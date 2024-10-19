@@ -19,7 +19,10 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('button_one');
             $table->string('link_one');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
+
             $table->softDeletes();
         });
     }

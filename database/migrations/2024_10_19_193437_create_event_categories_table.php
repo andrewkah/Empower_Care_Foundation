@@ -11,19 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('event_categories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('summary');
-            $table->longText('description')->nullable();
-            $table->text('quote')->nullable();
-            $table->text('photo')->nullable();
-            $table->string('tags')->nullable();
-            $table->unsignedBigInteger('article_cat_id')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
-            $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('event_categories');
     }
 };

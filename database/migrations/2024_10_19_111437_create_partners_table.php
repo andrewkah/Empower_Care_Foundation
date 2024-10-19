@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('address')->nullable();
+            $table->string('website')->nullable();
+            $table->string('slug')->unique();
+            $table->string('photo')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
