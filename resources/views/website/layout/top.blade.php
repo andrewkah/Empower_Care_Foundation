@@ -8,7 +8,7 @@
                             <i class="icon-envelope"></i>
                         </div>
                         <div class="text">
-                            <p><a href="mailto:example@gamil.com">example@gamil.com</a>
+                            <p><a href="mailto:mwirusima@gmail.com">empowercare@gmail.com</a>
                             </p>
                         </div>
                     </li>
@@ -17,7 +17,7 @@
                             <i class="icon-pin-two"></i>
                         </div>
                         <div class="text">
-                            <p>12 Green Road, 05 New York</p>
+                            <p>Uyole, Mbeya</p>
                         </div>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="{{route('home')}}"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                            <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.png') }}" alt=""></a>
                         </div>
                         <div class="main-menu__main-menu-box">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
