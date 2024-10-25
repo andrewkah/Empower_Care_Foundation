@@ -41,9 +41,9 @@
             <div class="container">
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
-                        <div class="main-menu__logo">
+                        {{-- <div class="main-menu__logo">
                             <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.png') }}" alt=""></a>
-                        </div>
+                        </div> --}}
                         <div class="main-menu__main-menu-box">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
@@ -76,13 +76,16 @@
                                 <li class="dropdown">
                                     <a href="#">Gallery</a>
                                     <ul class="shadow-box">
-                                        <li><a href="#">Album</a></li>
-                                        <li><a href="#">Videos</a></li>
-                                        <li><a href="#">Downloads</a></li>
+                                        <li><a href="{{route('album')}}">Album</a></li>
+                                        <li><a href="{{route('videos')}}">Videos</a></li>
+                                        <li><a href="{{route('downloads')}}">Downloads</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="{{route('contact-us')}}">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('donations')}}">Donate</a>
                                 </li>
                             </ul>
                         </div>
@@ -102,7 +105,7 @@
                             <a href="#" class="main-menu__search search-toggler icon-search"></a>
                         </div>
                         <div class="main-menu__btn-box">
-                            <a href="donation-details.html" class="main-menu__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donation-details')}}" class="main-menu__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

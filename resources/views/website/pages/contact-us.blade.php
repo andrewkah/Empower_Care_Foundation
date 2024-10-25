@@ -16,7 +16,7 @@
                     <h2 class="section-title__title title-animation">Empowering Communities<br> through Donations
                     </h2>
                 </div>
-                <form class="contact-form-validated contact-one__form" action="assets/inc/sendemail.php" method="post"
+                <form class="contact-form-validated contact-one__form" action="{{asset('assets/inc/sendemail.php') }}" method="post"
                     novalidate="novalidate">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
@@ -132,7 +132,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="donation-details.html" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
