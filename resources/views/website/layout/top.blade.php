@@ -41,9 +41,9 @@
             <div class="container">
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
-                        {{-- <div class="main-menu__logo">
-                            <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.png') }}" alt=""></a>
-                        </div> --}}
+                        <div class="main-menu__logo">
+                            <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.png') }}" style="height:60px;" alt=""></a>
+                        </div>
                         <div class="main-menu__main-menu-box">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
