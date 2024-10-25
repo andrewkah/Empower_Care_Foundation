@@ -289,13 +289,13 @@
                                         <div class="icon">
                                             <span class="icon-call"></span>
                                         </div>
-                                        <p><a href="tel:0882466422710">+088 (246) 642-27-10</a></p>
+                                        <p><a href="tel:255784421959">+(255) 784421959</a></p>
                                     </li>
                                     <li>
                                         <div class="icon">
                                             <span class="icon-envelope"></span>
                                         </div>
-                                        <p><a href="mailto:example@mail.com">example@mail.com</a></p>
+                                        <p><a href="mailto:mwirusima@gmail.com">mwirusima@gmail.com</a></p>
                                     </li>
                                 </ul>
                                 <div class="site-footer-two__social">
@@ -316,7 +316,7 @@
                             <div class="site-footer-two__bottom-inner">
                                 <div class="site-footer-two__copyright">
                                     <p class="site-footer-two__copyright-text">Copywright 2024 by <a
-                                            href="#">anity</a>. All
+                                            href="#">EmpowerCare</a>. All
                                         Rights Reserved.</p>
                                 </div>
                                 <div class="site-footer-two__bottom-menu-box">

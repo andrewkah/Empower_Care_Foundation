@@ -132,30 +132,24 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 class="cause-details__title-1">Our Goals</h2>
+                        <h2 class="cause-details__title-1">Our Causes</h2>
                         <p class="cause-details__text-4">Surely access to clean water should be a basic human right
                             in the <span class="color-black">19th century.</span> If you can only give <span
                                 class="color-base">£10</span> just this one time, it will still make a difference.
                         </p>
-                        <p class="cause-details__text-5">There are simple solutions like drilled wells, spring
-                            protections and BioSand filters that help provide clean water to communities around the
-                            world.ut many people around the world don’t have that luxury. Every day, about 1,400
-                            children die from diseases caused by unsafe water and poor sanitation. But it doesn’t
-                            have to be that way. There are simple solutions like drilled wells, spring protections
-                            and BioSand filters</p>
                         <div class="cause-details__points-box">
                             <ul class="cause-details__points-list list-unstyled">
                                 <li>
                                     <div class="icon">
                                         <span class="fas fa-check"></span>
                                     </div>
-                                    <p>A place in history</p>
+                                    <p>Substance abuse prevention including mental health</p>
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <span class="fas fa-check"></span>
                                     </div>
-                                    <p>More goodness in the world</p>
+                                    <p>Sexual Reproductive Health Rights including family planning</p>
                                 </li>
                             </ul>
                             <ul class="cause-details__points-list list-unstyled">
@@ -163,13 +157,55 @@
                                     <div class="icon">
                                         <span class="fas fa-check"></span>
                                     </div>
-                                    <p>It’s about impact, goodness</p>
+                                    <p>HIV, Hepatitis and Malaria</p>
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <span class="fas fa-check"></span>
                                     </div>
-                                    <p>The world we live in right now</p>
+                                    <p>Communicable and emerging diseases </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Non-Communicable Diseases </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Gender Equality and Equity </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Gender-Based Violence </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Economic Empowerment </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Climate Change </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Advocacy </p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="fas fa-check"></span>
+                                    </div>
+                                    <p>Research, Monitoring and Evaluation</p>
                                 </li>
                             </ul>
                         </div>
@@ -289,13 +325,13 @@
                                         <div class="icon">
                                             <span class="icon-call"></span>
                                         </div>
-                                        <p><a href="tel:0882466422710">+088 (246) 642-27-10</a></p>
+                                        <p><a href="tel:255784421959">+(255) 784421959</a></p>
                                     </li>
                                     <li>
                                         <div class="icon">
                                             <span class="icon-envelope"></span>
                                         </div>
-                                        <p><a href="mailto:example@mail.com">example@mail.com</a></p>
+                                        <p><a href="mailto:mwirusima@gmail.com">mwirusima@gmail.com</a></p>
                                     </li>
                                 </ul>
                                 <div class="site-footer-two__social">
@@ -316,7 +352,7 @@
                             <div class="site-footer-two__bottom-inner">
                                 <div class="site-footer-two__copyright">
                                     <p class="site-footer-two__copyright-text">Copywright 2024 by <a
-                                            href="#">anity</a>. All
+                                            href="#">EmpowerCare</a>. All
                                         Rights Reserved.</p>
                                 </div>
                                 <div class="site-footer-two__bottom-menu-box">

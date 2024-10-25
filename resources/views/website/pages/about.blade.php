@@ -2,7 +2,8 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="About Us" bgImage="assets/images/backgrounds/page-header-bg.jpg" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="About Us" bgImage="assets/images/backgrounds/page-header-bg.jpg"
+        homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
     <!--About One Start -->
@@ -42,40 +43,57 @@
                                 <span class="section-title__tagline">About Us</span>
                             </div>
                             <h2 class="section-title__title title-animation">Unite for a Cause
-                                <br> Change the World</h2>
+                                <br> Change the World
+                            </h2>
                         </div>
                         <div class="about-One__vission-mission">
                             <div class="about-One__tab-box tabs-box">
                                 <ul class="tab-buttons clearfix list-unstyled">
-                                    <li data-tab="#vission" class="tab-btn active-btn"><span>Our Mission</span></li>
-                                    <li data-tab="#mission" class="tab-btn"><span>Our Vision</span></li>
-                                    <li data-tab="#goal" class="tab-btn"><span>Our Goal</span></li>
+                                    <li data-tab="#vission" class="tab-btn active-btn"><span>Our Vision</span></li>
+                                    <li data-tab="#mission" class="tab-btn"><span>Our Mission</span></li>
+                                    <li data-tab="#goal" class="tab-btn"><span>Our Values</span></li>
                                 </ul>
                                 <div class="tabs-content">
                                     <!--tab-->
                                     <div class="tab active-tab" id="vission">
                                         <div class="tabs-content__inner">
-                                            <p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                                                aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt
-                                                explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                                            <p>Our vision is to see a flourishing Tanzania, where individuals and
+                                                communities thrive in health and development.</p>
                                         </div>
                                     </div>
                                     <!--tab-->
                                     <!--tab-->
                                     <div class="tab" id="mission">
                                         <div class="tabs-content__inner">
-                                            <p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                                                aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt
-                                                explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                                            <p>Our Mission is to foster the holistic development of Tanzanian individuals
+                                                and communities by promoting health, empowerment, and resilience.</p>
+                                            <p>Our key focus areas include; healthcare enhancement, with an emphasis on
+                                                maternal, newborn, adolescent and young people, and child health, HIV,
+                                                Hepatitis, Gender Equality, Gender Based Violence, climate change
+                                                resilience, substance abuse prevention, advocacy for policy change, and
+                                                building strong partnerships with local governments, private sector,
+                                                educational institutions, and international organizations.</p>
                                         </div>
                                     </div>
                                     <!--tab-->
                                     <!--tab-->
                                     <div class="tab" id="goal">
                                         <div class="tabs-content__inner">
-                                            <p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                                                aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt
-                                                explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                                            <h6>Quality</h6>
+                                            <p>We prioritize the highest standards in delivering services that meet the
+                                                diverse needs of the communities we serve.</p>
+                                            <h6>Integrity</h6>
+                                            <p>Transparency, accountability, and honesty guide all of our actions and
+                                                decisions.</p>
+                                            <h6>Inclusivity</h6>
+                                            <p>We embrace diversity and work to ensure that all voices, especially those of
+                                                marginalized groups, are heard and respected.</p>
+                                            <h6>Collaboration</h6>
+                                            <p>We believe in the power of partnerships and actively engage with stakeholders
+                                                to foster sustainable, community-driven solutions.</p>
+                                            <h6>Resilience</h6>
+                                            <p>We are committed to building the capacity of individuals and communities to
+                                                overcome challenges and thrive in the face of adversity.</p>
                                         </div>
                                     </div>
                                     <!--tab-->
@@ -93,7 +111,10 @@
                                 </div>
                                 <div class="content">
                                     <p>Need help?</p>
-                                    <h4><a href="tel:3195550115">(319) 555-0115</a></h4>
+                                    <h4><a href="tel:255757448534">(255) 757-448534</a></h4>
+                                    <h4><a href="tel:255784421959">(255) 784-421959</a></h4>
+                                    <h4><a href="tel:255746869255">(255) 746-869255</a></h4>
+                                    <h4><a href="tel:255767210313">(255) 767-210313</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -297,9 +318,8 @@
                             </div>
                             <h2 class="section-title__title title-animation">Supporting Dreams Changing
                                 Lives</h2>
-                        </div>
-                        <p class="who-we-are__text">Lorem Ipsum is simply dummy a of the printing and type setting
-                            industry Loreaim Ipsum has been the industry's standard dummy</p>
+                        </div><span class="color-black">19th century.</span>
+                        <p class="who-we-are__text">EmpowerCare Foundation (EF), is a non-governmental organization with registration number <strong class="color-black">00NGO/R/5113</strong>, untethered by political or religious affiliations, registered by the Ministry of Community Development. EmpowerCare is committed to fostering health, empowerment, and resilience across communities.</p>
                         <div class="who-we-are__progress-box">
                             <ul class="who-we-are__progress-list list-unstyled">
                                 <li>
@@ -492,13 +512,13 @@
                                         <div class="icon">
                                             <span class="icon-call"></span>
                                         </div>
-                                        <p><a href="tel:0882466422710">+088 (246) 642-27-10</a></p>
+                                        <p><a href="tel:255784421959">+(255) 784421959</a></p>
                                     </li>
                                     <li>
                                         <div class="icon">
                                             <span class="icon-envelope"></span>
                                         </div>
-                                        <p><a href="mailto:example@mail.com">example@mail.com</a></p>
+                                        <p><a href="mailto:mwirusima@gmail.com">mwirusima@gmail.com</a></p>
                                     </li>
                                 </ul>
                                 <div class="site-footer-two__social">
@@ -519,7 +539,7 @@
                             <div class="site-footer-two__bottom-inner">
                                 <div class="site-footer-two__copyright">
                                     <p class="site-footer-two__copyright-text">Copywright 2024 by <a
-                                            href="#">anity</a>. All
+                                            href="#">EmpowerCare</a>. All
                                         Rights Reserved.</p>
                                 </div>
                                 <div class="site-footer-two__bottom-menu-box">

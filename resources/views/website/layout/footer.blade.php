@@ -48,19 +48,19 @@
                                     <div class="icon">
                                         <span class="icon-call"></span>
                                     </div>
-                                    <p><a href="tel:0882466422710">+088 (246) 642-27-10</a></p>
+                                    <p><a href="tel:255784421959">+(255) 784421959</a></p>
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <span class="icon-envelope"></span>
                                     </div>
-                                    <p><a href="mailto:example@mail.com">example@mail.com</a></p>
+                                    <p><a href="mailto:mwirusima@gmail.com">mwirusima@gmail.com</a></p>
                                 </li>
                                 <li>
                                     <div class="icon">
                                         <span class="icon-pin"></span>
                                     </div>
-                                    <p>455 West Orchard Street<br> Kings Mountain, NC 280867</p>
+                                    <p>Uyole, Mbeya</p>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +75,7 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copywright 2024 by <a href="#">anity</a>.
+                            <p class="site-footer__copyright-text">Copywright 2024 by <a href="#">EmpowerCare</a>.
                                 All
                                 Rights Reserved.</p>
                         </div>
