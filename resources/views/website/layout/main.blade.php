@@ -80,7 +80,6 @@
         @include('website.layout.top')
         <!-- top navbar end -->
 
-        <x-flash />
         @yield('content')
 
 

@@ -32,4 +32,20 @@ Route::get('/sponsors', function () {
 Route::get('/contact-us', function () {
     return view('website.pages.contact-us');
 })->name('contact-us');
+Route::get('/album', function () {
+    return view('website.pages.album');
+})->name('album');
+Route::get('/donations', function () {
+    return view('website.pages.donate');
+})->name('donations');
+Route::get('/donation/details', function () {
+    return view('website.pages.donation-details');
+})->name('donation-details');
+Route::get('/videos', function () {
+    return view('website.pages.videos');
+})->name('videos');
+Route::get('/downloads', function () {
+    return view('website.pages.downloads');
+})->name('downloads');
 
+require __DIR__.'/admin-auth.php';

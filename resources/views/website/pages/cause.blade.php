@@ -68,7 +68,7 @@
                         </div>
                         <div class="cause-details__form-box">
                             <form class="contact-form-validated cause-details__form"
-                                action="assets/inc/sendemail.php" method="post" novalidate="novalidate">
+                                action="{{asset('assets/inc/sendemail.php') }}" method="post" novalidate="novalidate">
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6">
                                         <h4 class="cause-details__input-title">First Name</h4>
@@ -290,7 +290,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="donation-details.html" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>

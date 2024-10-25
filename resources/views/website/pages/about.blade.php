@@ -102,7 +102,7 @@
                         </div>
                         <div class="about-One__btn-and-need-help">
                             <div class="about-One__btn-box">
-                                <a href="donation-details.html" class="about-One__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="about-One__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                             <div class="about-One__need-help">
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="donation-details.html">Help For Ecosystem</a></h4>
+                            <h4 class="found-one__title"><a href="{{route('donation-details')}}">Help For Ecosystem</a></h4>
                             <p class="found-one__text">Charity and Donation is a categorys that involves giving
                                 financial </p>
                             <div class="found-one__goals">
@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="found-one__btn-box">
-                                <a href="donation-details.html" class="found-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="found-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                             </div>
                         </div>
                         <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="donation-details.html">Water For All</a></h4>
+                            <h4 class="found-one__title"><a href="{{route('donation-details')}}">Water For All</a></h4>
                             <p class="found-one__text">Charity and Donation is a categorys that involves giving
                                 financial </p>
                             <div class="found-one__goals">
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                             <div class="found-one__btn-box">
-                                <a href="donation-details.html" class="found-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="found-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                         <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="donation-details.html">Vaccine Aid Camp</a></h4>
+                            <h4 class="found-one__title"><a href="{{route('donation-details')}}">Vaccine Aid Camp</a></h4>
                             <p class="found-one__text">Charity and Donation is a categorys that involves giving
                                 financial </p>
                             <div class="found-one__goals">
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
                             <div class="found-one__btn-box">
-                                <a href="donation-details.html" class="found-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="found-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -266,14 +266,14 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url(assets/images/backgrounds/donate-one-single-bg.jpg);">
                         </div>
-                        <h3 class="donate-one__title"><a href="donation-details.html">Help Them With Donation</a>
+                        <h3 class="donate-one__title"><a href="{{route('donation-details')}}">Help Them With Donation</a>
                         </h3>
                         <p class="donate-one__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem<br> quia
                             voluptas
                             sit aspernaturaut odit aut fugit, sed<br> quia consequuntur. Dicta sunt explicabo. Nemo
                         </p>
                         <div class="donate-one__btn-box">
-                            <a href="donation-details.html" class="donate-one__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donation-details')}}" class="donate-one__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -347,7 +347,7 @@
                             </ul>
                         </div>
                         <div class="who-we-are__btn-box">
-                            <a href="donation-details.html" class="who-we-are__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donation-details')}}" class="who-we-are__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="donation-details.html" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -424,7 +424,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="donation-details.html" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -449,7 +449,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="donation-details.html" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -477,7 +477,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="donation-details.html" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
