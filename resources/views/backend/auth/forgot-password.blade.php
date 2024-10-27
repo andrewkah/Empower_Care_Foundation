@@ -36,25 +36,33 @@
      <!-- login area start -->
      <div class="login-area">
         <div class="container">
+            <x-flash/>
             <div class="login-box ptb--100">
-                <form>
+                <form method="POST" action="{{ route('password.email')}}" class="needs-validation" novalidate>
+                    @csrf
                     <div class="login-form-head">
                         <h4>Reset Password</h4>
-                        <p>Hey! Reset Your Password and comeback again</p>
+                        <p>Please enter your registered email address</p>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">Old Password</label>
-                            <input type="password" id="exampleInputPassword1">
-                            <i class="ti-lock"></i>
+                            <label for="exampleInputEmail2">Email Address</label>
+                            <input type="email" value="{{ old('email') }}" id="exampleInputEmail2" autocomplete="off">
+                            <i class="ti-email"></i>
                         </div>
-                        <div class="form-gp">
-                            <label for="exampleInputPassword2">New Password</label>
-                            <input type="password" id="exampleInputPassword2">
-                            <i class="ti-lock"></i>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    {{-- <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label> --}}
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="{{ route('login')}}">Already have an account?</a>
+                            </div>
                         </div>
                         <div class="submit-btn-area mt-5">
-                            <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" type="submit">Send Link <i class="ti-arrow-right"></i></button>
                         </div>
                     </div>
                 </form>
