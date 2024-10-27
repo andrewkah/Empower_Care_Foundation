@@ -38,7 +38,9 @@
         <!-- sidebar menu area end -->
         <!-- main content area start -->
         <x-flash />
-        @yield('content')
+        <div class="main-content">
+            @yield('content')
+        </div>
         <!-- main content area end -->
         <!-- footer area start-->
         @include('backend.layout.footer')

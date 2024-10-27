@@ -36,25 +36,35 @@
      <!-- login area start -->
      <div class="login-area">
         <div class="container">
+            <x-flash/>
             <div class="login-box ptb--100">
-                <form>
+                <form method="POST" action="{{ route('password.update')}}" class="needs-validation" novalidate>
+                    @csrf
                     <div class="login-form-head">
                         <h4>Reset Password</h4>
                         <p>Hey! Reset Your Password and comeback again</p>
                     </div>
+                    <input type="hidden" name="token" value="{{ $token }}" >
+                    <input type="hidden" name="email" id="email" value="{{ $email }}">
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Old Password</label>
                             <input type="password" id="exampleInputPassword1">
                             <i class="ti-lock"></i>
                         </div>
+                        @error('password')
+                            <div class="invalid-feedback"> {{ $message }}</div>
+                        @enderror
                         <div class="form-gp">
                             <label for="exampleInputPassword2">New Password</label>
                             <input type="password" id="exampleInputPassword2">
                             <i class="ti-lock"></i>
                         </div>
+                        @error('password')
+                            <div class="invalid-feedback"> {{ $message }}</div>
+                        @enderror
                         <div class="submit-btn-area mt-5">
-                            <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" type="submit">Reset Password<i class="ti-arrow-right"></i></button>
                         </div>
                     </div>
                 </form>

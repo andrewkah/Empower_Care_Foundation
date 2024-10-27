@@ -11,7 +11,7 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,25 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
+        $userId = $this->route('user');
         return [
-            //
+            'name'=>'required',
+            'username'=>'required',
+            'email' => 'required|email|unique:users,email,'.$userId,
+            'roles' => 'required',
+            'phone'=>'nullable'
+        ];
+    }
+    public function messages(){
+        return [
+            'name.required'=>'Full Name  is required',
+            'username.required'=>'Username is required',
+            'email.required'=>'Email is required',
+            'email.email'=>'Email is invalid',
+            'email.unique'=>'Email already exists',
+            'password.required'=>'Password is required',
+            'password.same'=>'Password does not match',
+            'roles.required'=>'Role is required'
         ];
     }
 }
