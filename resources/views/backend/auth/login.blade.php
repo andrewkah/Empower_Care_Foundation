@@ -51,14 +51,14 @@
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Username</label>
-                            <input type="text" id="exampleInputEmail1">
+                            <input type="email" id="exampleInputEmail1" name="email">
                             <i class="ti-user"></i>
                             @error('name')<x-input.error id="name"
                                                     class="form-text text-danger">{{ $message }}</x-small>@enderror
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" id="exampleInputPassword1">
+                            <input type="password" id="exampleInputPassword1" name="password">
                             <i class="ti-lock"></i>
                             @error('password')<x-input.error id="password"
                             class="form-text text-danger">{{ $message }}</x-small>@enderror

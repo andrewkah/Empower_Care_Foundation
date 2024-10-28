@@ -22,16 +22,13 @@ class AuthRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>"required|min:4|string|unique:users",
             'email'=> "required|email",
             'password'=>"required|min:8"
         ];
     }
     public function messages()
     {
-        return [
-            'name.required' => 'Username is required',
-            'name.min' => 'Username must be at least 4 characters long',
+        return [          
             'email.required'=> "Email Address is required",
             'email.email'=> "Please provide a valid email address",
             'password.required' => 'Password is required',
