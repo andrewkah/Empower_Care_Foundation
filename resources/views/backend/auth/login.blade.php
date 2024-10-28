@@ -50,7 +50,7 @@
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputEmail1">Username</label>
+                            <label for="exampleInputEmail1">Email Address</label>
                             <input type="email" id="exampleInputEmail1" name="email">
                             <i class="ti-user"></i>
                             @error('name')<x-input.error id="name"
