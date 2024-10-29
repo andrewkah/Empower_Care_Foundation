@@ -11,7 +11,7 @@ class ArticleCategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class ArticleCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title'=>'required|string|max:255',
+        ];
+    }
+    public function messages(){
+        return [
+            'title.required'=>'Title is required',
+            'title.string'=>'Title should be a valid text',
         ];
     }
 }

@@ -11,7 +11,7 @@ class TeamRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class TeamRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>'required|string|max:255',
+            'email'=>'email|unique:teams,email',
+            'phone' => 'regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/',
+            'position' => 'string|max:255',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ];
+    }
+    public function messages(){
+        return [
+            'name.required'=>'The name is required',
+            'name.string' => 'The name should be a valid text',
+            'email.email' => 'Please provide a valid email address',
+            'email.unique' => 'Email address already exists',
+            'phone.regex' => 'Phone number should be in a valid format',
+            'position.string'=>'Position should be a valid text',
+            'photo.max' => 'Image should be at least 2MB',
+            'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }
 }
