@@ -43,7 +43,7 @@
           </div>
             @endif
             <div class="login-box ptb--100">
-                <x-form :action="route('register')">
+                <x-form :action="route('register.user')">
                     <div class="login-form-head">
                         <h4>Sign up</h4>
                         <p>Hello there, Sign up and Join with Us</p>
@@ -89,7 +89,7 @@
                             </div> --}}
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Already have an account? <a href="{{route('register.user')}}">Sign in</a></p>
+                            <p class="text-muted">Already have an account? <a href="{{route('login')}}">Sign in</a></p>
                         </div>
                     </div>
                 </x-form>

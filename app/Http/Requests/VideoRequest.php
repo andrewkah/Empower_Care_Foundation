@@ -11,7 +11,7 @@ class VideoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class VideoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title'=>'required|string|max:255',
+            'link'=>'required|url',
+        ];
+    }
+    public function messages(){
+        return [
+            'title.required'=>'The title is required',
+            'title.string' => 'The title should be a valid text',
+            'link.required' => 'The link is required',
+            'link.url' => 'The link should be a valid url',
         ];
     }
 }

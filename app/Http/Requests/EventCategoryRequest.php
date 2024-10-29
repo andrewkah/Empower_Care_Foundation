@@ -11,7 +11,7 @@ class EventCategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class EventCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title'=>'required|string|max:255',
+        ];
+    }
+    public function messages(){
+        return [
+            'title.required'=>'The title is required',
+            'title.string' => 'The title should be a valid text',
         ];
     }
 }

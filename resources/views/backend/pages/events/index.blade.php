@@ -2,26 +2,26 @@
 
 @section('content')
     <!-- header area start -->
-    <x-header :pageTitle="Causes" :currentPage="Causes"></x-header>
+    <x-admin.header pageTitle="Events" currentPage="Events"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
             <!-- table dark start -->
-            <div class="col-lg-6 mt-5">
+            <div class="col-lg-12 mt-5">
                 <div class="card">
                     <div class="card-body">
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table text-center">
                                     <thead class="text-uppercase bg-dark">
-                                        <tr>
+                                        <tr class="text-white">
                                             <th scope="col">Title</th>
                                             <th scope="col">Description</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($causes as $cause)
+                                        @forelse ($data as $cause)
                                             <td>{{$cause->title}}</td>
                                             <td>{{$cause->description}}</td>
                                             <td>
@@ -86,35 +86,7 @@
                 </div>
             </div>
             <!-- table dark end -->
-            <!-- Dark table start -->
-            <div class="col-12 mt-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="header-title">Data Table Dark</h4>
-                        <div class="data-tables datatable-dark">
-                            <table id="dataTable3" class="text-center">
-                                <thead class="text-capitalize">
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($causes as $cause)
-                                        <td>{{$cause->title}}</td>
-                                        <td>{{$cause->description}}</td>
-                                    @empty
-                                        <td colspan="2">No data present</td>
-                                    @endforelse
-                                    
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Dark table end -->
+            
         </div>
     </div>
 @endsection

@@ -6,26 +6,27 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ config('app.name', '') }} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="{{asset('backend/images/icon/favicon.ico') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/metisMenu.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/slicknav.min.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('backend/images/icon/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/metisMenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/slicknav.min.css') }}">
     <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+        media="all" />
     <!-- others css -->
-    <link rel="stylesheet" href="{{asset('backend/css/typography.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/default-css.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/styles.css') }}">
-    <link rel="stylesheet" href="{{asset('backend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/typography.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/default-css.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/responsive.css') }}">
     <!-- modernizr css -->
     <script src="{{ asset('backend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
 
 <body>
-    
+
     <!-- preloader area start -->
     <div id="preloader">
         <div class="loader"></div>
@@ -259,6 +260,35 @@
     <!-- others plugins -->
     <script src="{{ asset('backend/js/plugins.js') }}"></script>
     <script src="{{ asset('backend/js/scripts.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the current page URL
+            const currentPage = window.location.pathname;
+    
+            // Get all menu items
+            const menuItems = document.querySelectorAll('.sidebar-menu li a');
+    
+            // Loop through each menu item
+            menuItems.forEach((menuItem) => {
+                // Get the href attribute of the menu item
+                const menuItemUrl = menuItem.getAttribute('href');
+    
+                // Check if the menu item URL matches the current page URL
+                if (menuItemUrl && currentPage.includes(menuItemUrl)) {
+                    // Add the active class to the menu item
+                    menuItem.classList.add('active');
+                    menuItem.parentNode.classList.add('active');
+    
+                    // Open the parent <ul> if it's a dropdown
+                    let parent = menuItem.closest('ul.collapse');
+                    if (parent) {
+                        parent.classList.add('in');
+                        parent.previousElementSibling.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        });
+    </script>    
 </body>
 
 </html>
