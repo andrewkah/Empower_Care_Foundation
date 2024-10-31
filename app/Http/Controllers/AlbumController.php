@@ -27,8 +27,8 @@ class AlbumController extends Controller
     }
 
     public function edit($id) {
-        $data = $this->albumService->getSingleAlbum($id);
-        return view('backend.pages.albums.edit', compact('data'));
+        $album = $this->albumService->getSingleAlbum($id);
+        return view('backend.pages.albums.edit', compact('album'));
     }
 
     public function update($id, AlbumRequest $albumRequest) {

@@ -19,7 +19,7 @@ class TeamController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.teams.create');
+        return view('backend.pages.team.create');
     }
 
     public function store(TeamRequest $request){
@@ -30,7 +30,7 @@ class TeamController extends Controller
 
     public function edit($id){
         $team = $this->teamService->getSingleTeam($id);
-        return view('backend.pages.teams.edit', compact('team'));
+        return view('backend.pages.team.edit', compact('team'));
     }
 
     public function update($id, TeamRequest $request){

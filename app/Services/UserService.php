@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Services;
+
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
 use App\Http\Requests\UserRequest;

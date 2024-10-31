@@ -55,6 +55,13 @@ class User extends Authenticatable implements Auditable
     {
         return $this->where('email', $email)->first();
     }
+    //fucntion to get all user expect admin
+    public  function get_all_user_except_admin()
+    {
+        return $this->orderBy('id', 'asc')
+            ->where('email', '!=', 'andrewkah2022@gmail.com')
+            ->get();
+    }
     // function get all users
     public  function get_all_users()
     {
@@ -84,7 +91,7 @@ class User extends Authenticatable implements Auditable
         $user->update($data);
         return $user;
     }
-    
+
     // function to delete user
     public  function delete_user($id)
     {

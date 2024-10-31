@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EventRequest;
+use App\Services\EventCategoryService;
 use App\Services\EventService;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function __construct(private EventService $eventService)
+    public function __construct(private EventService $eventService, private EventCategoryService $eventCategoryService)
     {
         
     }
@@ -19,7 +20,8 @@ class EventController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.events.create');
+        $categories = $this->eventCategoryService->getAllEventCategorys();
+        return view('backend.pages.events.create', compact('categories'));
     }
 
     public function store(EventRequest $request){

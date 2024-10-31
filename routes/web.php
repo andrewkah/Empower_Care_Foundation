@@ -13,12 +13,15 @@ Route::get('/', function () {
 Route::get('/events', function () {
     return view('website.pages.events');
 })->name('events');
+Route::get('/articles', function () {
+    return view('website.pages.articles');
+})->name('articles');
 Route::get('/events/details', function () {
     return view('website.pages.events-details');
 })->name('events-details');
-Route::get('/news', function () {
-    return view('website.pages.news');
-})->name('news');
+Route::get('/programs', function () {
+    return view('website.pages.programs');
+})->name('programs');
 Route::get('/about', function () {
     return view('website.pages.about');
 })->name('about');
@@ -43,9 +46,9 @@ Route::get('/album', function () {
 Route::get('/donations', function () {
     return view('website.pages.donate');
 })->name('donations');
-Route::get('/donation/details', function () {
-    return view('website.pages.donation-details');
-})->name('donation-details');
+Route::get('/faqs', function () {
+    return view('website.pages.faqs');
+})->name('faqs');
 Route::get('/videos', function () {
     return view('website.pages.videos');
 })->name('videos');

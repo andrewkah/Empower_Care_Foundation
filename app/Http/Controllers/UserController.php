@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Services\UserService;
 use Illuminate\Http\Request;
-use UserService;
 
 class UserController extends Controller
 {
@@ -14,7 +14,7 @@ class UserController extends Controller
     }
 
     public function index(){
-        $users = $this->userService->get_all_users_except_admin();
+        $data = $this->userService->get_all_users_except_admin();
         return view('backend.pages.users.index', compact('data'));
     }
 

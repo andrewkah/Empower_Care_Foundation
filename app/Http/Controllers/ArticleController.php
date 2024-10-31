@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Services\ArticleCategoryService;
 use App\Services\ArticleService;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function __construct(protected ArticleService $articleService)
+    public function __construct(private ArticleService $articleService, private ArticleCategoryService $articleCategoryService)
     {
     }
 
@@ -19,7 +20,8 @@ class ArticleController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.articles.create');
+        $categories = $this->articleCategoryService->getAllArticleCategories();
+        return view('backend.pages.articles.create', compact('categories'));
     }
 
     public function store(ArticleRequest $request){
