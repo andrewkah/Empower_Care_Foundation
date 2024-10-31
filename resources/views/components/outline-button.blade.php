@@ -1,5 +1,5 @@
-@props(['color', 'type', 'onclick']));
+@props(['color', 'href' => '#'])
 
-<button type="{{$type}}" class="btn btn-outline-{{ $color }}  mb-3" onclick="{{ $onclick }}">
-    {{ $slot }}
-</button>
+<a href={{ $href }} class="btn btn-outline-{{ $color }} mb-3">
+    {!! $slot !!}
+</a>

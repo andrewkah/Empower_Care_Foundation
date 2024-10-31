@@ -8,6 +8,13 @@
         <div class="row">
             <!-- table dark start -->
             <div class="col-lg-12 mt-5">
+                <div class="row justify-content-between">
+                    
+                    <div class="col-auto ml-0">
+                        
+                        <x-outline-button color="primary" href="{{route('partners.create')}}">Add Partner</x-outline-button>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
                         <div class="single-table">

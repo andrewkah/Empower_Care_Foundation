@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Children Cancer Help
+                            <h3 class="donate-three__title"><a href="#">Children Cancer Help
                                     Fund</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Clean Water & Health
+                            <h3 class="donate-three__title"><a href="#">Clean Water & Health
                                     Food</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Medicine For
+                            <h3 class="donate-three__title"><a href="#">Medicine For
                                     Africans</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Poverty Help Fund</a>
+                            <h3 class="donate-three__title"><a href="#">Poverty Help Fund</a>
                             </h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Rights Of Poor
+                            <h3 class="donate-three__title"><a href="#">Rights Of Poor
                                     Children</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Africans Ecosystem</a>
+                            <h3 class="donate-three__title"><a href="#">Africans Ecosystem</a>
                             </h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -223,7 +223,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Children Cancer Help
+                            <h3 class="donate-three__title"><a href="#">Children Cancer Help
                                     Fund</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -257,7 +257,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Clean Water & Health
+                            <h3 class="donate-three__title"><a href="#">Clean Water & Health
                                     Food</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -291,7 +291,7 @@
                             </div>
                         </div>
                         <div class="donate-three__content">
-                            <h3 class="donate-three__title"><a href="{{route('donation-details')}}">Medicine For
+                            <h3 class="donate-three__title"><a href="#">Medicine For
                                     Africans</a></h3>
                             <p class="donate-three__text">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                                 voluptas sit asuraut</p>
@@ -336,7 +336,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="#" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>

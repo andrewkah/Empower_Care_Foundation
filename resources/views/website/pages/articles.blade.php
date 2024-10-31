@@ -2,10 +2,11 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="News" bgImage="assets/images/backgrounds/page-header-bg.jpg" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="Articles" bgImage="assets/images/backgrounds/page-header-bg.jpg"
+        homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
-    <!--Testimonial Page Start -->
+    <!--About One Start -->
     <section class="testimonial-page">
         <div class="container">
             <div class="row">
@@ -24,10 +25,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-1.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-1.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Darlene
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Darlene
                                         Robertson</a></h3>
                                 <p class="testimonial-one__client-sub-title">Web Designer</p>
                             </div>
@@ -50,10 +51,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-2.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-2.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Floyd Miles</a>
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Floyd Miles</a>
                                 </h3>
                                 <p class="testimonial-one__client-sub-title">Medical Assistant</p>
                             </div>
@@ -76,10 +77,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-3.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-3.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Leslie
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Leslie
                                         Alexander</a></h3>
                                 <p class="testimonial-one__client-sub-title">Web Designer</p>
                             </div>
@@ -102,10 +103,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-4.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-4.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Cameron
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Cameron
                                         Williamson</a></h3>
                                 <p class="testimonial-one__client-sub-title">Medical Assistant</p>
                             </div>
@@ -128,10 +129,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-5.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-5.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Andre
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Andre
                                         Robertson</a></h3>
                                 <p class="testimonial-one__client-sub-title">Web Designer</p>
                             </div>
@@ -154,10 +155,10 @@
                             that captures the essence of Blooming</p>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-img">
-                                <img src="{{asset ('assets/images/testimonial/testimonial-1-6.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/testimonial/testimonial-1-6.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-one__client-content">
-                                <h3 class="testimonial-one__client-name"><a href="news.html">Floyd Jack</a>
+                                <h3 class="testimonial-one__client-name"><a href="testimonials.html">Floyd Jack</a>
                                 </h3>
                                 <p class="testimonial-one__client-sub-title">Medical Assistant</p>
                             </div>
@@ -168,12 +169,12 @@
             </div>
         </div>
     </section>
-    <!--Testimonial Page End -->
+    <!--About One End -->
 
     <!--Site Footer Two Start-->
     <footer class="site-footer-two">
         <div class="site-footer-two__shape-1 float-bob-y">
-            <img src="{{asset ('assets/images/shapes/site-footer-two-shape-1.png') }}" alt="">
+            <img src="{{ asset('assets/images/shapes/site-footer-two-shape-1.png') }}" alt="">
         </div>
         <div class="site-footer-two__top">
             <div class="container">
@@ -186,7 +187,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="{{route('home')}}#donate" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>

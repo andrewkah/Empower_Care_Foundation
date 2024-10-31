@@ -1,6 +1,5 @@
 @props([
-    'id',
-    'class',
+    'id'
 ])
 
-<small id="{{ $id }}" class="{{$class}}">{{$slot}}</small>
+<small id="{{ $id }}" {{$attributes}}>{{$slot}}</small>

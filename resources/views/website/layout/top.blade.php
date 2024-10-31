@@ -56,14 +56,14 @@
                                     <ul class="shadow-box">
                                     <li><a href="{{route('causes')}}">Our Cause</a></li>
                                         
-                                        <li><a href="{{route('news')}}">Our Programs</a></li>
+                                        <li><a href="{{route('programs')}}">Our Programs</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">Updates</a>
                                     <ul class="shadow-box">
                                     <li><a href="{{route('events')}}">Events</a></li>
-                                        <li><a href="{{route('team')}}">Articles</a></li>
+                                        <li><a href="{{route('articles')}}">Articles</a></li>
                                         <li><a href="{{route('album')}}">Album</a></li>
                                         <li><a href="{{route('videos')}}">Videos</a></li>
                                         <li><a href="{{route('downloads')}}">Downloads</a></li>
@@ -85,7 +85,7 @@
                                             <a href="{{route('contact-us')}}">Contact Us</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('donations')}}">FAQ</a>
+                                            <a href="{{route('faqs')}}">FAQ</a>
                                         </li>
                                         
                                     </ul>
