@@ -22,14 +22,14 @@
                                         Together, we can<br> make the world<br> better
                                     </h2>
                                 </div>
-                                <div class="btn-box">
+                                {{-- <div class="btn-box">
                                     <a href="{{route('donation-details')}}" class="thm-btn">
                                         Donate Now
                                         <span>
                                             <i class="icon-arrow-right"></i>
                                         </span>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -53,14 +53,14 @@
                                         Give a little<br> change you <br>a lot
                                     </h2>
                                 </div>
-                                <div class="btn-box">
+                                {{-- <div class="btn-box">
                                     <a href="{{route('donation-details')}}" class="thm-btn">
                                         Donate Now
                                         <span>
                                             <i class="icon-arrow-right"></i>
                                         </span>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -84,14 +84,14 @@
                                         Every gift counts<br> your Every life<br> matters
                                     </h2>
                                 </div>
-                                <div class="btn-box">
+                                {{-- <div class="btn-box">
                                     <a href="{{route('donation-details')}}" class="thm-btn">
                                         Donate Now
                                         <span>
                                             <i class="icon-arrow-right"></i>
                                         </span>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
 
 
     <!--Start Welcome one-->
-    <section class="welcome-one">
+    <section class="welcome-one" id="donate">
         <div class="container">
             <div class="welcome-one__inner">
                 <div class="row">
@@ -416,10 +416,10 @@
                             </div>
                         </div>
                         <div class="about-One__btn-and-need-help">
-                            <div class="about-One__btn-box">
+                            {{-- <div class="about-One__btn-box">
                                 <a href="{{route('donation-details')}}" class="about-One__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
-                            </div>
+                            </div> --}}
                             <div class="about-One__need-help">
                                 <div class="icon">
                                     <span class="icon-phone-call"></span>
@@ -440,7 +440,7 @@
     </section>
     <!--About One End -->
 
-    <!--Found One Start -->
+    {{-- <!--Found One Start -->
     <section class="found-one">
         <div class="found-one__bg">
             <div class="found-one__shape-1 float-bob-y">
@@ -570,7 +570,7 @@
             </div>
         </div>
     </section>
-    <!--Found One End -->
+    <!--Found One End --> --}}
 
 
     <!--Donation One Start -->
@@ -600,10 +600,10 @@
                         </div>
                         <div class="donate-now wow fadeInUp" data-wow-delay=".7s">
                             <input type="text" class="addAmount-value" placeholder="$ Costume Amount">
-                            <div class="donation-one__btn-box">
+                            {{-- <div class="donation-one__btn-box">
                                 <a href="#" class="donation-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -627,10 +627,10 @@
                             voluptas
                             sit aspernaturaut odit aut fugit, sed<br> quia consequuntur. Dicta sunt explicabo. Nemo
                         </p>
-                        <div class="donate-one__btn-box">
+                        {{-- <div class="donate-one__btn-box">
                             <a href="{{route('donation-details')}}" class="donate-one__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -701,10 +701,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="who-we-are__btn-box">
+                        {{-- <div class="who-we-are__btn-box">
                             <a href="{{route('donation-details')}}" class="who-we-are__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -753,10 +753,10 @@
                                 setting industry Loreaim Ipsum has</p>
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
-                            <div class="event-one__btn-box">
+                            {{-- <div class="event-one__btn-box">
                                 <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -778,10 +778,10 @@
                                 setting industry Loreaim Ipsum has</p>
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
-                            <div class="event-one__btn-box">
+                            {{-- <div class="event-one__btn-box">
                                 <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -803,10 +803,10 @@
                                 setting industry Loreaim Ipsum has</p>
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
-                            <div class="event-one__btn-box">
+                            {{-- <div class="event-one__btn-box">
                                 <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -816,7 +816,7 @@
     </section>
     <!--Event One End -->
 
-    <!--Testimonial One Start -->
+    {{-- <!--Testimonial One Start -->
     <section class="testimonial-one pdb1">
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
@@ -933,7 +933,7 @@
             </div>
         </div>
     </section>
-    <!--Testimonial One End -->
+    <!--Testimonial One End --> --}}
 
 
     <!--Country One Start -->
@@ -1010,7 +1010,7 @@
     </section>
     <!--Country One End -->
 
-    <!--Start Faq Style1-->
+    {{-- <!--Start Faq Style1-->
     <section class="faq-style1">
         <div class="container">
             <div class="row">
@@ -1118,7 +1118,7 @@
             </div>
         </div>
     </section>
-    <!--End Faq Style1-->
+    <!--End Faq Style1--> --}}
 
 
     <!--Stat Project Style1-->
@@ -1305,7 +1305,7 @@
                     </h2>
                 </div>
                 <div class="cta-one__btn-box">
-                    <a href="{{route('donation-details')}}" class="cta-one__btn-1 thm-btn">Donate Now<span><i
+                    <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
                                 class="icon-arrow-right"></i></span></a>
                     <a href="become-volunteer.html" class="cta-one__btn-2 thm-btn">Become A volunteer<span><i
                                 class="icon-arrow-right"></i></span></a>

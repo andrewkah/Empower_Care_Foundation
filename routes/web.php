@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('admin-home');
+    }
     return view('website.dashboard.index');
 })->name('home');
 Route::get('/events', function () {

@@ -52,41 +52,46 @@
                                     
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">What we Offer</a>
+                                    <a href="#">What we Do</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('events')}}">Events</a></li>
-                                        <li><a href="{{route('news')}}">Testimonials(News)</a></li>
+                                    <li><a href="{{route('causes')}}">Our Cause</a></li>
+                                        
+                                        <li><a href="{{route('news')}}">Our Programs</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">People</a>
+                                    <a href="#">Updates</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('team')}}">Team</a></li>
-                                        <li><a href="{{route('sponsors')}}">Sponsors</a></li>
+                                    <li><a href="{{route('events')}}">Events</a></li>
+                                        <li><a href="{{route('team')}}">Articles</a></li>
+                                        <li><a href="{{route('album')}}">Album</a></li>
+                                        <li><a href="{{route('videos')}}">Videos</a></li>
+                                        <li><a href="{{route('downloads')}}">Downloads</a></li>
+                                        {{-- <li><a href="{{route('sponsors')}}">Sponsors</a></li> --}}
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">About Us</a>
                                     <ul class="shadow-box">
                                         <li><a href="{{route('about')}}">About</a></li>
-                                        <li><a href="{{route('causes')}}">Our Cause</a></li>
+                                        <li><a href="{{route('team')}}">Our Team</a></li>
                                     </ul>
                                 </li>
                                 
                                 <li class="dropdown">
-                                    <a href="#">Gallery</a>
+                                    <a href="#">Contact Us</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('album')}}">Album</a></li>
-                                        <li><a href="{{route('videos')}}">Videos</a></li>
-                                        <li><a href="{{route('downloads')}}">Downloads</a></li>
+                                        <li>
+                                            <a href="{{route('contact-us')}}">Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('donations')}}">FAQ</a>
+                                        </li>
+                                        
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="{{route('contact-us')}}">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('donations')}}">Donate</a>
-                                </li>
+                                
+                                
                             </ul>
                         </div>
                     </div>
@@ -105,7 +110,7 @@
                             <a href="#" class="main-menu__search search-toggler icon-search"></a>
                         </div>
                         <div class="main-menu__btn-box">
-                            <a href="{{route('donation-details')}}" class="main-menu__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('home')}}#donate" class="main-menu__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

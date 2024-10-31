@@ -259,36 +259,7 @@
     <script src="{{ asset('backend/js/maps.js') }}"></script>
     <!-- others plugins -->
     <script src="{{ asset('backend/js/plugins.js') }}"></script>
-    <script src="{{ asset('backend/js/scripts.js') }}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Get the current page URL
-            const currentPage = window.location.pathname;
-    
-            // Get all menu items
-            const menuItems = document.querySelectorAll('.sidebar-menu li a');
-    
-            // Loop through each menu item
-            menuItems.forEach((menuItem) => {
-                // Get the href attribute of the menu item
-                const menuItemUrl = menuItem.getAttribute('href');
-    
-                // Check if the menu item URL matches the current page URL
-                if (menuItemUrl && currentPage.includes(menuItemUrl)) {
-                    // Add the active class to the menu item
-                    menuItem.classList.add('active');
-                    menuItem.parentNode.classList.add('active');
-    
-                    // Open the parent <ul> if it's a dropdown
-                    let parent = menuItem.closest('ul.collapse');
-                    if (parent) {
-                        parent.classList.add('in');
-                        parent.previousElementSibling.setAttribute('aria-expanded', 'true');
-                    }
-                }
-            });
-        });
-    </script>    
+    <script src="{{ asset('backend/js/scripts.js') }}"></script> 
 </body>
 
 </html>

@@ -39,16 +39,16 @@
                 </ul>
             </div>
         </div>
-        <a href="{{route('logout')}}"><div class="col-sm-6 clearfix">
-            <div class="user-profile pull-right">
+        <div class="col-sm-6 clearfix">
+            <a href="{{route('logout')}}"><div class="user-profile pull-right">
                 {{-- <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar"> --}}
-                <h4 class="user-name dropdown-toggle">Logout </h4>
+                <h4 class="user-name">Logout </h4>
                 {{-- <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Message</a>
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">Log Out</a>
                 </div> --}}
-            </div>
-        </div></a>
+            </div></a>
+        </div>
     </div>
 </div>
