@@ -54,28 +54,28 @@
                             <input type="text" id="exampleInputName1">
                             <i class="ti-user"></i>
                             @error('name')<x-input.error id="name"
-                                                    class="form-text text-danger">{{ $message }}</x-small>@enderror
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" id="exampleInputEmail1">
                             <i class="ti-email"></i>
                             @error('email')<x-input.error id="email"
-                                                    class="form-text text-danger">{{ $message }}</x-small>@enderror
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" id="exampleInputPassword1">
                             <i class="ti-lock"></i>
                             @error('password')<x-input.error id="password"
-                                                    class="form-text text-danger">{{ $message }}</x-small>@enderror
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword2">Confirm Password</label>
                             <input type="password" id="exampleInputPassword2">
                             <i class="ti-lock"></i>
                             @error('password')<x-input.error id="password"
-                                                    class="form-text text-danger">{{ $message }}</x-small>@enderror
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="submit-btn-area">
                             <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>

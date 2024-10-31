@@ -26,7 +26,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -226,7 +226,7 @@
                             <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
                                 10299</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('donation-details')}}" class="event-one__btn thm-btn">Donate Now<span><i
+                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                                     to a
                                     materialt<br> support various causes organizations It allows not </p>
                                 <div class="footer-widget-two__btn-box">
-                                    <a href="{{route('donation-details')}}" class="footer-widget-two__btn thm-btn">Donate
+                                    <a href="{{route('home')}}#donate" class="footer-widget-two__btn thm-btn">Donate
                                         Now<span><i class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>

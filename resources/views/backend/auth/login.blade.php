@@ -54,14 +54,14 @@
                             <input type="email" id="exampleInputEmail1" name="email">
                             <i class="ti-user"></i>
                             @error('name')<x-input.error id="name"
-                                                    class="form-text text-danger">{{ $message }}</x-small>@enderror
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" id="exampleInputPassword1" name="password">
                             <i class="ti-lock"></i>
                             @error('password')<x-input.error id="password"
-                            class="form-text text-danger">{{ $message }}</x-small>@enderror
+                            class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="row mb-4 rmber-area">
                             <div class="col-6">

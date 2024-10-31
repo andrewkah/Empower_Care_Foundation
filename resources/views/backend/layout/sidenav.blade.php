@@ -43,7 +43,7 @@
                         <ul class="collapse">
                             <li><a href="{{route('partners.index')}}">Partners</a></li>
                             <li><a href="{{route('teams.index')}}">Team</a></li>
-                            <li><a href="#">Users</a></li>
+                            <li><a href="{{ route('users.index')}}">Users</a></li>
                         </ul>
                     </li>
                 </ul>
