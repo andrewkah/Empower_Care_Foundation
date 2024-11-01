@@ -42,7 +42,7 @@
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.png') }}" style="height:60px;" alt=""></a>
+                            <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.jpg') }}"  alt=""></a>
                         </div>
                         <div class="main-menu__main-menu-box">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -50,6 +50,13 @@
                                 <li>
                                     <a href="{{route('home')}}">Home </a>
                                     
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">About Us</a>
+                                    <ul class="shadow-box">
+                                        <li><a href="{{route('about')}}">Who are we</a></li>
+                                        <li><a href="{{route('team')}}">Our Team</a></li>
+                                    </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">What we Do</a>
@@ -70,13 +77,7 @@
                                         {{-- <li><a href="{{route('sponsors')}}">Sponsors</a></li> --}}
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">About Us</a>
-                                    <ul class="shadow-box">
-                                        <li><a href="{{route('about')}}">About</a></li>
-                                        <li><a href="{{route('team')}}">Our Team</a></li>
-                                    </ul>
-                                </li>
+                                
                                 
                                 <li class="dropdown">
                                     <a href="#">Contact Us</a>

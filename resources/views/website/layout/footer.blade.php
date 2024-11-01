@@ -6,7 +6,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="footer-widget__about">
                             <div class="footer-widget__about-logo">
-                                <a href="{{route('home')}}"><img src="assets/images/resources/logo-2.png" alt=""></a>
+                                <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo.jpg') }}" alt=""></a>
                             </div>
                             <p class="footer-widget__about-text">category that involves giving financial or to a
                                 materialt support various causes organizations It allows not </p>
@@ -54,7 +54,7 @@
                                     <div class="icon">
                                         <span class="icon-envelope"></span>
                                     </div>
-                                    <p><a href="mailto:mwirusima@gmail.com">mwirusima@gmail.com</a></p>
+                                    <p><a href="mailto:mwirusima@gmail.com">emwirusima@gmail.com</a></p>
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -75,7 +75,7 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copywright 2024 by <a href="#">EmpowerCare</a>.
+                            <p class="site-footer__copyright-text">Copyright 2024 by <a href="#">EmpowerCare</a>.
                                 All
                                 Rights Reserved.</p>
                         </div>
