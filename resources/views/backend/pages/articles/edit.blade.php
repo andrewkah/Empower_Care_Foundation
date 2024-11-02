@@ -70,11 +70,56 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" />
-                                        @error('photo')
-                                                <x-input.error id="photo"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <div id="existing-images-container" class="mb-4">
+                                            <x-input.label for="existing_photos[]">Quote</x-input.label>
+                                            @foreach(json_decode($data->photos, true) as $photo)
+                                                <div class="input-group custom-input-group">
+                                                    <img src="{{ asset('storage/' . $photo) }}" alt="Image" width="100">
+                                                    <input type="hidden" id="existing_photos[]" name="existing_photos[]" value="{{ $photo }}">
+                                                    <div class="input-group-append">
+                                                        <button type="button" class="btn btn-danger" onclick="removeExistingImage(this, '{{ $photo }}')">Remove</button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Add New Image</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="new_photo" name="new_photo" accept=".jpg, .jpeg, .png">
+                                                <label class="custom-file-label" for="new_photo">Browse</label>
+                                            </div>
+                                        </div>
+                                        <div id="cover_photo_error" class="form-text text-danger"></div>
+                                        <div id="upload-container"></div>
+                                    
+                                        <!-- Hidden inputs to store JSON data -->
+                                        <input type="hidden" id="images_json" name="images_json">
+                                        <input type="hidden" id="captions_json" name="captions_json">
+                                    
+                                        
+                                        <div class="input-group mb-3">
+                                            <div class="custom-file">
+                                                <input type="file" id="photos" accept=".jpg, .jpeg, .png" multiple
+                                                    name="photos">
+                                                <label class="custom-file-label" for="photos">Choose Photos</label>
+                                            </div>
+                                        </div>
+
+                                        @error('photos')
+                                            <x-input.error id="photos"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
+                                        <div id="cover_photo_error" class="form-text text-danger"></div>
+                                        <div id="upload-container"></div>
+
+                                        <!-- Hidden inputs to store JSON data -->
+                                        <input type="hidden" id="photos" name="photos">
+                                        <input type="hidden" id="captions" name="captions">
+                                        
+
                                     </div>
                                     
                                     <div class="d-flex justify-content-end mr-0 mt-4">
@@ -90,4 +135,117 @@
             </div>
         </div>
     </div>
+    <script>
+        const imagesArray = @json(old('photos', json_decode($data->photos, true)));
+        const captionsArray = [];
+    
+        document.getElementById('new_photo').addEventListener('change', function () {
+            const file = this.files[0];
+    
+            if (file) {
+                if (imagesArray.includes(file.name)) {
+                    // If the file already exists, inform the user and return
+                    displayErrorMessage('This file has already been uploaded.');
+                    this.value = ''; // Reset the file input
+                    return;
+                }
+    
+                imagesArray.push(file.name); // Push file name to imagesArray
+    
+                // Create a new div for each file input and caption
+                const inputGroup = document.createElement('div');
+                inputGroup.classList.add('input-group', 'custom-input-group');
+    
+                // Create the file input element
+                const fileInput = document.createElement('input');
+                fileInput.type = 'file';
+                fileInput.classList.add('custom-file-input');
+                fileInput.name = `uploaded_files[]`;
+                fileInput.disabled = true; // Disable the file input
+                fileInput.value = ''; // Clear any default value to make it selectable again
+    
+                // Create the label for the file input
+                const fileLabel = document.createElement('label');
+                fileLabel.classList.add('custom-file-label');
+                fileLabel.textContent = file.name;
+    
+                // Create the caption input element
+                const captionInput = document.createElement('input');
+                captionInput.type = 'text';
+                captionInput.classList.add('form-control');
+                captionInput.name = `captions[]`;
+                captionInput.placeholder = 'Enter caption';
+    
+                // Update the captionsArray when the caption is changed
+                captionInput.addEventListener('input', function() {
+                    captionsArray[imagesArray.length - 1] = this.value;
+                    updateHiddenInputs();
+                });
+    
+                captionsArray.push(''); // Initialize the caption array with an empty string
+    
+                // Append elements to the input group
+                const inputGroupAppend = document.createElement('div');
+                inputGroupAppend.classList.add('input-group-append');
+                inputGroupAppend.appendChild(captionInput);
+    
+                const customFileDiv = document.createElement('div');
+                customFileDiv.classList.add('custom-file');
+                customFileDiv.appendChild(fileInput);
+                customFileDiv.appendChild(fileLabel);
+    
+                // Append the file input and caption input to the input group
+                inputGroup.appendChild(customFileDiv);
+                inputGroup.appendChild(inputGroupAppend);
+    
+                // Append the input group to the container
+                document.getElementById('upload-container').appendChild(inputGroup);
+    
+                // Update the hidden inputs with JSON encoded data
+                updateHiddenInputs();
+    
+                // Reset the error message if a new file is successfully added
+                clearErrorMessage();
+            }
+    
+            // Reset the file input for the next file selection
+            this.value = '';
+        });
+    
+        function updateHiddenInputs() {
+            document.getElementById('images_json').value = JSON.stringify(imagesArray);
+            document.getElementById('captions_json').value = JSON.stringify(captionsArray);
+        }
+    
+        function displayErrorMessage(message) {
+            // Create an error message element and display it
+            const errorMessageElement = document.createElement('div');
+            errorMessageElement.classList.add('form-text', 'text-danger');
+            errorMessageElement.textContent = message;
+    
+            // Find the error message placeholder and append the error message
+            const errorPlaceholder = document.getElementById('cover_photo_error');
+            errorPlaceholder.innerHTML = '';
+            errorPlaceholder.appendChild(errorMessageElement);
+        }
+    
+        function clearErrorMessage() {
+            // Clear any existing error message
+            const errorPlaceholder = document.getElementById('cover_photo_error');
+            errorPlaceholder.innerHTML = '';
+        }
+    
+        function removeExistingImage(button, imageName) {
+            // Remove the image from the array
+            const index = imagesArray.indexOf(imageName);
+            if (index > -1) {
+                imagesArray.splice(index, 1);
+            }
+    
+            // Remove the input group element
+            button.closest('.input-group').remove();
+    
+            updateHiddenInputs();
+        }
+    </script>
 @endsection

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cover_photo');
             $table->text('description')->nullable();
             $table->longText('photos')->nullable();
+            $table->longText('captions')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

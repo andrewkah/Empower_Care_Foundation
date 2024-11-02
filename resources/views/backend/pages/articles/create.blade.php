@@ -70,7 +70,11 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" />
+                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="
+                                        const selectedFiles = this.files;
+                                        const label = this.nextElementSibling;
+                                        label.textContent = selectedFiles[0].name;
+                                    "/>
                                         @error('photo')
                                                 <x-input.error id="photo"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>

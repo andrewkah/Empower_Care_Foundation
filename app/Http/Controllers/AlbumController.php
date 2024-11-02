@@ -22,7 +22,8 @@ class AlbumController extends Controller
     
     public function store(AlbumRequest $albumRequest){
         $album = $this->albumService->storeAlbum($albumRequest);
-        if($album) return redirect()->route('albums.index')->with('success', 'Album created successfully');
+        $albumPhotos = $this->albumService->photoUpload($album->id(), $album);
+        if($albumPhotos) return redirect()->route('albums.index')->with('success', 'Album created successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
@@ -33,7 +34,8 @@ class AlbumController extends Controller
 
     public function update($id, AlbumRequest $albumRequest) {
         $album = $this->albumService->updateAlbum($id, $albumRequest);
-        if($album) return redirect()->route('albums.index')->with('success', 'Album updated successfully');
+        $albumPhotos = $this->albumService->photoUpload($album->id(), $album);
+        if($albumPhotos) return redirect()->route('albums.index')->with('success', 'Album updated successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
