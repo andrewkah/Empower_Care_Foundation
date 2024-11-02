@@ -3,6 +3,7 @@
     'value',
     'class',
     'id',
+    'name',
     'placeholder',
 ])
 @aware(['error'])

@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('admin-home');
-    }
+    // if (Auth::check()) {
+    //     return redirect()->route('admin-home');
+    // }
     return view('website.dashboard.index');
 })->name('home');
 Route::get('/events', function () {
@@ -25,9 +26,8 @@ Route::get('/programs', function () {
 Route::get('/about', function () {
     return view('website.pages.about');
 })->name('about');
-Route::get('/causes', function () {
-    return view('website.pages.cause');
-})->name('causes');
+Route::get('/causes',[FrontendController::class,'causes'])->name('causes');
+
 Route::get('/contact-us', function () {
     return view('website.pages.contact-us');
 })->name('contact-us');

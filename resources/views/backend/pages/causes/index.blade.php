@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-center">
+                                <table class="table text-center" id="dataTable2">
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
@@ -29,18 +29,18 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
+                                            <tr>
                                             <td>{{$cause->title}}</td>
-                                            <td>{{$cause->description}}</td>
+                                            <td>{!!$cause->description!!}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor"
-                                                            href="{{ route('cause.edit', $cause->id) }}"
-                                                            title="Edit Category" class="btn btn-sm btn-success"><i
-                                                                class="fas fa-pencil-alt"></i></a>
+                                                            href="{{ route('causes.edit', $cause->id) }}"
+                                                            title="Edit Cause" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete User"><i class="fas fa-trash "></i></button>
+                                                            title="Delete Causes"><i class="fa fa-trash "></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -57,7 +57,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <form
-                                                                            action="{{ route('cause.destroy', $cause->id) }}"
+                                                                            action="{{ route('causes.destroy', $cause->id) }}"
                                                                             method="post">
                                                                             @csrf
                                                                             @method('DELETE')
@@ -82,6 +82,7 @@
                                                         </div>
                                                 </div>
                                             </td>
+                                            </tr>
                                         @empty
                                             <td colspan="2">No data present</td>
                                         @endforelse
