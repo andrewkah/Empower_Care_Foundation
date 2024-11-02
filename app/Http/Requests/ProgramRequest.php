@@ -23,7 +23,9 @@ class ProgramRequest extends FormRequest
     {
         return [
             'title'=>'required|string|max:255',
-            'description' => 'string|max:350',
+            'objectives'=>'required|string',
+            'location'=>'required|string',
+            'description' => 'string',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }

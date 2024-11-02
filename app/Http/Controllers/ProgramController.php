@@ -21,7 +21,12 @@ class ProgramController extends Controller
     public function create(){
         return view('backend.pages.programs.create');
     }
-
+    public function show($id)
+    {
+        //
+            $album= $this->programService->getSingleProgram($id);
+        return view('backend.pages.programs.show',compact('album'));
+    }
     public function store(ProgramRequest $request){
         $programs = $this->programService->storeProgram($request);
         if ($programs) return redirect()->route('programs.index')->with('success', "Program created successfully.");
@@ -30,9 +35,13 @@ class ProgramController extends Controller
 
     public function edit($id){
         $program = $this->programService->getSingleProgram($id);
-        return view('backend.pages.programs.edit', compact('program'));
+        return view('backend.pages.programs.create', compact('program'));
     }
-
+    public function update_album(Request $request,$id){
+        
+      $program_album = $this->programService->updateProgramAlbum($request, $id);
+      return redirect()->route('programs.show', $id)->with('success', "Album Photos Successfully updated");
+    }
     public function update($id, ProgramRequest $request){
         $program = $this->programService->updateProgram($id, $request);
         if($program) return redirect()->route('programs.index')->with('success', 'Program updated successfully');

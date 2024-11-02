@@ -23,24 +23,28 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
+                                            <th scope="col">Location</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
                                             <td>{{$cause->title}}</td>
-                                            <td>{{$cause->description}}</td>
+                                            <td>{{$cause->location}}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor"
-                                                            href="{{ route('cause.edit', $cause->id) }}"
-                                                            title="Edit Category" class="btn btn-sm btn-success"><i
-                                                                class="fas fa-pencil-alt"></i></a>
+                                                            href="{{ route('programs.edit', $cause->id) }}"
+                                                            title="Edit Program" class="btn btn-sm btn-success"><i
+                                                                class="fa fa-pencil-square"></i></a>
+                                                                <a aria-label="anchor"
+                                                                href="{{ route('programs.show', $cause->id) }}"
+                                                                title="view Program Album" class="btn btn-sm btn-success"><i
+                                                                    class="fa fa-eye"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete User"><i class="fas fa-trash "></i></button>
+                                                            title="Delete Program"><i class="fa fa-trash "></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -57,7 +61,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <form
-                                                                            action="{{ route('cause.destroy', $cause->id) }}"
+                                                                            action="{{ route('programs.destroy', $cause->id) }}"
                                                                             method="post">
                                                                             @csrf
                                                                             @method('DELETE')

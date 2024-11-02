@@ -20,9 +20,9 @@ Route::get('/articles', function () {
 Route::get('/events/details', function () {
     return view('website.pages.events-details');
 })->name('events-details');
-Route::get('/programs', function () {
-    return view('website.pages.programs');
-})->name('programs');
+Route::get('/programs',[FrontendController::class,'programs'])->name('programs');
+Route::get('/programs/{id}',[FrontendController::class,'program_details'])->name('programs.details');
+
 Route::get('/about', function () {
     return view('website.pages.about');
 })->name('about');

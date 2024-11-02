@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-center" id="dataTable2">
+                                <table class="table text-center" >
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>

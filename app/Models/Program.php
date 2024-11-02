@@ -17,6 +17,10 @@ class Program extends Model implements Auditable
         'slug',
         'photo',
         'description',
+        'location',
+        'objectives',
+        'other_photos',
+        'captions',
         'created_by',
         'updated_by',
     ];

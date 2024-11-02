@@ -53,6 +53,7 @@ class CauseService{
         if ($cause->hasFile('photo')) $path = $cause->file('photo')->store('causes');
         $data = $cause->validated();
         $data['photo'] = $path;
+        $data['updated_by'] = Auth::id();
         return $this->cause->findOrFail($id)->update($data);
 
     }
