@@ -25,7 +25,8 @@ class AlbumRequest extends FormRequest
             'title'=>'required|string|max:255',
             'cover_photo'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'string|max:350',
-            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'captions' => 'string',
+            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ];
     }
     public function messages(){
@@ -37,7 +38,7 @@ class AlbumRequest extends FormRequest
             'cover_photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
             'description.required'=>'Description is required',
             'description.string'=>'Description should be a valid text',
-            'photos.max' => 'Image should be at least 2MB',
+            'captions.string' => 'The caption should be a valid text',
             'photos.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }

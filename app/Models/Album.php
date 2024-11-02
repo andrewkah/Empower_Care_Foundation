@@ -17,6 +17,7 @@ class Album extends Model implements Auditable
         'cover_photo',
         'description',
         'photos',
+        'captions',
         'created_by',
         'updated_by',
     ];
