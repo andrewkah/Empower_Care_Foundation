@@ -73,9 +73,7 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="contact-two__left">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
-                            class="contact-two__google-map" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.6790920138287!2d33.45819947415774!3d-8.909396091443043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19009f0f1cd8a65d%3A0xd10e0f3b36e37ab8!2sUyole!5e0!3m2!1sen!2sug!4v1730712518144!5m2!1sen!2sug" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -87,7 +85,7 @@
                                 </div>
                                 <div class="content">
                                     <h4>Address</h4>
-                                    <p>2972 Westheimer Rd. Santa </p>
+                                    <p>Uyole, Mbeya</p>
                                 </div>
                             </li>
                             <li>
@@ -96,7 +94,7 @@
                                 </div>
                                 <div class="content">
                                     <h4>Email Address</h4>
-                                    <p><a href="mailto:nevaeh.sons@example.com">nevaeh.sons@example.com</a></p>
+                                    <p><a href="mailto:"></a></p>
                                 </div>
                             </li>
                             <li>
@@ -105,7 +103,7 @@
                                 </div>
                                 <div class="content">
                                     <h4>Phone number</h4>
-                                    <p><a href="tel:7045550127">(704) 555-0127</a></p>
+                                    <p><a href="tel:+255757448534">(+255) 757 448 534</a></p>
                                 </div>
                             </li>
                         </ul>

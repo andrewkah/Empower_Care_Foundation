@@ -25,10 +25,10 @@
                     <div class="main-menu__social-box">
                         <p class="main-menu__social-title">Follow Us On:</p>
                         <div class="main-menu__social">
-                            <a href="#"><i class="icon-facebook"></i></a>
-                            <a href="#"><i class="icon-twitter"></i></a>
-                            <a href="#"><i class="icon-link-in"></i></a>
-                            <a href="#"><i class="icon-instagram"></i></a>
+                            {{-- <a href="#"><i class="icon-facebook"></i></a>
+                            <a href="#"><i class="icon-twitter"></i></a> --}}
+                            <a href="https://www.linkedin.com/company/105256332/admin/dashboard/?anchor=organization-website-field&editPage=true&editPageActiveTab=details"><i class="icon-link-in"></i></a>
+                            <a href="https://www.youtube.com/channel/UCS0OVJU-7Eu_iEVRF8gYIDQ"><i class="icon-play"></i></a>
                         </div>
                     </div>
                 </div>

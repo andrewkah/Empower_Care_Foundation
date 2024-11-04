@@ -73,6 +73,53 @@
                                                 resilience, substance abuse prevention, advocacy for policy change, and
                                                 building strong partnerships with local governments, private sector,
                                                 educational institutions, and international organizations.</p>
+                                                <p>At the core of EmpowerCare&#39;s work are community-driven solutions and evidence-based
+                                                    approaches to improve service delivery, tackle emerging health and environmental
+                                                    challenges, and drive sustainable development across Tanzania.</p>
+                                                <div class="cause-details__points-box">
+                                                    <ul class="cause-details__points-list list-unstyled">
+                                                        <li>
+                                                            <div class="icon">
+                                                                <span class="fas fa-check"></span>
+                                                            </div>
+                                                            <p>Empowering and capacitating vulnerable communities on matters of health and
+                                                                development.</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <span class="fas fa-check"></span>
+                                                            </div>
+                                                            <p>Advocating for the enhancement of service delivery and the integration of
+                                                                interventions.</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <span class="fas fa-check"></span>
+                                                            </div>
+                                                            <p>Promoting climate resilience and sustainable development practices.</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <span class="fas fa-check"></span>
+                                                            </div>
+                                                            <p>Fostering enduring partnerships with local government entities for effective
+                                                                intervention implementation.</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <span class="fas fa-check"></span>
+                                                            </div>
+                                                            <p>Utilizing research, monitoring, and evaluation to drive advocacy efforts towards
+                                                                policy changes and resource allocation.</p>
+                                                        </li>
+                                                    </ul>
+                                                    {{-- <ul class="cause-details__points-list list-unstyled">
+                                                       
+                                                        
+                                                    </li>
+                                                   
+                                                    </ul> --}}
+                                                </div>
                                         </div>
                                     </div>
                                     <!--tab-->
@@ -100,162 +147,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="about-One__btn-and-need-help">
-                            <div class="about-One__btn-box">
-                                <a href="{{route('home')}}#donate" class="about-One__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                            <div class="about-One__need-help">
-                                <div class="icon">
-                                    <span class="icon-phone-call"></span>
-                                </div>
-                                <div class="content">
-                                    <p>Need help?</p>
-                                    <h4><a href="tel:255757448534">(255) 757-448534</a></h4>
-                                    <h4><a href="tel:255784421959">(255) 784-421959</a></h4>
-                                    <h4><a href="tel:255746869255">(255) 746-869255</a></h4>
-                                    <h4><a href="tel:255767210313">(255) 767-210313</a></h4>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--About One End -->
-
-    <!--Found One Start -->
-    <section class="found-one">
-        <div class="found-one__bg">
-            <div class="found-one__shape-1 float-bob-y">
-                <img src="{{ asset('assets/images/shapes/found-one-shape-1.png') }}" alt="">
-            </div>
-        </div>
-        <div class="container">
-            <div class="section-title text-center sec-title-animation animation-style1">
-                <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Charity Fund</span>
-                </div>
-                <h2 class="section-title__title title-animation">Together We Can <br> <span>Make</span> a Difference
-                </h2>
-            </div>
-            <div class="row">
-                <!--Found One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
-                    <div class="found-one__single">
-                        <div class="found-one__img-box">
-                            <div class="found-one__img">
-                                <img src="{{ asset('assets/images/resources/found-1-1.jpg') }}" alt="">
-                                <img src="{{ asset('assets/images/resources/found-1-1.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="#">Help For Ecosystem</a></h4>
-                            <p class="found-one__text">Charity and Donation is a categorys that involves giving
-                                financial </p>
-                            <div class="found-one__goals">
-                                <div class="found-one__raised">
-                                    <p>Raised</p>
-                                    <span>40,802$</span>
-                                </div>
-                                <div class="found-one__raised">
-                                    <p>Goal</p>
-                                    <span>100,000$</span>
-                                </div>
-                            </div>
-                            <div class="found-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="75%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="found-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="found-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Found One Single End-->
-                <!--Found One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="found-one__single">
-                        <div class="found-one__img-box">
-                            <div class="found-one__img">
-                                <img src="{{ asset('assets/images/resources/found-1-2.jpg') }}" alt="">
-                                <img src="{{ asset('assets/images/resources/found-1-2.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="#">Water For All</a></h4>
-                            <p class="found-one__text">Charity and Donation is a categorys that involves giving
-                                financial </p>
-                            <div class="found-one__goals">
-                                <div class="found-one__raised">
-                                    <p>Raised</p>
-                                    <span>40,802$</span>
-                                </div>
-                                <div class="found-one__raised">
-                                    <p>Goal</p>
-                                    <span>100,000$</span>
-                                </div>
-                            </div>
-                            <div class="found-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="75%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="found-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="found-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Found One Single End-->
-                <!--Found One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
-                    <div class="found-one__single">
-                        <div class="found-one__img-box">
-                            <div class="found-one__img">
-                                <img src="{{ asset('assets/images/resources/found-1-3.jpg') }}" alt="">
-                                <img src="{{ asset('assets/images/resources/found-1-3.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="found-one__content">
-                            <h4 class="found-one__title"><a href="#">Vaccine Aid Camp</a></h4>
-                            <p class="found-one__text">Charity and Donation is a categorys that involves giving
-                                financial </p>
-                            <div class="found-one__goals">
-                                <div class="found-one__raised">
-                                    <p>Raised</p>
-                                    <span>40,802$</span>
-                                </div>
-                                <div class="found-one__raised">
-                                    <p>Goal</p>
-                                    <span>100,000$</span>
-                                </div>
-                            </div>
-                            <div class="found-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="75%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="found-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="found-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Found One Single End-->
-            </div>
-        </div>
-    </section>
-    <!--Found One End -->
 
     <!--Donate One Start -->
     <section class="donate-one">
@@ -318,34 +216,9 @@
                             </div>
                             <h2 class="section-title__title title-animation">Supporting Dreams Changing
                                 Lives</h2>
-                        </div><span class="color-black">19th century.</span>
+                        </div><span class="color-black"></span>
                         <p class="who-we-are__text">EmpowerCare Foundation (EF), is a non-governmental organization with registration number <strong class="color-black">00NGO/R/5113</strong>, untethered by political or religious affiliations, registered by the Ministry of Community Development. EmpowerCare is committed to fostering health, empowerment, and resilience across communities.</p>
-                        <div class="who-we-are__progress-box">
-                            <ul class="who-we-are__progress-list list-unstyled">
-                                <li>
-                                    <div class="who-we-are__progress-single">
-                                        <p>Total Fund Worth: <span>450,896,070$</span></p>
-                                        <div class="who-we-are__progress">
-                                            <div class="bar">
-                                                <div class="bar-inner count-bar" data-percent="75%">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="who-we-are__progress-single">
-                                        <p>Total Cases Helped: <span>200+</span></p>
-                                        <div class="who-we-are__progress">
-                                            <div class="bar">
-                                                <div class="bar-inner count-bar" data-percent="80%">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        
                         <div class="who-we-are__btn-box">
                             <a href="{{route('home')}}#donate" class="who-we-are__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
@@ -370,97 +243,6 @@
         </div>
     </section>
     <!--Who We Are End -->
-
-    <!--Event One Start -->
-    <section class="event-one pdb">
-        <div class="container">
-            <div class="section-title text-center sec-title-animation animation-style1">
-                <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Our Events</span>
-                </div>
-                <h2 class="section-title__title title-animation">Join Us in the Fight <br>Against Poverty</h2>
-            </div>
-            <div class="row">
-                <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="{{ asset('assets/images/event/event-1-1.jpg') }}" alt="">
-                            </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>20th Dec, 2024</p>
-                            </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">Donation Drive</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Event One Single End-->
-                <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="{{ asset('assets/images/event/event-1-2.jpg') }}" alt="">
-                            </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>15th nov, 2023</p>
-                            </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">win-win survival</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Event One Single End-->
-                <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="100ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="{{ asset('assets/images/event/event-1-3.jpg') }}" alt="">
-                            </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>19th Feb, 2024</p>
-                            </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">Children Education.</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Event One Single End-->
-            </div>
-        </div>
-    </section>
-    <!--Event One End -->
-
     <!--Site Footer Two Start-->
     @include('website.layout.footer')
     <!--Site Footer Two End-->

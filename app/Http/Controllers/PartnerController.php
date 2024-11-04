@@ -30,7 +30,7 @@ class PartnerController extends Controller
 
     public function edit($id){
         $partner = $this->partnerService->getSinglePartner($id);
-        return view('backend.pages.partners.edit', compact('partner'));
+        return view('backend.pages.partners.create', compact('partner'));
     }
 
     public function update($id, PartnerRequest $request){

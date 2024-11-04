@@ -8,6 +8,7 @@
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
+    <link rel="icon" href="{{ asset('assets/images/favicons/favicon.ico') }}favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16"
         href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
     <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
@@ -101,7 +102,7 @@
 
             <div class="logo-box">
                 <a href="{{ route('home') }}" aria-label="logo image"><img
-                        src="{{ asset('assets/images/resources/logo-2.png') }}" width="130" alt="" /></a>
+                        src="{{asset('assets/images/empower-logo/logo.jpg') }}" width="130" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -119,9 +120,9 @@
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
+                    {{-- <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a> --}}
+                    <a href="https://www.linkedin.com/company/105256332/admin/dashboard/?anchor=organization-website-field&editPage=true&editPageActiveTab=details" class="fab fa-link-in"></a>
                     <a href="#" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->

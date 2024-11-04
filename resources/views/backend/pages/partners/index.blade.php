@@ -23,24 +23,30 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
+                                            <th scope="col">Details</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
-                                            <td>{{$cause->title}}</td>
-                                            <td>{{$cause->description}}</td>
+                                            <td>{{$cause->name}}</td>
+                                            <td> 
+                                                <div class="media mb-2 mt-2">
+                                                <img class="img-fluid mr-4" src="{{Storage::url($cause->photo)}}" style="height: 100px;" alt="image">
+                                                <div class="media-body">
+                                                    {{$cause->address}}
+                                                </div>
+                                            </div></td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor"
-                                                            href="{{ route('cause.edit', $cause->id) }}"
+                                                            href="{{ route('partners.edit', $cause->id) }}"
                                                             title="Edit Category" class="btn btn-sm btn-success"><i
-                                                                class="fas fa-pencil-alt"></i></a>
+                                                                class="fa fa-pencil-alt"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete User"><i class="fas fa-trash "></i></button>
+                                                            title="Delete User"><i class="fa fa-trash "></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -57,7 +63,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <form
-                                                                            action="{{ route('cause.destroy', $cause->id) }}"
+                                                                            action="{{ route('partners.destroy', $cause->id) }}"
                                                                             method="post">
                                                                             @csrf
                                                                             @method('DELETE')

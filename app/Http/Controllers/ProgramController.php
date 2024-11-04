@@ -23,8 +23,7 @@ class ProgramController extends Controller
     }
     public function show($id)
     {
-        //
-            $album= $this->programService->getSingleProgram($id);
+        $album= $this->programService->getSingleProgram($id);
         return view('backend.pages.programs.show',compact('album'));
     }
     public function store(ProgramRequest $request){
