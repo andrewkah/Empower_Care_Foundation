@@ -18,7 +18,7 @@ class PartnerService{
         $data = $request->validated();
         if ($request->hasFile('photo')) $path = $request->file('photo')->store('partners'); else $path=null;
         $data['photo'] = $path;
-        $data['slug'] = Str::slug($data['name']);
+        $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->partner->create($data);
     }
@@ -36,17 +36,20 @@ class PartnerService{
     public function updatePartner($id, PartnerRequest $partner)
     {
         $path = $this->getSinglePartner($id)->photo;
-        if ($partner->hasFile('photo')) $path = $partner->file('photo')->store('programs');
+        if ($partner->hasFile('photo')) $path = $partner->file('photo')->store('partners');
         $data = $partner->validated();
         $data['photo'] = $path;
         $data['updated_by'] = Auth::id();
-        return $this->partner->findOrFail($id)->update($partner->validated());
+        return $this->partner->findOrFail($id)->update($data);
 
     }
     // delete partner
     public function deletePartner($id)
     {
         return $this->partner->destroy($id);
+    }
+    public function getAllPartnersOrderByCreatedAt(){
+        return $this->partner->orderBy('created_at', 'desc')->get();
     }
 }
 

@@ -488,67 +488,22 @@
             </div>
             <div class="row">
                 <!--Country One Single Start-->
+                @forelse($partners as $partner)
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="country-one__single">
                         <div class="country-one__img">
-                            <img src="assets/images/country/country-1-1.jpg" alt="">
+                            <img src="@if ($partner->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($partner->photo) }}@endif" alt="">
                         </div>
-                        <h4 class="country-one__title"><a href="#">South Africa</a></h4>
+                        <h4 class="country-one__title"><a href="#">{{$partner->name}}</a></h4>
                     </div>
                 </div>
                 <!--Country One Single End-->
-                <!--Country One Single Start-->
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="assets/images/country/country-1-2.jpg" alt="">
-                        </div>
-                        <h4 class="country-one__title"><a href="#">Germany</a></h4>
-                    </div>
-                </div>
-                <!--Country One Single End-->
-                <!--Country One Single Start-->
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="assets/images/country/country-1-3.jpg" alt="">
-                        </div>
-                        <h4 class="country-one__title"><a href="#">South Korea</a></h4>
-                    </div>
-                </div>
-                <!--Country One Single End-->
-                <!--Country One Single Start-->
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="assets/images/country/country-1-4.jpg" alt="">
-                        </div>
-                        <h4 class="country-one__title"><a href="#">Japan</a></h4>
-                    </div>
-                </div>
-                <!--Country One Single End-->
+                @empty
+                @endforelse
+                
+               
                 <div class="col-xl-3"></div>
-                <!--Country One Single Start-->
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="assets/images/country/country-1-5.jpg" alt="">
-                        </div>
-                        <h4 class="country-one__title"><a href="#">Turkey</a></h4>
-                    </div>
-                </div>
-                <!--Country One Single End-->
-                <!--Country One Single Start-->
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="assets/images/country/country-1-6.jpg" alt="">
-                        </div>
-                        <h4 class="country-one__title"><a href="#">Indonesia</a></h4>
-                    </div>
-                </div>
-                <!--Country One Single End-->
-                <div class="col-xl-3"></div>
+               
             </div>
         </div>
     </section>

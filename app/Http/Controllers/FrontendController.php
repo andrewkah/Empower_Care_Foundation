@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\CauseService;
+use App\Services\PartnerService;
 use App\Services\ProgramService;
 
 class FrontendController extends Controller
 {
     //
-    public function __construct(private CauseService $causeService, private ProgramService $programService)
+    public function __construct(private CauseService $causeService, private PartnerService $partnerService, private ProgramService $programService)
     {
         
+    }
+    public function index(){
+        $partners = $this->partnerService->getAllPartnersOrderByCreatedAt();
+        return view('website.dashboard.index',compact('partners'));
     }
     public function programs(){
         $programs = $this->programService->getAllProgramsOrderByCreatedAt();
