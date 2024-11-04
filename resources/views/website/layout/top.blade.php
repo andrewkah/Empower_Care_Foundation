@@ -61,18 +61,17 @@
                                 <li class="dropdown">
                                     <a href="#">What we Do</a>
                                     <ul class="shadow-box">
-                                    <li><a href="{{route('causes')}}">Our Cause</a></li>
-                                        
+                                        <li><a href="{{route('causes')}}">Our Cause</a></li>                                        
                                         <li><a href="{{route('programs')}}">Our Programs</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">Updates</a>
                                     <ul class="shadow-box">
-                                    <li><a href="{{route('events')}}">Events</a></li>
                                         <li><a href="{{route('articles')}}">Articles</a></li>
+                                        <li><a href="{{route('events')}}">Events</a></li>
                                         <li><a href="{{route('album')}}">Album</a></li>
-                                        <li><a href="{{route('videos')}}">Videos</a></li>
+                                        <li><a href="{{route('videos')}}">Video</a></li>
                                         <li><a href="{{route('downloads')}}">Downloads</a></li>
                                         {{-- <li><a href="{{route('sponsors')}}">Sponsors</a></li> --}}
                                     </ul>

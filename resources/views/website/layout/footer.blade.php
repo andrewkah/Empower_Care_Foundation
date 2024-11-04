@@ -8,8 +8,7 @@
                             <div class="footer-widget__about-logo">
                                 <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo_footer_v2-transparent.png') }}" alt=""></a>
                             </div>
-                            <p class="footer-widget__about-text">category that involves giving financial or to a
-                                materialt support various causes organizations It allows not </p>
+                            <p class="footer-widget__about-text">Our vision is to see a flourishing Tanzania, where individuals and communities thrive in health and development. </p>
                             <div class="site-footer__social">
                                 {{-- <a href="#"><i class="icon-facebook"></i></a>
                                 <a href="#"><i class="icon-twitter"></i></a> --}}
@@ -20,12 +19,12 @@
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="footer-widget__services">
-                            <h4 class="footer-widget__title">Services</h4>
+                            <h4 class="footer-widget__title">Updates</h4>
                             <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="about.html">Incident Responder</a></li>
-                                <li><a href="about.html">Secure Managed Fund</a></li>
-                                <li><a href="about.html">Clean Water All</a></li>
-                                <li><a href="about.html">Give Education</a></li>
+                                <li><a href="{{route('articles')}}">Articles</a></li>
+                                <li><a href="{{route('events')}}">Events</a></li>
+                                <li><a href="{{route('album')}}">Album</a></li>
+                                <li><a href="{{route('videos')}}">Video</a></li>
                             </ul>
                         </div>
                     </div>
@@ -33,10 +32,11 @@
                         <div class="footer-widget__links">
                             <h4 class="footer-widget__title">Links</h4>
                             <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="about.html">Food to individuals</a></li>
-                                <li><a href="about.html">Temporary housing</a></li>
-                                <li><a href="about.html">Local shelters</a></li>
-                                <li><a href="about.html">Natural disasters</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="{{route('programs')}}">Our Programs</a></li>
+                                <li><a href="{{route('causes')}}">Our Cause</a></li>                                        
+                                <li><a href="{{route('team')}}">Our Team</a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -75,9 +75,9 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright {{date('Y')}} by <a href="#">EmpowerCare</a>. <a href="https://ufanisiafrica.com/" >Developed by Ufanisi Africa</a>
-                                All
-                                Rights Reserved.</p>
+                            <p class="site-footer__copyright-text">Copyright {{date('Y')}} by <a href="#">EmpowerCare</a>.   All
+                                Rights Reserved. <a href="https://ufanisiafrica.com/" >Developed by Ufanisi Africa</a>
+                               </p>
                         </div>
                         <div class="site-footer__bottom-menu-box">
                             <ul class="list-unstyled site-footer__bottom-menu">

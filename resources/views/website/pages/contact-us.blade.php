@@ -73,7 +73,7 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="contact-two__left">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.6790920138287!2d33.45819947415774!3d-8.909396091443043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19009f0f1cd8a65d%3A0xd10e0f3b36e37ab8!2sUyole!5e0!3m2!1sen!2sug!4v1730712518144!5m2!1sen!2sug" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7883.6437719083115!2d33.54223307415741!3d-8.896145791263754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19009d0041976a09%3A0x89173a2fcfc95d1b!2sEmpowerCare%20Foundation!5e0!3m2!1sen!2sug!4v1730714847703!5m2!1sen!2sug" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
