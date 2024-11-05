@@ -24,13 +24,13 @@ class CauseController extends Controller
 
     public function store(CauseRequest $request){
         $causes = $this->causeService->storeCause($request);
-        if ($causes) return redirect()->route('causes.index')->with('success', "Cause created successfully.");
+        if ($causes) return redirect()->route('causes.create')->with('success', "Cause created successfully.");
         return redirect()->back()->with('error', "Something went wrong");
     }
 
     public function edit($id){
         $cause = $this->causeService->getSingleCause($id);
-        return view('backend.pages.causes.edit', compact('cause'));
+        return view('backend.pages.causes.create', compact('cause'));
     }
 
     public function update($id, CauseRequest $request){

@@ -13,12 +13,19 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Causes</h4>
-                                <x-form has-files :action="route('causes.store')">
+                                <h4 class="header-title">@if(isset($cause)) Edit Cause @else Causes @endif</h4>
+                                    <x-form has-files :action="isset($cause) ? route('causes.update', $cause->id) : route('causes.store')" :method="isset($cause) ? 'PUT': 'POST'"> 
+                               
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="old('title')" name="title" placeholder="Title"
-                                                required />
+                                        @if(isset($cause))
+                                        <x-input.text type='text' class="form-control @error('title') error-message @enderror" id="title"  value="{{ old('title',$cause->title)}}" name='title' placeholder="Title"
+                                            required />
+                                        @else
+                                        <x-input.text type='text' class="form-control @error('title') error-message @enderror" id="title"  value="{{ old('title')}}" name='title' placeholder="Title"
+                                            required />
+                                        @endif
+                                           
                                             @error('title')
                                                 <x-input.error id="title"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
@@ -31,7 +38,7 @@
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
-                                                    name="photo" accept=".jpg, .jpeg, .png"
+                                                    name="photo" accept="image/*"
                                                     onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
                                                 <label class="custom-file-label" for="photo">Browse</label>
                                             </div>
@@ -40,11 +47,22 @@
                                                 <x-input.error id="photo"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
+                                            @if(isset($cause) && $cause->photo !=null)
+                                            <div class="media mb-2 mt-2">
+                                                <img class="img-fluid mr-4" src="{{Storage::url($cause->photo)}}" style="height: 100px;" alt="image">
+                                                <div class="media-body">
+                                                </div>
+                                            </div>
+                                            @endif
                                     </div>
                                     
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
+                                        @if(isset($cause))
+                                        <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$cause->description)}}</textarea>
+                                        @else
+                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
+                                        @endif 
                                             @error('description')
                                                 <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
@@ -64,3 +82,16 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+
+<script>
+    $(document).ready(function() {
+        $('#description').summernote({
+            placeholder: 'Write a short description...',
+            tabsize: 2,
+            height: 150
+        });
+    });
+</script>
+@endpush

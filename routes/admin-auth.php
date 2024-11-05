@@ -43,6 +43,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('videos', VideoController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('programs', ProgramController::class);
+    Route::put('programs/{program}/update-gallery', [ProgramController::class, 'update_album'])->name('program.update_gallery');
     Route::resource('donations', DonationController::class);
     Route::resource('articles', ArticleController::class);
     Route::resource('users', UserController::class);

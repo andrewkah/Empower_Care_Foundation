@@ -33,7 +33,7 @@
                                             <td>{{ $cause->description }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    <a aria-label="anchor" href="{{ route('cause.edit', $cause->id) }}"
+                                                    <a aria-label="anchor" href="{{ route('album.edit', $cause->id) }}"
                                                         title="Edit Category" class="btn btn-sm btn-success"><i
                                                             class="fas fa-pencil-alt"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
@@ -54,7 +54,7 @@
 
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="{{ route('cause.destroy', $cause->id) }}"
+                                                                    <form action="{{ route('album.destroy', $cause->id) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')
