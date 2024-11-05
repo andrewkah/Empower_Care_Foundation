@@ -41,6 +41,11 @@ class FAQService{
     {
         return $this->faq->destroy($id);
     }
+
+
+    public function getAllFaqsOrderByCreatedAt(){
+        return $this->faq->orderBy('created_at', 'desc')->get();
+    }
 }
 
 ?>

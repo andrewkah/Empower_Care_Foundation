@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="cause-details.html">{{$program->title}}</a></h4>
+                            <h4 class="event-one__title"><a href="#">{{$program->title}}</a></h4>
                             <p class="event-one__text">{!! $program->objectives !!}</p>
                             <p class="event-one__location"><span class="icon-pin"></span>{{$program->location}}</p>
                             <div class="event-one__btn-box">

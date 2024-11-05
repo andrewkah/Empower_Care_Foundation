@@ -41,6 +41,10 @@ class VideoService{
     {
         return $this->video->destroy($id);
     }
+
+    public function getAllVideosOrderByCreatedAt(){
+        return $this->video->orderBy('created_at', 'desc')->get();
+    }
 }
 
 ?>

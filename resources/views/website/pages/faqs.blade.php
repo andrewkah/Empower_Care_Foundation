@@ -12,124 +12,36 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="faq-page__left">
                         <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
+                            @foreach($faqs->slice(0, ceil($faqs->count() / 2)) as $faq)
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>Maecenas facilisis erat id odio</h4>
+                                    <h4>{{ $faq->title }}</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
+                                        <p>{{ $faq->description }}</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
-                            <div class="accrodion  active">
-                                <div class="accrodion-title">
-                                    <h4>Phasellus et vehicula nulla</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>Maecenas malesuada</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>Why you join our team</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="faq-page__right">
                         <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-2">
+                            @foreach($faqs->slice(ceil($faqs->count() / 2)) as $faq)
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h4>Why you join our team</h4>
+                                    <h4>{{ $faq->title }}</h4>
                                 </div>
                                 <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
+                                        <p>{{ $faq->description }}</p>
                                     </div><!-- /.inner -->
                                 </div>
                             </div>
-                            <div class="accrodion  active">
-                                <div class="accrodion-title">
-                                    <h4>Maecenas malesuada</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>Phasellus et vehicula nulla</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>Maecenas facilisis erat id odio</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>Et purus duis sollicitudin dignissim ha. Egest nulla quis venenatis
-                                            cras
-                                            sed
-                                            eu massa eu faucibus. Urna fusce aenea tortor pretium Et purus duis
-                                            sollicitudin dignissim habitant</p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

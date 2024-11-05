@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\EventRequest;
 use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class EventService{
 
@@ -42,6 +43,14 @@ class EventService{
     public function deleteEvent($id)
     {
         return $this->event->destroy($id);
+    }
+
+    public function getAllEventsOrderByCreatedAt(){
+        return $this->event->orderBy('created_at', 'desc')->get();
+    }
+
+    public function getEventBySlug($id){
+        return $this->event->where('slug', $id)->first();
     }
 }
 

@@ -41,6 +41,10 @@ class TeamService{
     {
         return $this->team->destroy($id);
     }
+
+    public function getAllTeamsOrderByCreatedAt(){
+        return $this->team->orderBy('created_at', 'desc')->get();
+    }
 }
 
 ?>
