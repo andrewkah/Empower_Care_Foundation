@@ -10,8 +10,12 @@
         <div class="container">
             <div class="event-details__inner">
                 <div class="event-details__img">
+                    <img src="{{ asset('storage/' . $details->photo) }}" alt="">
                     <img src="{{ asset('assets/images/event/event-details-img-1.jpg') }}" alt="">
                 </div>
+                <h2 class="event-details__title">{{ $details->title }}</h2>
+                <p class="event-details__text-1">{{ $details->summary }}</p>
+                <p class="event-details__text-2">{{ $details->description }}</p>
                 <p class="event-details__text-1">Southern grayling trout-perch. Sharksucker sea toad candiru rocket
                     danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata.</p>
                 <p class="event-details__text-2">Minnow snoek icefish velvet-belly shark, California halibut round
@@ -21,56 +25,14 @@
                     northern sea robin zingel lancetfish galjoen fish, catla wolffish, mosshead warbonnet grouper
                     darter wels catfish mud catfish.</p>
                 <div class="event-details__text-box">
+                    <p>Event Speaker: {{ $details->event_speaker }}</p>
+                    <p>Tags: {{ $details->tags }}</p>
                     <p>Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere vive rra
                         .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentu m ul amcorper
                         viverra laoreet.flounder European minnow black dragonfish orbicular batfish stingray
                         tenpounder. Sucker lionfish garibaldi surgeonfish</p>
                 </div>
-                <p class="event-details__text-3">Web designing in a powerful way of just not an only professions,
-                    however, in a passion for our Company. We have to a tendency to believe the idea that smart
-                    looking of any website is the first impression on visitors.Web designing in a powerful way of
-                    just not an only professions, however, in a passion for our Company. We have</p>
-                <p class="event-details__text-4">Web designing in a powerful way of just not an only professions,
-                    however, in a passion for our Company. We have to a tendency to believe the idea that smart</p>
-                <ul class="event-details__points list-unstyled">
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Grayling Mexican golden trout; Chinook salmon bramble
-                            shark</p>
-                    </li>
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Scat zebra pleco graveldiver river shark tripod fish;
-                            flagtail bala</p>
-                    </li>
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Hatchetfish pricklefish sixgill ray sawfish scaly
-                            dragonfish! Grayling Mexican</p>
-                    </li>
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Grayling Mexican golden trout; Chinook salmon bramble
-                            shark sand stargazer Steve fish</p>
-                    </li>
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Scat zebra pleco graveldiver river shark tripod fish;
-                            flagtail bala shark</p>
-                    </li>
-                    <li>
-                        <div class="event-details__points-shape"></div>
-                        <p class="event-details__points-text">Burma danio black bass straptail southern Dolly Varden
-                            orbicular velvetfish</p>
-                    </li>
-                </ul>
-                <p class="event-details__text-5">Web designing in a powerful way of just not an only professions,
-                    however, in a passion for our Company. We have to a tendency to believe the idea that smart
-                    looking of any website is the first impression on visitors.Web designing in a powerful way of
-                    just not an only professions, however, in a passion for our Company. We have Burma danio black
-                    bass straptail southern Dolly Varden orbicular velvetfish trumpetfish; bluntnose minnow.
-                    Hatchetfish pricklefish sixgill ray sawfish scaly dragonfish! Grayling Mexican golden trout;
-                    Chinook salmon bramble shark sand stargazer Steve fish</p>
+                
             </div>
             <div class="event-details__events-box">
                 <div class="row">
@@ -79,11 +41,19 @@
                             <h3>Details</h3>
                             <ul class="event-details__event-list list-unstyled">
                                 <li>
-                                    <p><span>Start:</span>September 11’ 24</p>
+                                    <p><span>Start Date:</span>{{ $details->event_date }}</p>
                                 </li>
                                 <li>
-                                    <p><span>Finish:</span>October 03’ 24</p>
+                                    <p><span>Start Time:</span>{{ $details->event_time }}</p>
                                 </li>
+                                <li>
+                                    <p><span>Start Time:</span>{{ $details->website }}</p>
+                                </li>
+                                <li>
+                                    <p><span>Sponsor:</span>{{ $details->sponsor }}</p>
+                                </li>
+                                <li><p>Event Speaker: {{ $details->event_speaker }}</p></li>
+                                <li><p>Tags: {{ $details->tags }}</p></li>
                             </ul>
                         </div>
                     </div>
@@ -91,11 +61,12 @@
                         <div class="event-details__event-single">
                             <h3>Organizer</h3>
                             <ul class="event-details__event-list list-unstyled">
+                                <p>{{ $details->organizer }}</p>
                                 <li>
-                                    <p><span>Phone:</span><a href="tel:31859644725">+31 85 964 47 25</a></p>
+                                    <p><span>Phone:</span><a href="tel:{{ $details->phone }}">+{{ $details->phone }}</a></p>
                                 </li>
                                 <li>
-                                    <p><span>E-mail:</span><a href="mailto:helpo@gmail.com">helpo@gmail.com</a></p>
+                                    <p><span>E-mail:</span><a href="mailto:{{ $details->email }}">{{ $details->email }}</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -105,10 +76,7 @@
                             <h3>Venue</h3>
                             <ul class="event-details__event-list list-unstyled">
                                 <li>
-                                    <p><span>Location:</span>Dark Spurt,</p>
-                                </li>
-                                <li>
-                                    <p>San Francisco, CA 94528</p>
+                                    <p><span>Location:</span>{{ $details->location }}</p>
                                 </li>
                             </ul>
                         </div>

@@ -401,79 +401,26 @@
             </div>
             <div class="row">
                 <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="assets/images/event/event-1-1.jpg" alt="">
+                @foreach ($events as $event)
+                    <div class="col-xl-4 col-lg-4 wow fadeIn{{$loop->index % 2 == 0 ? 'Left' : 'Right'}}" data-wow-delay="{{($loop->index * 100) + 100}}ms">
+                        <div class="event-one__single">
+                            <div class="event-one__img-box">
+                                <div class="event-one__img">
+                                    <img src="{{asset($event->image)}}" alt="">
+                                </div>
+                                <div class="event-one__date">
+                                    <p><span class="icon-clock"></span>{{$event->event_date}} : {{$event->event_time}}</p>
+                                </div>
                             </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>20th Dec, 2024</p>
+                            <div class="event-one__content">
+                                <h4 class="event-one__title"><a href="{{route('events.details', ['event' => $event->id])}}">{{$event->title}}</a></h4>
+                                <p class="event-one__text">{{$event->summary}}</p>
+                                <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
+                                
                             </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">Donation Drive</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            {{-- <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div> --}}
                         </div>
                     </div>
-                </div>
-                <!--Event One Single End-->
-                <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="assets/images/event/event-1-2.jpg" alt="">
-                            </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>15th nov, 2023</p>
-                            </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">win-win survival</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            {{-- <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-                <!--Event One Single End-->
-                <!--Event One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="100ms">
-                    <div class="event-one__single">
-                        <div class="event-one__img-box">
-                            <div class="event-one__img">
-                                <img src="assets/images/event/event-1-3.jpg" alt="">
-                            </div>
-                            <div class="event-one__date">
-                                <p><span class="icon-clock"></span>19th Feb, 2024</p>
-                            </div>
-                        </div>
-                        <div class="event-one__content">
-                            <h4 class="event-one__title"><a href="event-details.html">Children Education.</a></h4>
-                            <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
-                                setting industry Loreaim Ipsum has</p>
-                            <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
-                                10299</p>
-                            {{-- <div class="event-one__btn-box">
-                                <a href="{{route('home')}}#donate" class="event-one__btn thm-btn">Donate Now<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!--Event One Single End-->
             </div>
         </div>
@@ -488,7 +435,7 @@
             </div>
             <div class="row">
                 <!--Country One Single Start-->
-                @forelse($partners as $partner)
+                @forelse ($partners as $partner)
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="country-one__single">
                         <div class="country-one__img">
@@ -499,11 +446,8 @@
                 </div>
                 <!--Country One Single End-->
                 @empty
-                @endforelse
-                
-               
                 <div class="col-xl-3"></div>
-               
+                @endforelse
             </div>
         </div>
     </section>
@@ -514,82 +458,32 @@
         <div class="container">
             <div class="project-style1__inner">
                 <div class="project-style1__carousel owl-theme owl-carousel">
-
-                    <!--Start Single Project Style1-->
-                    <div class="item">
-                        <div class="single-project-style1">
-                            <div class="img-box">
-                                <img src="assets/images/gallery/gallery-v1-1.jpg" alt="Image">
-                                <div class="overlay-icon">
-                                    <a class="lightbox-image" data-fancybox="gallery"
-                                        href="{{ asset('assets/images/gallery/gallery-v1-1.jpg') }}">
-                                        <i class="fa fa fa-expand"></i>
-                                    </a>
+                    @foreach ($album as $image)
+                        <!--Start Single Project Style1-->
+                        <div class="item">
+                            <div class="single-project-style1">
+                                <div class="img-box">
+                                    <div class="gallery">
+                                        @foreach (json_decode($image->photo) as $key => $photo)
+                                            <a class="lightbox-image" data-fancybox="gallery"
+                                                href="{{ Storage::url($photo) }}">
+                                                <img src="{{ Storage::url($photo) }}" alt="Image">
+                                                <div class="overlay-icon">
+                                                    <i class="fa fa fa-expand"></i>
+                                                </div>
+                                                @if (isset(json_decode($image->captions)[$key]))
+                                                    <div class="caption">
+                                                        {{ json_decode($image->captions)[$key] }}
+                                                    </div>
+                                                @endif
+                                            </a>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--End Single Project Style1-->
-                    <!--Start Single Project Style1-->
-                    <div class="item">
-                        <div class="single-project-style1">
-                            <div class="img-box">
-                                <img src="assets/images/gallery/gallery-v1-2.jpg" alt="Image">
-                                <div class="overlay-icon">
-                                    <a class="lightbox-image" data-fancybox="gallery"
-                                        href="{{ asset('assets/images/gallery/gallery-v1-2.jpg') }}">
-                                        <i class="fa fa fa-expand"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Project Style1-->
-                    <!--Start Single Project Style1-->
-                    <div class="item">
-                        <div class="single-project-style1">
-                            <div class="img-box">
-                                <img src="assets/images/gallery/gallery-v1-3.jpg" alt="Image">
-                                <div class="overlay-icon">
-                                    <a class="lightbox-image" data-fancybox="gallery"
-                                        href="{{ asset('assets/images/gallery/gallery-v1-3.jpg') }}">
-                                        <i class="fa fa fa-expand"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Project Style1-->
-                    <!--Start Single Project Style1-->
-                    <div class="item">
-                        <div class="single-project-style1">
-                            <div class="img-box">
-                                <img src="assets/images/gallery/gallery-v1-4.jpg" alt="Image">
-                                <div class="overlay-icon">
-                                    <a class="lightbox-image" data-fancybox="gallery"
-                                        href="{{ asset('assets/images/gallery/gallery-v1-4.jpg') }}">
-                                        <i class="fa fa fa-expand"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Project Style1-->
-                    <!--Start Single Project Style1-->
-                    <div class="item">
-                        <div class="single-project-style1">
-                            <div class="img-box">
-                                <img src="assets/images/gallery/gallery-v1-5.jpg" alt="Image">
-                                <div class="overlay-icon">
-                                    <a class="lightbox-image" data-fancybox="gallery"
-                                        href="{{ asset('assets/images/gallery/gallery-v1-5.jpg') }}">
-                                        <i class="fa fa fa-expand"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Single Project Style1-->
+                        <!--End Single Project Style1-->
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -607,72 +501,73 @@
                 <h2 class="section-title__title title-animation">Lending a Hand<br> Spreading Hope</h2>
             </div>
             <div class="row">
-                <!--Blog One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__img-box">
-                            <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="">
+                @forelse ($articles as $key => $article)
+                    <!--Blog One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($key * 100)}}ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__img-box">
+                                <div class="blog-one__img">
+                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($article->photo) }}@endif" alt="">
+                                </div>
+                                <div class="blog-one__date">
+                                    <p>{{date('d', strtotime($article->created_at))}}
+                                        <span><br>{{date('M', strtotime($article->created_at))}}</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="blog-one__date">
-                                <p>20<span><br>feb</span></p>
+                            <div class="blog-one__content">
+                                <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
+                                <p class="blog-one__text">{{$article->summary}}</p>
+                                <div class="blog-one__btn-box">
+                                    <a href="{{route('article', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
+                                                class="icon-arrow-right"></i></span></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="blog-one__content">
-                            <h4 class="blog-one__title"><a href="blog-details.html">Caring for the Elderly and
-                                    Vulnerable Strategy </a></h4>
-                            <div class="blog-one__btn-box">
-                                <a href="blog-details.html" class="blog-one__btn thm-btn">rEAD mORe<span><i
-                                            class="icon-arrow-right"></i></span></a>
+                            <div class="blog-one__quote">
+                                <p>{{$article->quote}}</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Blog One Single End-->
-                <!--Blog One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__img-box">
-                            <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-2.jpg" alt="">
-                            </div>
-                            <div class="blog-one__date">
-                                <p>15<span><br>Nov</span></p>
-                            </div>
-                        </div>
-                        <div class="blog-one__content">
-                            <h4 class="blog-one__title"><a href="blog-details.html">Our Goal Is Help The Poor Child
-                                    Around The World</a></h4>
-                            <div class="blog-one__btn-box">
-                                <a href="blog-details.html" class="blog-one__btn thm-btn">rEAD mORe<span><i
-                                            class="icon-arrow-right"></i></span></a>
+                            <div class="blog-one__tags">
+                                <ul class="list-unstyled blog-one__tags-list">
+                                    @foreach (json_decode($article->tags) as $tag)
+                                        <li><a href="#">{{$tag}}</a></li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--Blog One Single End-->
-                <!--Blog One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="300ms">
-                    <div class="blog-one__single">
-                        <div class="blog-one__img-box">
-                            <div class="blog-one__img">
-                                <img src="assets/images/blog/blog-1-3.jpg" alt="">
-                            </div>
-                            <div class="blog-one__date">
-                                <p>25<span><br>Jun</span></p>
+                    <!--Blog One Single End-->
+                @empty
+                    @for ($i = 0; $i < 3; $i++)
+                        <!--Blog One Single Start-->
+                        <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($i * 100)}}ms">
+                            <div class="blog-one__single">
+                                <div class="blog-one__img-box">
+                                    <div class="blog-one__img">
+                                        <img src="assets/images/blog/blog-1-{{rand(1, 3)}}.jpg" alt="">
+                                    </div>
+                                    <div class="blog-one__date">
+                                        <p>{{rand(1, 28)}}
+                                            <span><br>{{date('M')}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="blog-one__content">
+                                    <h4 class="blog-one__title"><a href="#">Caring for the Elderly and Vulnerable
+                                            Strategy</a></h4>
+                                    <p class="blog-one__text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat.</p>
+                                    <div class="blog-one__btn-box">
+                                        <a href="#" class="blog-one__btn thm-btn">rEAD mORe<span><i
+                                                    class="icon-arrow-right"></i></span></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="blog-one__content">
-                            <h4 class="blog-one__title"><a href="blog-details.html">Education For Poor Children Is A
-                                    Must Now</a></h4>
-                            <div class="blog-one__btn-box">
-                                <a href="blog-details.html" class="blog-one__btn thm-btn">rEAD mORe<span><i
-                                            class="icon-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Blog One Single End-->
+                        <!--Blog One Single End-->
+                    @endfor
+                @endforelse
             </div>
         </div>
     </section>

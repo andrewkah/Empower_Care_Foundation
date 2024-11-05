@@ -43,6 +43,13 @@ class ArticleService{
     {
         return $this->article->destroy($id);
     }
+    public function getAllArticleOrderByCreatedAt(){
+        return $this->article->orderBy('created_at', 'desc')->get();
+    }
+
+    public function getArticleBySlug($id){
+        return $this->article->where('slug', $id)->first();
+    }
 }
 
 ?>

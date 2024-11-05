@@ -70,6 +70,10 @@ class AlbumService{
     {
         return $this->album->destroy($id);
     }
+
+    public function getAllAlbumOrderByCreatedAt(){
+        return $this->album->orderBy('created_at', 'desc')->get();
+    }
 }
 
 ?>
