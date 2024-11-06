@@ -1,16 +1,6 @@
 @extends('backend.layout.main')
 
 @section('content')
-    <style>
-        .custom-input-group {
-            margin-bottom: 1rem;
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 0.5rem;
-        }
-    </style>
     <!-- header area start -->
     <x-admin.header pageTitle="Albums" currentPage="Albums"></x-admin.header>
     <!-- header area end -->
@@ -23,13 +13,13 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Albums</h4>
-                                <x-form has-files :action="route('album.store')">
+                                <h4 class="header-title">@if(isset($album)) Edit Album @else Albums @endif </h4>
+                                <x-form has-files :action="isset($album) ? route('album.update', $album->id): route('album.store')" :method="isset($album) ? 'PUT': 'POST'">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
                                         <x-input.text type="text"
                                             class="form-control @error('title') error-message @enderror" id="title"
-                                            :value="old('title')" name="title" placeholder="Title" required />
+                                            :value="isset($album) ? old('title',$album): old('title')" name="title" placeholder="Title" required />
                                         @error('title')
                                             <x-input.error id="title"
                                                 class="form-text text-danger">{{ $message }}</x-input.error>
@@ -48,6 +38,13 @@
                                                 <label class="custom-file-label" for="cover_photo">Browse</label>
                                             </div>
                                         </div>
+                                        @if(isset($album) && $album->photo !=null)
+                                        <div class="media mb-2 mt-2">
+                                            <img class="img-fluid mr-4" src="{{Storage::url($album->photo)}}" style="height: 100px;" alt="image">
+                                            <div class="media-body">
+                                            </div>
+                                        </div>
+                                        @endif
                                         @error('cover_photo')
                                             <x-input.error id="cover_photo"
                                                 class="form-text text-danger">{{ $message }}</x-input.error>
@@ -56,13 +53,16 @@
 
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                        <textarea class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
-                                        @error('description')
-                                            <x-input.error id="description"
-                                                class="form-text text-danger">{{ $message }}</x-input.error>
-                                        @enderror
+                                        @if(isset($album))
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$album->description)}}</textarea>
+                                        @else
+                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
+                                        @endif 
+                                            @error('description')
+                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <div class="input-group mb-3">
                                             <div class="custom-file">
                                                 <input type="file" id="photos" accept=".jpg, .jpeg, .png" multiple
@@ -83,7 +83,7 @@
                                         <input type="hidden" id="captions" name="captions">
                                         
 
-                                    </div>
+                                    </div> --}}
                                     <div class="d-flex justify-content-end mr-0 mt-4">
                                         <x-admin.submit type="submit" color="primary">Submit</x-admin.submit>
                                     </div>
@@ -98,7 +98,7 @@
             </div>
         </div>
     </div>
-    <script>
+    {{-- <script>
         const imagesArray = [];
         const captionsArray = [];
 
@@ -187,5 +187,5 @@
             const errorPlaceholder = document.getElementById('cover_photo_error');
             errorPlaceholder.innerHTML = '';
         }
-    </script>
+    </script> --}}
 @endsection

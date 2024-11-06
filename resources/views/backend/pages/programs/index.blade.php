@@ -24,13 +24,18 @@
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
                                             <th scope="col">Location</th>
+                                            <th scope="col">Objectives</th>
+                                            <th scope="col">Description</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
+                                        <tr>
                                             <td>{{$cause->title}}</td>
                                             <td>{{$cause->location}}</td>
+                                            <td>{{$cause->objectives}}</td>
+                                            <td>{!!$cause->description!!}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor"
@@ -87,7 +92,8 @@
                                                 </div>
                                             </td>
                                         @empty
-                                            <td colspan="2">No data present</td>
+                                            <td colspan="5">No data present</td>
+                                        </tr>
                                         @endforelse
                                     </tbody>
                                 </table>

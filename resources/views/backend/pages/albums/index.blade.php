@@ -9,10 +9,10 @@
             <!-- table dark start -->
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
-                    
+
                     <div class="col-auto ml-0">
-                        
-                        <x-outline-button color="primary" href="{{route('album.create')}}">Add Album</x-outline-button>
+
+                        <x-outline-button color="primary" href="{{ route('album.create') }}">Add Album</x-outline-button>
                     </div>
                 </div>
                 <div class="card">
@@ -29,16 +29,20 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
+                                        <tr>
                                             <td>{{ $cause->title }}</td>
-                                            <td>{{ $cause->description }}</td>
+                                            <td>{!!$cause->description!!}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('album.edit', $cause->id) }}"
-                                                        title="Edit Category" class="btn btn-sm btn-success"><i
-                                                            class="fas fa-pencil-alt"></i></a>
+                                                        title="Edit Album" class="btn btn-sm btn-success"><i
+                                                            class="fa fa-pencil-square"></i></a>
+                                                    <a aria-label="anchor" href="{{ route('album.show', $cause->id) }}"
+                                                        title="view Album Album" class="btn btn-sm btn-success"><i
+                                                            class="fa fa-eye"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete User"><i class="fas fa-trash "></i></button>
+                                                        title="Delete Album"><i class="fa fa-trash "></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">
@@ -54,7 +58,8 @@
 
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="{{ route('album.destroy', $cause->id) }}"
+                                                                    <form
+                                                                        action="{{ route('album.destroy', $cause->id) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -79,8 +84,11 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                        </tr>
                                         @empty
-                                            <td colspan="2">No data present</td>
+                                        <tr>
+                                            <td colspan="3">No data present</td>
+                                        </tr>
                                         @endforelse
                                     </tbody>
                                 </table>

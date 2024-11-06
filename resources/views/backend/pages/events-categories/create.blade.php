@@ -13,11 +13,11 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Event Category</h4>
-                                <x-form has-files :action="route('event-categories.store')">
+                                <h4 class="header-title">@if(isset($eventCategory)) Edit Event Category @else Event Categories @endif</h4>
+                                <x-form has-files :action="isset($eventCategory) ? route('event-categories.update', $eventCategory->id): route('event-categories.store')" :method="isset($eventCategory) ? 'PUT': 'POST'">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="old('title')" name="title" placeholder="Title"
+                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="isset($eventCategory) ? old('title',$eventCategory): old('title')" name="title" placeholder="Title"
                                                 required />
                                             @error('title')
                                                 <x-input.error id="title"

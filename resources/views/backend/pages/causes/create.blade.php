@@ -59,7 +59,7 @@
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
                                         @if(isset($cause))
-                                        <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$cause->description)}}</textarea>
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$cause->description)}}</textarea>
                                         @else
                                             <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
                                         @endif 

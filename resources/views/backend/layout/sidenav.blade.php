@@ -13,37 +13,37 @@
                         
                     </li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Articles</span></a>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-newspaper-o"></i><span>Articles</span></a>
                         <ul class="collapse">
-                            <li><a href="{{route('article-categories.index')}}">Categories</a></li>
-                            <li><a href="{{route('articles.index')}}">Articles</a></li>
+                            <li><a href="{{route('article-categories.index')}}"><i class="fa fa-tag"></i> Categories</a></li>
+                            <li><a href="{{route('articles.index')}}"><i class="fa fa-file"></i> Articles</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{route('causes.index')}}"><i class="ti-map-alt"></i> <span>Causes</span></a></li>
-                    <li><a href="{{route('donations.index')}}"><i class="ti-map-alt"></i> <span>Donations</span></a></li>
-                    <li><a href="#"><i class="ti-map-alt"></i> <span>Downloads</span></a></li>
+                    <li><a href="{{route('causes.index')}}"><i class="fa fa-heartbeat"></i> <span>Causes</span></a></li>
+                    <li><a href="{{route('donations.index')}}"><i class="fa fa-money"></i> <span>Donations</span></a></li>
+                    <li><a href="#"><i class="fa fa-download"></i> <span>Downloads</span></a></li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Events</span></a>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Events</span></a>
                         <ul class="collapse">
-                            <li><a href="{{route('event-categories.index')}}">Categories</a></li>
-                            <li><a href="{{route('events.index')}}">Events</a></li>
+                            <li><a href="{{route('event-categories.index')}}"><i class="fa fa-tag"></i> Categories</a></li>
+                            <li><a href="{{route('events.index')}}"><i class="fa fa-calendar-check-o"></i> Events</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-pie-chart"></i><span>Gallery</span></a>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-camera"></i><span>Gallery</span></a>
                         <ul class="collapse">
-                            <li><a href="{{route('album.index')}}">Album</a></li>
-                            <li><a href="{{route('videos.index')}}">Video</a></li>
+                            <li><a href="{{route('album.index')}}"><i class="fa fa-picture-o"></i> Album</a></li>
+                            <li><a href="{{route('videos.index')}}"><i class="fa fa-video-camera"></i> Video</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{route('contact.index')}}"><i class="ti-map-alt"></i> <span>Inquiries</span></a></li>
-                    <li><a href="{{route('programs.index')}}"><i class="ti-map-alt"></i> <span>Programs</span></a></li>
+                    <li><a href="{{route('contact.index')}}"><i class="fa fa-envelope-o"></i> <span>Inquiries</span></a></li>
+                    <li><a href="{{route('programs.index')}}"><i class="fa fa-graduation-cap"></i> <span>Programs</span></a></li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers-alt"></i> <span>Settings</span></a>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-cog"></i> <span>Settings</span></a>
                         <ul class="collapse">
-                            <li><a href="{{route('partners.index')}}">Partners</a></li>
-                            <li><a href="{{route('teams.index')}}">Team</a></li>
-                            <li><a href="{{ route('users.index')}}">Users</a></li>
+                            <li><a href="{{route('partners.index')}}"><i class="fa fa-handshake-o"></i>Partners</a></li>
+                            <li><a href="{{route('teams.index')}}"><i class="fa fa-users"></i> Team</a></li>
+                            <li><a href="{{ route('users.index')}}"><i class="fa fa-user"></i> Users</a></li>
                         </ul>
                     </li>
                 </ul>

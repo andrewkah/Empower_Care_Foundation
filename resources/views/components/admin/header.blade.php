@@ -34,7 +34,7 @@
             <div class="breadcrumbs-area clearfix">
                 <h4 class="page-title pull-left">{{ $pageTitle }}</h4>
                 <ul class="breadcrumbs pull-left">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('admin-home')}}">Home</a></li>
                     <li><span>{{ $currentPage }}</span></li>
                 </ul>
             </div>

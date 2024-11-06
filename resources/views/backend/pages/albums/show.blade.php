@@ -74,13 +74,13 @@
                             <strong>Add Photos to {{ $album->title }} Album </strong>
                         </div>
                         <div class="card-body card-block">
-                            <form method="post" action="{{ route('program.update_gallery', $album->id) }}"
+                            <form method="post" action="{{ route('album.update_album', $album->id) }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <!-- Existing images with captions -->
-                                @if ($album->other_photos != null)
-                                    @foreach ($album->other_photos as $index => $image)
+                                @if ($album->photos != null)
+                                    @foreach ($album->photos as $index => $image)
                                         <div class=" image-preview row">
                                             <div class="col-4 mt-2 mb-2">
                                                 <img src="{{ Storage::url($image) }}" alt="Image" height="75"
@@ -123,10 +123,9 @@
                         <button class="btn btn-success" type="submit" id="banner_submit">Update</button>
                     </div>
                     <div class="form-group mb-3">
-                        <a href="{{ route('programs.index') }}" class="btn btn-danger" id="banner_back">Back</a>
+                        <a href="{{ route('album.index') }}" class="btn btn-danger" id="banner_back">Back</a>
                     </div>
                 </div>
-                                
                             </form>
                         </div>
                     </div>
@@ -165,7 +164,7 @@ h
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="photo"
-                                                    name="new_images[]" accept="image/*" onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
+                                                    name="new_images[]" accept="image/*" onchange="document.querySelector('#photo + label').textContent = this.files[0].name"
                                                    >
                                                 <label class="custom-file-label" for="photo">Browse</label>
                                             </div>

@@ -9,17 +9,17 @@
             <!-- table dark start -->
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
-                    
+
                     <div class="col-auto ml-0">
-                        
-                        <x-outline-button color="primary" href="{{route('causes.create')}}">Add Cause</x-outline-button>
+
+                        <x-outline-button color="primary" href="{{ route('causes.create') }}">Add Cause</x-outline-button>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-center" >
+                                <table class="table text-center">
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
@@ -30,17 +30,17 @@
                                     <tbody>
                                         @forelse ($data as $cause)
                                             <tr>
-                                            <td>{{$cause->title}}</td>
-                                            <td>{!!$cause->description!!}</td>
-                                            <td>
-                                                <div class="hstack gap-2 fs-15">
-                                                        <a aria-label="anchor"
-                                                            href="{{ route('causes.edit', $cause->id) }}"
-                                                            title="Edit Cause" class="btn btn-sm btn-success"><i class="fa fa-pencil-square-o"></i></a>
+                                                <td>{{ $cause->title }}</td>
+                                                <td>{!! $cause->description !!}</td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                        <a aria-label="anchor" href="{{ route('causes.edit', $cause->id) }}"
+                                                            title="Edit Cause" class="btn btn-sm btn-success"><i
+                                                                class="fa fa-pencil-square-o"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Causes"><i class="fa fa-trash "></i></button>
+                                                            title="Delete Cause"><i class="fa fa-trash "></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -80,11 +80,13 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                </div>
-                                            </td>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         @empty
-                                            <td colspan="2">No data present</td>
+                                            <tr>
+                                                <td colspan="3">No data present</td>
+                                            </tr>
                                         @endforelse
                                     </tbody>
                                 </table>
@@ -94,7 +96,7 @@
                 </div>
             </div>
             <!-- table dark end -->
-            
+
         </div>
     </div>
 @endsection
