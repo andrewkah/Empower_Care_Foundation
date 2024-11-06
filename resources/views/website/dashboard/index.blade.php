@@ -438,8 +438,8 @@
                 @forelse ($partners as $partner)
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="country-one__single">
-                        <div class="country-one__img">
-                            <img src="@if ($partner->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($partner->photo) }}@endif" alt="">
+                        <div class="country-one__img" style="width: 80px; height: 80px; overflow: hidden;">
+                            <img src="@if ($partner->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($partner->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4 class="country-one__title"><a href="#">{{$partner->name}}</a></h4>
                     </div>
@@ -464,7 +464,7 @@
                             <div class="single-project-style1">
                                 <div class="img-box">
                                     <div class="gallery">
-                                        @foreach (json_decode($image->photo) as $key => $photo)
+                                        @foreach (json_decode($image->photos) as $key => $photo)
                                             <a class="lightbox-image" data-fancybox="gallery"
                                                 href="{{ Storage::url($photo) }}">
                                                 <img src="{{ Storage::url($photo) }}" alt="Image">
@@ -496,7 +496,7 @@
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">News And Blogs</span>
+                    <span class="section-title__tagline">Articles And Blogs</span>
                 </div>
                 <h2 class="section-title__title title-animation">Lending a Hand<br> Spreading Hope</h2>
             </div>
@@ -519,7 +519,7 @@
                                 <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
                                 <p class="blog-one__text">{{$article->summary}}</p>
                                 <div class="blog-one__btn-box">
-                                    <a href="{{route('article', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
+                                    <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
@@ -528,9 +528,9 @@
                             </div>
                             <div class="blog-one__tags">
                                 <ul class="list-unstyled blog-one__tags-list">
-                                    @foreach (json_decode($article->tags) as $tag)
-                                        <li><a href="#">{{$tag}}</a></li>
-                                    @endforeach
+                                    {{-- @foreach (json_decode($article->tags) as $tag) --}}
+                                        <li><a href="#">{{$article->tags}}</a></li>
+                                    {{-- @endforeach --}}
                                 </ul>
                             </div>
                         </div>
