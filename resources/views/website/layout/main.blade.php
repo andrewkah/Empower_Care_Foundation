@@ -177,7 +177,7 @@
     <script src="{{ asset('assets/js/gsap/SplitText.js') }}"></script>
 
     <script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 
 

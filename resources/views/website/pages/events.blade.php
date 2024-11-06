@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                             <div class="event-one__content">
-                                <h4 class="event-one__title"><a href="{{route('events-details')}}">Donation Drive</a></h4>
+                                <h4 class="event-one__title"><a href="#">Donation Drive</a></h4>
                                 <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
                                     setting industry Loreaim Ipsum has</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="event-one__content">
-                                <h4 class="event-one__title"><a href="{{route('events-details')}}">win-win survival</a></h4>
+                                <h4 class="event-one__title"><a href="#">win-win survival</a></h4>
                                 <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
                                     setting industry Loreaim Ipsum has</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,
@@ -96,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="event-one__content">
-                                <h4 class="event-one__title"><a href="{{route('events-details')}}">Children Education.</a></h4>
+                                <h4 class="event-one__title"><a href="#">Children Education.</a></h4>
                                 <p class="event-one__text">Lorem Ipsum is simply dummy a of the printing and type
                                     setting industry Loreaim Ipsum has</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>6391 Elgin St. Celina,

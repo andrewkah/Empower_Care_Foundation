@@ -54,6 +54,7 @@
                         </div>
                     </div>
                 <!--Blog One Single End-->
+                @endforelse
             </div>
         </div>
     </section>
