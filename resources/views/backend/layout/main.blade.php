@@ -6,7 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ config('app.name', '') }} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="{{ asset('backend/images/icon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
+    <link rel="icon" href="{{ asset('assets/images/favicons/favicon.ico') }}favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
+    <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
     <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/themify-icons.css') }}">
@@ -276,6 +281,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{{ asset('backend/js/summernote.min.js') }}"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     @stack('scripts')
 </body>

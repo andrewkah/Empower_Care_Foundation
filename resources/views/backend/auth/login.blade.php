@@ -6,7 +6,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ config('app.name', '') }} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="{{asset('backend/images/icon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
+    <link rel="icon" href="{{ asset('assets/images/favicons/favicon.ico') }}favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
+    <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
     <link rel="stylesheet" href="{{asset('backend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{asset('backend/css/themify-icons.css') }}">
@@ -36,12 +41,8 @@
     <!-- login area start -->
     <div class="login-area login-bg">
         <div class="container">
+            
             <x-flash/>
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-              {{ session('status') }}
-          </div>
-            @endif
             <div class="login-box ptb--100">
                 <x-form :action="route('login')">
                     <div class="login-form-head">
@@ -53,7 +54,7 @@
                             <label for="exampleInputEmail1">Email Address</label>
                             <input type="email" id="exampleInputEmail1" name="email">
                             <i class="ti-user"></i>
-                            @error('name')<x-input.error id="name"
+                            @error('email')<x-input.error id="email"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         </div>
                         <div class="form-gp">
