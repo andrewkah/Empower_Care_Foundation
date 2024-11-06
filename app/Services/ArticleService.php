@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class ArticleService{
 
@@ -16,9 +17,9 @@ class ArticleService{
     public function storeArticle(ArticleRequest $request)
     {
         $data = $request->validated();
-        if ($request->hasFile('photo')) $path = $request->file('photo')->store('public/categories'); else $path=null;
+        if ($request->hasFile('photo')) $path = $request->file('photo')->store('articles'); else $path=null;
         $data['photo'] = $path;
-        $data['slug'] = Str::slug($data['title']);
+        $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->article->create($data);
     }
@@ -35,7 +36,12 @@ class ArticleService{
     // update article
     public function updateArticle($id, ArticleRequest $article)
     {
-        return $this->article->findOrFail($id)->update($article->validated());
+        $path = $this->getSingleArticle($id)->photo;
+        if ($article->hasFile('photo')) $path = $article->file('photo')->store('programs');
+        $data = $article->validated();
+        $data['photo'] = $path;
+        $data['updated_by'] = Auth::id();
+        return $this->article->findOrFail($id)->update($data);
 
     }
     // delete article
@@ -44,11 +50,26 @@ class ArticleService{
         return $this->article->destroy($id);
     }
     public function getAllArticleOrderByCreatedAt(){
-        return $this->article->orderBy('created_at', 'desc')->get();
+        $data= $this->article->orderBy('created_at', 'desc')->get();
+        if ($data){
+            foreach ($data as $article){
+                $article->date = Carbon::parse($article->created_at)->format('F j, h:i A');
+                $article->time = Carbon::parse($article->created_at)->format('M, Y');
+                $article->day = Carbon::parse($article->created_at)->format('d');
+            }
+        }
+        return $data;
     }
 
     public function getArticleBySlug($id){
-        return $this->article->where('slug', $id)->first();
+        $data = $this->article->where('slug', $id)->first();
+        if ($data){
+            $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
+            $data->time = Carbon::parse($data->created_at)->format('M, y');
+            $data->day = Carbon::parse($data->created_at)->format('d');
+           
+        }
+        return $data;
     }
 }
 

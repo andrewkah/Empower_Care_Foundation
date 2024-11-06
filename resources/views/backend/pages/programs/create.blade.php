@@ -32,10 +32,10 @@
                                         @enderror
                                       </div>
                                       <div class="form-group">
-                                        <x-input.label for="description">Objectives</x-input.label>
+                                        <x-input.label for="objectives">Objectives</x-input.label>
                                             <textarea id="objectives" class="form-control @error('objectives') error-message @enderror" name="objectives" aria-label="With textarea">{{isset($program) ? old('objectives',$program):old('objectives')}}</textarea>
                                             @error('objectives')
-                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                                <x-input.error id="objectives" class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                       <div class="form-group">

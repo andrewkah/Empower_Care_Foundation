@@ -9,6 +9,7 @@
     <section class="contact-one">
         <div class="container">
             <div class="contact-one__inner">
+                <x-flash />
                 <div class="section-title text-left sec-title-animation animation-style2">
                     <div class="section-title__tagline-box">
                         <span class="section-title__tagline">Contact Us</span>
@@ -16,7 +17,7 @@
                     <h2 class="section-title__title title-animation">Empowering Communities<br> through Donations
                     </h2>
                 </div>
-                <form class="contact-form-validated contact-one__form" action="{{ asset('assets/inc/sendemail.php') }}"
+                <form class="contact-form-validated contact-one__form" action="{{ route('contact_us.store') }}"
                     method="post" novalidate="novalidate">
                     @csrf
                     <div class="row">
@@ -44,7 +45,7 @@
                                 <div class="contact-one__input-icon">
                                     <span class="icon-call"></span>
                                 </div>
-                                <input type="text" name="phone" placeholder="+255 000 000 000">
+                                <input type="text" name="phone" placeholder="255 000 000 000">
                             </div>
                         </div>
                         <div class="col-xl-12">
@@ -56,11 +57,8 @@
                                 <textarea name="message" placeholder="Write your message.."></textarea>
                             </div>
                             <div class="contact-one__btn-box">
-                                <button type="submit" class="thm-btn contact-one__btn" id="submit-btn">Send Message<span><i
+                                <button type="submit" class="thm-btn contact-one__btn">Send Message<span><i
                                             class="icon-arrow-right"></i></span></button>
-                                <div class="progress progress-bar-striped progress-bar-animated" role="progressbar"
-                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; display: none">
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,33 +67,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        const form = document.querySelector('.contact-form-validated');
-        const btn = document.querySelector('#submit-btn');
-        const progress = document.querySelector('.progress');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            btn.disabled = true;
-            progress.style.display = 'block';
-            progress.style.width = '0%';
-            var interval = setInterval(function () {
-                var w = progress.getAttribute('aria-valuenow');
-                if (w < 100) {
-                    w++;
-                    progress.setAttribute('aria-valuenow', w);
-                    progress.style.width = w + '%';
-                } else {
-                    clearInterval(interval);
-                }
-            }, 10);
-            setTimeout(function () {
-                progress.style.display = 'none';
-                btn.disabled = false;
-            }, 3000);
-        });
-    </script>
     <!--Contact One End-->
 
     <!--Contact Two Start-->

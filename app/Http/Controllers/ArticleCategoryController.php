@@ -28,8 +28,8 @@ class ArticleCategoryController extends Controller
     }
 
     public function edit($id){
-        $data = $this->articleCategoryService->getSingleArticleCategory($id);
-        return view('backend.pages.article-categories.edit', compact('data'));
+        $articleCategory = $this->articleCategoryService->getSingleArticleCategory($id);
+        return view('backend.pages.article-categories.create', compact('articleCategory'));
     }
 
     public function update($id, ArticleCategoryRequest $request){

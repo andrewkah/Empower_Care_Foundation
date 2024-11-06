@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea class="form-control @error('description') error-message @enderror" value="{{ old('description',$data->description)}}" aria-label="With textarea"></textarea>
+                                            <textarea name="description" class="form-control @error('description') error-message @enderror" value="{{ old('description',$data->description)}}" aria-label="With textarea"></textarea>
                                             @error('description')
                                                 <x-input.error id="description">{{ $message }}</x-input.error>
                                             @enderror

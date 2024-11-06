@@ -57,7 +57,6 @@ class FrontendController extends Controller
         return view('website.pages.articles', compact('articles'));
     }
 
-
     public function article_details($id){
         $article = $this->articleService->getArticleBySlug($id);
         return view('website.pages.article-details', compact('article'));
@@ -82,7 +81,7 @@ class FrontendController extends Controller
     public function contact_us(ContactRequest $request){
         $contacts = $this->contactService->storeContact($request);
         if ($contacts) return redirect()->route('home')->with('success', "Message sent successfully.");
-        return redirect()->back()->with('error', "Something went wrong");
+        return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
     }
     
 }

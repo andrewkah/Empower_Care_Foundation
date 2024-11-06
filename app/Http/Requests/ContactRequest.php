@@ -11,7 +11,7 @@ class ContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,9 +23,8 @@ class ContactRequest extends FormRequest
     {
         return [
             'name'=>'required|string|max:255',
-            'subject'=>'required|string|max:255',
             'email'=>'required|email',
-            'phone' => 'regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/',
+            'phone' => 'nullable',
             'message' => 'required|string|max:450',
         ];
     }
@@ -33,13 +32,9 @@ class ContactRequest extends FormRequest
         return [
             'name.required'=>'The name is required',
             'name.string' => 'The name should be a valid text',
-            'subject.string'=>'Subject should be a valid text',
-            'subject.required'=>'Subject is required',
             'email.required'=>'Email Address is required',
             'email.email'=>'Email Address should be of valid format',
-            'phone.regex' => 'Phone number should be in a valid format',
             'message.required'=>'Message is required',
-            'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }
 }

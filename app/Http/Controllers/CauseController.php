@@ -24,7 +24,7 @@ class CauseController extends Controller
 
     public function store(CauseRequest $request){
         $causes = $this->causeService->storeCause($request);
-        if ($causes) return redirect()->route('causes.create')->with('success', "Cause created successfully.");
+        if ($causes) return redirect()->route('causes.index')->with('success', "Cause created successfully.");
         return redirect()->back()->with('error', "Something went wrong");
     }
 

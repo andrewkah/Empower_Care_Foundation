@@ -24,6 +24,7 @@
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
                                             <th scope="col">Details</th>
+                                            <th scope="col">Website</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
@@ -36,9 +37,10 @@
                                                 <div class="media-body">
                                                     <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
                                                     {{$cause->address}} <br>
-                                                    {{$cause->website}}
+                                                    
                                                 </div>
                                             </div></td>
+                                            <td>{{$cause->website}}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor"
@@ -91,7 +93,7 @@
                                                 </div>
                                             </td>
                                         @empty
-                                            <td colspan="2">No data present</td>
+                                            <td colspan="4">No data present</td>
                                         </tr>
                                         @endforelse
 

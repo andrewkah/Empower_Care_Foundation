@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">
-                                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                            <textarea  class="form-control" aria-label="With textarea"></textarea>
                                             @error('description')
                                                 <x-input.error id="description">{{ $message }}</x-input.error>
                                             @enderror

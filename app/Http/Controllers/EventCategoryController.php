@@ -30,7 +30,7 @@ class EventCategoryController extends Controller
 
     public function edit($id){
         $eventCategory = $this->eventCategoryService->getSingleEventCategory($id);
-        return view('backend.pages.events-categories.edit', compact('eventCategory'));
+        return view('backend.pages.events-categories.create', compact('eventCategory'));
     }
 
     public function update($id, EventCategoryRequest $request){

@@ -25,9 +25,9 @@
                                 </div>
                             </div>
                             <div class="blog-one__content">
-                                <h4 class="blog-one__title"><a href="{{ route('articles.details', $article->id) }}">{{ $article->title }}</a></h4>
+                                <h4 class="blog-one__title"><a href="{{ route('articles.details', $article->slug) }}">{{ $article->title }}</a></h4>
                                 <div class="blog-one__btn-box">
-                                    <a href="{{ route('articles.details', $article->id) }}" class="blog-one__btn thm-btn">rEAD mORe<span><i
+                                    <a href="{{ route('articles.details', $article->slug) }}" class="blog-one__btn thm-btn">rEAD mORe<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>

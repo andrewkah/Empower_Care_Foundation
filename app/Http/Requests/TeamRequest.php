@@ -24,7 +24,7 @@ class TeamRequest extends FormRequest
         return [
             'name'=>'required|string|max:255',
             'email'=>'email|unique:teams,email',
-            'phone' => 'regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/',
+            'phone' => 'nullable',
             'position' => 'string|max:255',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
@@ -35,7 +35,6 @@ class TeamRequest extends FormRequest
             'name.string' => 'The name should be a valid text',
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'Email address already exists',
-            'phone.regex' => 'Phone number should be in a valid format',
             'position.string'=>'Position should be a valid text',
             'photo.max' => 'Image should be at least 2MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',

@@ -19,11 +19,15 @@ class AlbumController extends Controller
     public function create() {
         return view('backend.pages.albums.create');
     }
+    public function show($id)
+    {
+        $album= $this->albumService->getSingleAlbum($id);
+        return view('backend.pages.albums.show',compact('album'));
+    }
     
     public function store(AlbumRequest $albumRequest){
         $album = $this->albumService->storeAlbum($albumRequest);
-        $albumPhotos = $this->albumService->photoUpload($album->id(), $album);
-        if($albumPhotos) return redirect()->route('albums.index')->with('success', 'Album created successfully');
+        if($album) return redirect()->route('album.index')->with('success', 'Album created successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
@@ -32,16 +36,23 @@ class AlbumController extends Controller
         return view('backend.pages.albums.edit', compact('album'));
     }
 
+    public function update_album(Request $request,$id){
+        
+        $album = $this->albumService->updateAlbumPhotos($request, $id);
+        if ($album) {
+            return redirect()->route('album.show', $id)->with('success', "Album Photos Successfully updated");
+        }
+        return redirect()->back()->with('error', 'Something went wrong');
+      }
     public function update($id, AlbumRequest $albumRequest) {
         $album = $this->albumService->updateAlbum($id, $albumRequest);
-        $albumPhotos = $this->albumService->photoUpload($album->id(), $album);
-        if($albumPhotos) return redirect()->route('albums.index')->with('success', 'Album updated successfully');
+        if($album) return redirect()->route('album.index')->with('success', 'Album updated successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
     public function destroy($id) {
         $album = $this->albumService->deleteAlbum($id);
-        if($album) return redirect()->route('albums.index')->with('success', 'Album deleted successfully');
+        if($album) return redirect()->route('album.index')->with('success', 'Album deleted successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 }

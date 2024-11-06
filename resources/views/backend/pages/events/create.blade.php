@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
+                                            <textarea name="description" class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
                                             @error('description')
                                                 <x-input.error id="description">{{ $message }}</x-input.error>
                                             @enderror
@@ -142,7 +142,7 @@
                                         <select data-live-search="true" name="event_cat_id" class="form-control selectpicker @error('event_cat_id')error-message @enderror" id="simple-select2">
                                             <option value="">Select </option>
                                             @foreach($categories as $role)
-                                            <option value="{{$role->id}}" @if(isset($data)) @selected($data->category_id == $role->id)  @else  @endif>{{$role->name}}</option>
+                                            <option value="{{$role->id}}" @if(isset($data)) @selected($data->category_id == $role->id)  @else  @endif>{{$role->title}}</option>
                                             @endforeach
                                           </optgroup>
                                         </select>

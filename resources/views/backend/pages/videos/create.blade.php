@@ -13,11 +13,11 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Videos</h4>
-                                <x-form has-files :action="route('videos.store')">
+                                <h4 class="header-title">@if(isset($video)) Edit Video @else Videos @endif</h4>
+                                <x-form has-files :action="isset($video) ? route('videos.update', $video->id): route('videos.store')" :method="isset($video) ? 'PUT': 'POST'">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="old('title')" name="title" placeholder="Title"
+                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="isset($video) ? old('title',$video): old('title')" name="title" placeholder="Title"
                                                 required />
                                             @error('title')
                                                 <x-input.error id="title"
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="link">Link</x-input.label>
-                                            <x-input.text type="url" class="form-control @error('link') error-message @enderror" id="link" :value="old('link')" name="link" placeholder="https://"
+                                            <x-input.text type="url" class="form-control @error('link') error-message @enderror" id="link" :value="isset($video) ? old('link',$video): old('link')" name="link" placeholder="https://"
                                                 required />
                                             @error('link')
                                                 <x-input.error id="link"
