@@ -14,7 +14,6 @@ class Contact extends Model implements Auditable
 
     protected $fillable = [
         'name',
-        'subject',
         'email',
         'phone',
         'message',

@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\PartnerRequest;
 use App\Models\Partner;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class PartnerService{
 
@@ -49,7 +50,24 @@ class PartnerService{
         return $this->partner->destroy($id);
     }
     public function getAllPartnersOrderByCreatedAt(){
-        return $this->partner->orderBy('created_at', 'desc')->get();
+        $data = $this->partner->orderBy('created_at', 'desc')->get();
+        if ($data){
+            foreach ($data as $partner){
+                $partner->date = Carbon::parse($partner->created_at)->format('F j, h:i A');
+                $partner->time = Carbon::parse($partner->created_at)->format('M, Y');
+                $partner->day = Carbon::parse($partner->created_at)->format('d');
+            }
+        }
+        return $data;
+    }
+    public function getProgramBySlug($id){
+        $data = $this->partner->where('slug', $id)->first();
+        if ($data){
+            $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
+            $data->time = Carbon::parse($data->created_at)->format('M, y');
+            $data->day = Carbon::parse($data->created_at)->format('d');
+        }
+        return $data;
     }
 }
 

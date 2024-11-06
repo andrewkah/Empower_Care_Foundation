@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class ContactService
@@ -41,5 +42,14 @@ class ContactService
     public function getMessages()
     {
         return $this->contact->select('message')->get();
+    }
+    public function getContactBySlug($id){
+        $data = $this->contact->where('slug', $id)->first();
+        if ($data){
+            $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
+            $data->time = Carbon::parse($data->created_at)->format('M, y');
+            $data->day = Carbon::parse($data->created_at)->format('d');
+        }
+        return $data;
     }
 }

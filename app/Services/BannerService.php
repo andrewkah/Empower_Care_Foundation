@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\BannerRequest;
 use App\Models\Banner;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class BannerService{
 
@@ -18,7 +19,7 @@ class BannerService{
         $data = $request->validated();
         if ($request->hasFile('photo')) $path = $request->file('photo')->store('public/categories'); else $path=null;
         $data['photo_path'] = $path;
-        $data['slug'] = Str::slug($data['title']);
+        $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->banner->create($data);
     }
@@ -35,13 +36,38 @@ class BannerService{
     // update banner
     public function updateBanner($id, BannerRequest $banner)
     {
-        return $this->banner->findOrFail($id)->update($banner->validated());
-
+        $path = $this->banner->findOrFail($id)->photo;
+        if ($banner->hasFile('photo')) $path = $banner->file('photo')->store('banners');
+        $data = $banner->validated();
+        $data['photo'] = $path;
+        $data['updated_by'] = Auth::id();
+        return $this->banner->findOrFail($id)->update($data);
     }
     // delete banner
     public function deleteBanner($id)
     {
         return $this->banner->destroy($id);
+    }
+
+    public function getAllBannersOrderByCreatedAt(){
+        $data= $this->banner->orderBy('created_at', 'desc')->get();
+        if ($data){
+            foreach ($data as $banner){
+                $banner->date = Carbon::parse($banner->created_at)->format('F j, h:i A');
+                $banner->time = Carbon::parse($banner->created_at)->format('M, Y');
+                $banner->day = Carbon::parse($banner->created_at)->format('d');
+            }
+        }
+        return $data;
+    }
+    public function getBannerBySlug($id){
+        $data = $this->banner->where('slug', $id)->first();
+        if ($data){
+            $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
+            $data->time = Carbon::parse($data->created_at)->format('M, y');
+            $data->day = Carbon::parse($data->created_at)->format('d');
+        }
+        return $data;
     }
 }
 

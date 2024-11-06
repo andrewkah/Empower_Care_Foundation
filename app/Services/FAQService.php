@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\FAQRequest;
 use App\Models\FAQ;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class FAQService{
 
@@ -16,7 +17,7 @@ class FAQService{
     public function storeFAQ(FAQRequest $request)
     {
         $data = $request->validated();
-        $data['slug'] = Str::slug($data['title']);
+        $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->faq->create($data);
     }
@@ -44,7 +45,25 @@ class FAQService{
 
 
     public function getAllFaqsOrderByCreatedAt(){
-        return $this->faq->orderBy('created_at', 'desc')->get();
+        $data= $this->faq->orderBy('created_at', 'desc')->get();
+        if ($data){
+            foreach ($data as $faq){
+                $faq->date = Carbon::parse($faq->created_at)->format('F j, h:i A');
+                $faq->time = Carbon::parse($faq->created_at)->format('M, Y');
+                $faq->day = Carbon::parse($faq->created_at)->format('d');
+            }
+        }
+        return $data;
+    }
+
+    public function getFAQBySlug($id){
+        $data = $this->faq->where('slug', $id)->first();
+        if ($data){
+            $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
+            $data->time = Carbon::parse($data->created_at)->format('M, y');
+            $data->day = Carbon::parse($data->created_at)->format('d');
+        }
+        return $data;
     }
 }
 

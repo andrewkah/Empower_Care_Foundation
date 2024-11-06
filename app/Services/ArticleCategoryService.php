@@ -16,7 +16,8 @@ class ArticleCategoryService{
     public function storeArticleCategory(ArticleCategoryRequest $request)
     {
         $data = $request->validated();
-        $data['slug'] = Str::slug($data['title']);
+        $data['slug'] = Str::random(10);
+        $data['created_by'] = Auth::id();
         return $this->articleCategory->create($data);
     }
     // get all articleCategorys
@@ -32,7 +33,9 @@ class ArticleCategoryService{
     // update articleCategory
     public function updateArticleCategory($id, ArticleCategoryRequest $articleCategory)
     {
-        return $this->articleCategory->findOrFail($id)->update($articleCategory->validated());
+        $data = $articleCategory->validated();
+        $data['updated_by'] = Auth::id();
+        return $this->articleCategory->findOrFail($id)->update();
 
     }
     // delete articleCategory

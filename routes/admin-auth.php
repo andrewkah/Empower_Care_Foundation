@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CauseController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\EventController;
@@ -29,12 +30,14 @@ Route::prefix('admin-empowercare')->middleware('guest')->group(function(){
 });
 
 Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('backend.dashboard.index');
-    })->name('admin-home');
+    // Route::get('/', function () {
+    //     return view('backend.dashboard.index');
+    // })->name('admin-home');
+    Route::get('/', [DashboardController::class, 'index'])->name('admin-home');
     Route::resource('articles', ArticleController::class);
     Route::resource('article-categories', ArticleCategoryController::class);
     Route::resource('album', AlbumController::class);
+    Route::put('album/{album}/update-gallery', [AlbumController::class, 'update_album'])->name('album.update_album');
     Route::resource('causes', CauseController::class);
     Route::resource('contact', ContactController::class);
     Route::resource('events', EventController::class);

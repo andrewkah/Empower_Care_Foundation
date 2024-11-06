@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('photo')->nullable();
             $table->text('description')->nullable();
+            $table->text('location');
+            $table->text('objectives');
+            $table->longText('other_photos')->nullable();
+            $table->longText('captions')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

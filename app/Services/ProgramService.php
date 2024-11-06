@@ -58,10 +58,10 @@ class ProgramService{
     public function getAllProgramsOrderByCreatedAt(){
         $data= $this->p->orderBy('created_at', 'desc')->get();
         if ($data){
-            foreach ($data as $cause){
-                $cause->date = Carbon::parse($cause->created_at)->format('F j, h:i A');
-                $cause->time = Carbon::parse($cause->created_at)->format('M, Y');
-                $cause->day = Carbon::parse($cause->created_at)->format('d');
+            foreach ($data as $program){
+                $program->date = Carbon::parse($program->created_at)->format('F j, h:i A');
+                $program->time = Carbon::parse($program->created_at)->format('M, Y');
+                $program->day = Carbon::parse($program->created_at)->format('d');
             }
         }
         return $data;

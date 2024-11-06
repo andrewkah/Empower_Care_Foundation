@@ -30,7 +30,7 @@ class TeamController extends Controller
 
     public function edit($id){
         $team = $this->teamService->getSingleTeam($id);
-        return view('backend.pages.team.edit', compact('team'));
+        return view('backend.pages.team.create', compact('team'));
     }
 
     public function update($id, TeamRequest $request){

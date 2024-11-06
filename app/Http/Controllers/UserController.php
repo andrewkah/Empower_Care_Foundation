@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function edit($id){
         $user = $this->userService->get_user_by_id($id);
-        return view('backend.pages.users.edit', compact('user'));
+        return view('backend.pages.users.create', compact('user'));
     }
 
     public function update($id, UserRequest $request){
