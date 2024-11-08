@@ -23,6 +23,7 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
+                                            <th scope="col">Photo</th>
                                             <th scope="col">Summary</th>
                                             <th scope="col">Event Date</th>
                                             <th scope="col">Event Time</th>
@@ -36,6 +37,13 @@
                                         @forelse ($data as $cause)
                                         <tr>
                                             <td>{{ $cause->title }}</td>
+                                            <td> 
+                                                <div class="media mb-2 mt-2">                                               
+                                                <div class="media-body">
+                                                    <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
+                                                                                                        
+                                                </div>
+                                            </div></td>
                                             <td>{{ $cause->summary }}</td>
                                             <td>{{ $cause->event_date }}</td>
                                             <td>{{ $cause->event_time }}</td>

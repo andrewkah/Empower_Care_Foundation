@@ -23,7 +23,7 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
+                                            <th scope="col">Details</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
@@ -31,7 +31,14 @@
                                         @forelse ($data as $cause)
                                         <tr>
                                             <td>{{ $cause->title }}</td>
-                                            <td>{!!$cause->description!!}</td>
+                                            <td> 
+                                                <div class="media mb-2 mt-2">                                               
+                                                <div class="media-body">
+                                                    <img class="img-fluid mr-2" src="{{Storage::url($cause->cover_photo)}}" style="height: 60px;" alt="image">
+                                                    {!!$cause->description!!} <br>
+                                                    
+                                                </div>
+                                            </div></td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('album.edit', $cause->id) }}"

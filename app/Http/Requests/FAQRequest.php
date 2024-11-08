@@ -30,7 +30,6 @@ class FAQRequest extends FormRequest
         return [
             'title.required'=>'The title is required',
             'title.string' => 'The title should be a valid text',
-            'description.string'=>'Description should be a valid text',
         ];
     }
 }

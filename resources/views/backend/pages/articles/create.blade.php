@@ -70,7 +70,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="
+                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept="image/*" onchange="
                                         const selectedFiles = this.files;
                                         const label = this.nextElementSibling;
                                         label.textContent = selectedFiles[0].name;

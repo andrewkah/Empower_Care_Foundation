@@ -2,17 +2,17 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Causes" currentPage="Causes"></x-admin.header>
+    <x-admin.header pageTitle="Banners" currentPage="Banners"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
             <!-- table dark start -->
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
-
+                    
                     <div class="col-auto ml-0">
-
-                        <x-outline-button color="primary" href="{{ route('causes.create') }}">Add Cause</x-outline-button>
+                        
+                        <x-outline-button color="primary" href="{{route('banner.create')}}">Add Banner</x-outline-button>
                     </div>
                 </div>
                 <div class="card">
@@ -29,25 +29,26 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
-                                            <tr>
-                                                <td>{{ $cause->title }}</td>
-                                                <td> 
-                                                    <div class="media mb-2 mt-2">                                               
-                                                    <div class="media-body">
-                                                        <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
-                                                        {!! $cause->description !!} <br>
-                                                        
-                                                    </div>
-                                                </div></td>
-                                                <td>
-                                                    <div class="hstack gap-2 fs-15">
-                                                        <a aria-label="anchor" href="{{ route('causes.edit', $cause->id) }}"
-                                                            title="Edit Cause" class="btn btn-sm btn-success"><i
+                                        <tr>
+                                            <td>{{$cause->title}}</td>
+                                            <td> 
+                                                <div class="media mb-2 mt-2">                                               
+                                                <div class="media-body">
+                                                    <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
+                                                    {{$cause->description}} <br>
+                                                    
+                                                </div>
+                                            </div></td>
+                                            <td>
+                                                <div class="hstack gap-2 fs-15">
+                                                        <a aria-label="anchor"
+                                                            href="{{ route('banner.edit', $cause->id) }}"
+                                                            title="Edit Banner" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Cause"><i class="fa fa-trash "></i></button>
+                                                            title="Delete Banner"><i class="fa fa-trash "></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -64,7 +65,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <form
-                                                                            action="{{ route('causes.destroy', $cause->id) }}"
+                                                                            action="{{ route('banner.destroy', $cause->id) }}"
                                                                             method="post">
                                                                             @csrf
                                                                             @method('DELETE')
@@ -87,14 +88,13 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                </div>
+                                            </td>
                                         @empty
-                                            <tr>
-                                                <td colspan="3">No data present</td>
-                                            </tr>
+                                            <td colspan="4">No data present</td>
+                                        </tr>
                                         @endforelse
+
                                     </tbody>
                                 </table>
                             </div>
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <!-- table dark end -->
-
+            
         </div>
     </div>
 @endsection

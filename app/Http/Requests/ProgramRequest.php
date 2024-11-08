@@ -26,15 +26,14 @@ class ProgramRequest extends FormRequest
             'objectives'=>'required|string',
             'location'=>'required|string',
             'description' => 'string',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ];
     }
     public function messages(){
         return [
             'title.required'=>'The title is required',
             'title.string' => 'The title should be a valid text',
-            'description.string'=>'Description should be a valid text',
-            'photo.max' => 'Image should be at least 2MB',
+            'photo.max' => 'Image should be at least 3MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }

@@ -30,7 +30,7 @@ class DonationController extends Controller
 
     public function edit($id){
         $donation = $this->donationService->getSingleDonation($id);
-        return view('backend.pages.donations.edit', compact('donation'));
+        return view('backend.pages.donations.create', compact('donation'));
     }
 
     public function update($id, DonationRequest $request){

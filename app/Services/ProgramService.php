@@ -87,7 +87,7 @@ class ProgramService{
         // Handle newly uploaded images and captions
         if ($request->hasFile('new_images')) {
             foreach ($request->file('new_images') as $index => $file) {
-                $path = $file->store('programs');
+                $path = $file->store('programs/album');
                 $existingImages[] = $path; // Add new image path to existing array
                 $existingCaptions[] = $request->input('new_captions')[$index]; // Add corresponding new caption
             }

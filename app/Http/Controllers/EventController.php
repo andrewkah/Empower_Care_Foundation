@@ -26,13 +26,14 @@ class EventController extends Controller
 
     public function store(EventRequest $request){
         $events = $this->eventService->storeEvent($request);
-        if ($events) return redirect()->route('events.index')->with('success', "Event created successfully.");
+        if($events) return redirect()->route('events.index')->with('success', "Event created successfully.");
         return redirect()->back()->with('error', "Something went wrong");
     }
 
     public function edit($id){
-        $event = $this->eventService->getSingleEvent($id);
-        return view('backend.pages.events.edit', compact('event'));
+        $data = $this->eventService->getSingleEvent($id);
+        $categories = $this->eventCategoryService->getAllEventCategorys();
+        return view('backend.pages.events.edit', compact('data', 'categories'));
     }
 
     public function update($id, EventRequest $request){
