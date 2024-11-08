@@ -15,7 +15,7 @@ return new class extends Migration
             $table->foreign('event_cat_id')->references('id')->on('event_categories');
         });
         Schema::table('articles', function (Blueprint $table) {
-            $table->foreign('article_cat_id')->references('id')->on('articles');
+            $table->foreign('article_cat_id')->references('id')->on('article_categories');
         });
     }
 

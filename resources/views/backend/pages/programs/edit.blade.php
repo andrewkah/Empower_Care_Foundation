@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Programs</h4>
-                                <x-form has-files :action="route('programs.update')">
+                                <x-form has-files :action="route('programs.update')" method="PUT">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
                                         <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="{{ old('title',$data->title)}}"
@@ -31,7 +31,7 @@
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
-                                                    name="photo" accept=".jpg, .jpeg, .png"
+                                                    name="photo" accept="image/*"
                                                     onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
                                                 <label class="custom-file-label" for="photo"></label>
                                             </div>

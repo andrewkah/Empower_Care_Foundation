@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Services\AlbumService;
 use App\Services\ArticleService;
+use App\Services\BannerService;
 use Illuminate\Http\Request;
 use App\Services\CauseService;
 use App\Services\ContactService;
@@ -19,16 +20,17 @@ class FrontendController extends Controller
 {
 
     //
-    public function __construct(private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
+    public function __construct(private BannerService $bannerService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
     {
         
     }
     public function index(){
+        $banners = $this->bannerService->getAllBannersOrderByCreatedAt();
         $articles = $this->articleService->getAllArticleOrderByCreatedAt();
         $album = $this->albumService->getAllAlbumOrderByCreatedAt();
         $events = $this->eventService->getAllEventsOrderByCreatedAt();
         $partners = $this->partnerService->getAllPartnersOrderByCreatedAt();
-        return view('website.dashboard.index', compact('partners', 'events', 'album', 'articles' ));
+        return view('website.dashboard.index', compact('partners', 'events', 'album', 'articles', 'banners' ));
     }
     public function programs(){
         $programs = $this->programService->getAllProgramsOrderByCreatedAt();
@@ -47,7 +49,7 @@ class FrontendController extends Controller
         return view('website.pages.events', compact('events'));
     }
 
-    public function events_details($id){
+    public function event_details($id){
         $details = $this->eventService->getEventBySlug($id);
         return view('website.pages.events-details', compact('details'));
     }

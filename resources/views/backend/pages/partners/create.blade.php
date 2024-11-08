@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
-                                                    name="photo" accept=".jpg, .jpeg, .png"
+                                                    name="photo" accept="image/*"
                                                     onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
                                                 <label class="custom-file-label" for="photo">Browse</label>
                                             </div>
