@@ -49,7 +49,7 @@
                                                         <a aria-label="anchor"
                                                             href="{{ route('programs.edit', $cause->id) }}"
                                                             title="Edit Program" class="btn btn-sm btn-success"><i
-                                                                class="fa fa-pencil-square"></i></a>
+                                                                class="fa fa-pencil-square-o fa-lg"></i></a>
                                                                 <a aria-label="anchor"
                                                                 href="{{ route('programs.show', $cause->id) }}"
                                                                 title="view Program Album" class="btn btn-sm btn-success"><i
@@ -57,7 +57,7 @@
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Program"><i class="fa fa-trash "></i></button>
+                                                            title="Delete Program"><i class="fa fa-trash fa-lg"></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">

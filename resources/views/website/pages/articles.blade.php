@@ -12,11 +12,11 @@
             <div class="row">
                 <!--Blog One Single Start-->
                 @forelse ($articles as $key => $article)
-                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeIn{{ $key % 2 == 0 ? 'Left' : 'Right' }}{{ $key % 3 == 0 ? '' : 'Up' }}" data-wow-delay="{{ $key * 100 }}ms">
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="{{ $key * 100 }}ms">
                         <div class="blog-one__single">
                             <div class="blog-one__img-box">
                                 <div class="blog-one__img">
-                                    <img src="{{ asset('storage/' . $article->image) }}" alt="">
+                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($article->photo) }} @endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div class="blog-one__date">
                                     <p>{{ date('d', strtotime($article->created_at)) }}

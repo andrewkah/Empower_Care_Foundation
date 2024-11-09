@@ -148,6 +148,9 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                        </div>
                                         <x-input.upload label="Choose Photo" id="photo" name="photo" accept="image/*" onchange="
                                         const selectedFiles = this.files;
                                         const label = this.nextElementSibling;
