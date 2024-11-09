@@ -15,7 +15,7 @@
                             <div class="event-one__single">
                                 <div class="event-one__img-box">
                                     <div class="event-one__img">
-                                        <img src="{{asset('assets/images/event/'.$event->image) }}" alt="">
+                                        <img src="@if ($event->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($event->photo) }} @endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div class="event-one__date">
                                         <p><span class="icon-clock"></span>{{date('d M, Y', strtotime($event->date))}}</p>
