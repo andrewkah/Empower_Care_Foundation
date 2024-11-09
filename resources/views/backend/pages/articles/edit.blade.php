@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Articles</h4>
-                                <x-form has-files :action="route('articles.update')" method="PUT">
+                                <x-form has-files :action="route('articles.update', $data->id)" method="PUT">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
                                         <x-input.text type="text"

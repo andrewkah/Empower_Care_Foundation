@@ -36,10 +36,10 @@
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('videos.edit', $cause->id) }}"
                                                         title="Edit Video" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o"></i></a>
+                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Video"><i class="fa fa-trash "></i></button>
+                                                        title="Delete Video"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

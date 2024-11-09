@@ -43,13 +43,13 @@
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('album.edit', $cause->id) }}"
                                                         title="Edit Album" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square"></i></a>
+                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     <a aria-label="anchor" href="{{ route('album.show', $cause->id) }}"
                                                         title="view Album Album" class="btn btn-sm btn-success"><i
                                                             class="fa fa-eye"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Album"><i class="fa fa-trash "></i></button>
+                                                        title="Delete Album"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

@@ -43,11 +43,11 @@
                                                     <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor" href="{{ route('causes.edit', $cause->id) }}"
                                                             title="Edit Cause" class="btn btn-sm btn-success"><i
-                                                                class="fa fa-pencil-square-o"></i></a>
+                                                                class="fa fa-pencil-square-o fa-lg"></i></a>
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Cause"><i class="fa fa-trash "></i></button>
+                                                            title="Delete Cause"><i class="fa fa-trash fa-lg"></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">

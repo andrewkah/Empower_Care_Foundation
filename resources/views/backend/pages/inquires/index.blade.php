@@ -35,7 +35,7 @@
                                                     <button type="button" class="btn btn-sm btn-danger"
                                                         data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Contact"><i class="fa fa-trash "></i></button>
+                                                        title="Delete Contact"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

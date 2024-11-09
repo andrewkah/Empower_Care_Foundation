@@ -33,7 +33,7 @@ class ArticleController extends Controller
     public function edit($id){
         $data = $this->articleService->getSingleArticle($id);
         $categories = $this->articleCategoryService->getAllArticleCategories();
-        return view('backend.pages.articles.edit', compact('data', 'categories' ));
+        return view('backend.pages.articles.create', compact('data', 'categories' ));
     }
 
     public function update($id, ArticleRequest $request){
