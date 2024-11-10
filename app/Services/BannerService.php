@@ -17,8 +17,8 @@ class BannerService{
     public function storeBanner(BannerRequest $request)
     {
         $data = $request->validated();
-        if ($request->hasFile('photo')) $path = $request->file('photo')->store('public/banners'); else $path=null;
-        $data['photo_path'] = $path;
+        if ($request->hasFile('photo')) $path = $request->file('photo')->store('banners'); else $path=null;
+        $data['photo'] = $path;
         $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->banner->create($data);
