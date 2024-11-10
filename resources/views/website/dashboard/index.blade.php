@@ -456,7 +456,7 @@
                             </div>
                             <div class="event-one__content">
                                 <h4 class="event-one__title"><a href="{{route('events.details', $event->slug)}}">{{$event->title}}</a></h4>
-                                <p class="event-one__text">{{$event->summary}}</p>
+                                <p class="event-one__text">{!!$event->summary!!}</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
                                 
                             </div>
@@ -513,11 +513,11 @@
                                                 <div class="overlay-icon">
                                                     <i class="fa fa fa-expand"></i>
                                                 </div>
-                                                @if (isset(json_decode($image->captions)[$key]))
+                                                {{-- @if (isset(json_decode($image->captions)[$key]))
                                                     <div class="caption">
                                                         {{ json_decode($image->captions)[$key] }}
                                                     </div>
-                                                @endif
+                                                @endif --}}
                                             </a>
                                         @endforeach
                                     </div>
@@ -559,21 +559,11 @@
                             </div>
                             <div class="blog-one__content">
                                 <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
-                                <p class="blog-one__text">{{$article->summary}}</p>
+                                <p class="blog-one__text">{!! $article->summary!!}</p>
                                 <div class="blog-one__btn-box">
                                     <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
-                            </div>
-                            <div class="blog-one__quote">
-                                <p>{{$article->quote}}</p>
-                            </div>
-                            <div class="blog-one__tags">
-                                <ul class="list-unstyled blog-one__tags-list">
-                                    {{-- @foreach (json_decode($article->tags) as $tag) --}}
-                                        <li><a href="#">{{$article->tags}}</a></li>
-                                    {{-- @endforeach --}}
-                                </ul>
                             </div>
                         </div>
                     </div>
