@@ -161,7 +161,7 @@ h
                 <div class="col-4">
                      <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">Photo</span>
+                                                <span class="input-group-text">Photo (81px * 81px)</span>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="photo"

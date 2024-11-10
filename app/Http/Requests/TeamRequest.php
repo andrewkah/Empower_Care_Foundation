@@ -26,7 +26,7 @@ class TeamRequest extends FormRequest
             'email'=>'email|unique:teams,email',
             'phone' => 'nullable',
             'position' => 'string|max:255',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ];
     }
     public function messages(){
@@ -36,7 +36,7 @@ class TeamRequest extends FormRequest
             'email.email' => 'Please provide a valid email address',
             'email.unique' => 'Email address already exists',
             'position.string'=>'Position should be a valid text',
-            'photo.max' => 'Image should be at least 2MB',
+            'photo.max' => 'Image should be at least 3MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }

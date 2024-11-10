@@ -23,20 +23,15 @@ class BannerRequest extends FormRequest
     {
         return [
             'title'=>'required|string|max:255',
-            'button_one'=>'required|string',
-            'link_one'=>'required|string',
             'description' => 'string|max:350',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ];
     }
     public function messages(){
         return [
             'title.required'=>'The title is required',
             'title.string' => 'The title should be a valid text',
-            'button_one.required' => 'Button is required',
-            'link_one.required' => 'Link is required',
-            'description.string'=>'Description should be a valid text',
-            'photo.max' => 'Image should be at least 2MB',
+            'photo.max' => 'Image should be at least 3MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }

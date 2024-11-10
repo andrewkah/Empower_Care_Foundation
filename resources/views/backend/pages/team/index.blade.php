@@ -24,6 +24,7 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Name</th>
+                                            <th scope="col">Photo</th>
                                             <th scope="col">Email Address</th>
                                             <th scope="col">Contact</th>
                                             <th scope="col">Position</th>
@@ -34,6 +35,13 @@
                                         @forelse ($data as $cause)
                                         <tr>
                                             <td>{{ $cause->name }}</td>
+                                            <td> 
+                                                <div class="media mb-2 mt-2">                                               
+                                                <div class="media-body">
+                                                    <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
+                                                                                                        
+                                                </div>
+                                            </div></td>
                                             <td>{!!$cause->email!!}</td>
                                             <td>{!!$cause->phone!!}</td>
                                             <td>{!!$cause->position!!}</td>
@@ -41,10 +49,10 @@
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('teams.edit', $cause->id) }}"
                                                         title="Edit Team" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o"></i></a>
+                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Team"><i class="fa fa-trash "></i></button>
+                                                        title="Delete Team"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

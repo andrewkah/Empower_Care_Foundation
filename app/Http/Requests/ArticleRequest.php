@@ -26,7 +26,7 @@ class ArticleRequest extends FormRequest
             'summary'=>'required|string|max:255',
             'description' => 'string|max:350',
             'quote' => 'string|max:255',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'tags' => 'string|max:255',
         ];
     }
@@ -35,9 +35,8 @@ class ArticleRequest extends FormRequest
             'title.required'=>'The title is required',
             'title.string' => 'The title should be a valid text',
             'summary.required' => 'Summary is required',
-            'description.string'=>'Description should be a valid text',
             'quote.string'=>'Quote should be a valid text',
-            'photo.max' => 'Image should be at least 2MB',
+            'photo.max' => 'Image should be at least 3MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
             'tags.string'=>'Tags should be a valid text',
         ];

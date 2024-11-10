@@ -13,11 +13,11 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Articles</h4>
-                                <x-form has-files :action="route('articles.store')">
+                                <h4 class="header-title">@if(isset($data)) Edit Article @else Articles @endif </h4>
+                                <x-form has-files :action="isset($data) ? route('articles.update', $data->id): route('articles.store')" :method="isset($data) ? 'PUT': 'POST'">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="old('title')" name="title" placeholder="Title"
+                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="isset($data) ? old('title',$data): old('title')" name="title" placeholder="Title"
                                                 required />
                                             @error('title')
                                                 <x-input.error id="title"
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="summary">Summary</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="old('summary')" name="summary" placeholder="Summary"
+                                            <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="isset($data) ? old('summary',$data): old('summary')" name="summary" placeholder="Summary"
                                                 required />
                                             @error('summary')
                                                 <x-input.error id="summary" class="form-text text-danger">{{ $message }}</x-input.error>
@@ -34,15 +34,19 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea name="description" class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
+                                        @if(isset($data))
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$data->description)}}</textarea>
+                                        @else
+                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
+                                        @endif 
                                             @error('description')
-                                                <x-input.error id="description">{{ $message }}</x-input.error>
+                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="quote">Quote</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('quote') error-message @enderror" id="quote" :value="old('quote')" name="quote" placeholder="Quote"
+                                                <x-input.text type="text" class="form-control @error('quote') error-message @enderror" id="quote" :value="isset($data) ? old('quote',$data): old('quote')" name="quote" placeholder="Quote"
                                                     required />
                                                 @error('quote')
                                                     <x-input.error id="quote"
@@ -51,7 +55,7 @@
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="tag">Tag</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('tag') error-message @enderror" id="tag" :value="old('tag')" name="tag" placeholder="Tag"
+                                                <x-input.text type="text" class="form-control @error('tag') error-message @enderror" id="tag" :value="isset($data) ? old('tag',$data): old('tag')" name="tag" placeholder="Tag"
                                                     required />
                                                 @error('tag')
                                                     <x-input.error id="tag"
@@ -70,11 +74,24 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="
-                                        const selectedFiles = this.files;
-                                        const label = this.nextElementSibling;
-                                        label.textContent = selectedFiles[0].name;
-                                    "/>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
+                                                    name="photo" accept="image/*"
+                                                    onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
+                                                <label class="custom-file-label" for="photo">Browse</label>
+                                            </div>
+                                        </div>
+                                        @if(isset($data) && $data->photo !=null)
+                                        <div class="media mb-2 mt-2">
+                                            <img class="img-fluid mr-4" src="{{Storage::url($data->photo)}}" style="height: 100px;" alt="image">
+                                            <div class="media-body">
+                                            </div>
+                                        </div>
+                                        @endif
                                         @error('photo')
                                                 <x-input.error id="photo"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>

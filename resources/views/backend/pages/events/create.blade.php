@@ -17,157 +17,187 @@
                                 <x-form has-files :action="route('events.store')">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="old('title')" name="title" placeholder="Title"
-                                                required />
-                                            @error('title')
-                                                <x-input.error id="title"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <x-input.text type="text"
+                                            class="form-control @error('title') error-message @enderror" id="title"
+                                            :value="old('title')" name="title" placeholder="Title" required />
+                                        @error('title')
+                                            <x-input.error id="title"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="summary">Summary</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="old('summary')" name="summary" placeholder="Summary"
-                                                required />
-                                            @error('summary')
-                                                <x-input.error id="summary" class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <x-input.text type="text"
+                                            class="form-control @error('summary') error-message @enderror" id="summary"
+                                            :value="old('summary')" name="summary" placeholder="Summary" required />
+                                        @error('summary')
+                                            <x-input.error id="summary"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea name="description" class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
-                                            @error('description')
-                                                <x-input.error id="description">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror"
+                                            aria-label="With textarea"></textarea>
+                                        @error('description')
+                                            <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="event_date">Event date</x-input.label>
-                                                <x-input.text type="date" class="form-control @error('event_date') error-message @enderror" id="event_date" :value="old('event_date')" name="event_date" placeholder="Event date"
-                                                    required />
-                                                @error('event_date')
-                                                    <x-input.error id="event_date"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="date"
+                                                class="form-control @error('event_date') error-message @enderror"
+                                                id="event_date" :value="old('event_date')" name="event_date" placeholder="Event date"
+                                                required />
+                                            @error('event_date')
+                                                <x-input.error id="event_date"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="event_time">Location</x-input.label>
-                                                <x-input.text type="time" class="form-control @error('event_time') error-message @enderror" id="event_time" :value="old('event_time')" name="event_time" placeholder="Event time"
-                                                    required />
-                                                @error('event_time')
-                                                    <x-input.error id="event_time"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="time"
+                                                class="form-control @error('event_time') error-message @enderror"
+                                                id="event_time" :value="old('event_time')" name="event_time" placeholder="Event time"
+                                                required />
+                                            @error('event_time')
+                                                <x-input.error id="event_time"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="email">Email Address</x-input.label>
-                                            <x-input.text type="email" class="form-control @error('email') error-message @enderror" id="email" :value="old('email')" name="email" placeholder="someone@example.com"
-                                                required />
-                                            @error('email')
-                                                <x-input.error id="email"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <x-input.text type="email"
+                                            class="form-control @error('email') error-message @enderror" id="email"
+                                            :value="old('email')" name="email" placeholder="someone@example.com" required />
+                                        @error('email')
+                                            <x-input.error id="email"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="organizer">Organizer</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('organizer') error-message @enderror" id="organizer" :value="old('organizer')" name="organizer" placeholder="Organizer"
-                                                    required />
-                                                @error('organizer')
-                                                    <x-input.error id="organizer"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('organizer') error-message @enderror"
+                                                id="organizer" :value="old('organizer')" name="organizer" placeholder="Organizer"
+                                                required />
+                                            @error('organizer')
+                                                <x-input.error id="organizer"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="location">Location</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('location') error-message @enderror" id="location" :value="old('location')" name="location" placeholder="Location"
-                                                    required />
-                                                @error('location')
-                                                    <x-input.error id="location"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('location') error-message @enderror"
+                                                id="location" :value="old('location')" name="location" placeholder="Location"
+                                                required />
+                                            @error('location')
+                                                <x-input.error id="location"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="website">Website</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('website') error-message @enderror" id="website" :value="old('title')" name="website" placeholder="Website"
-                                                required />
-                                            @error('website')
-                                                <x-input.error id="website"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                        <x-input.text type="text"
+                                            class="form-control @error('website') error-message @enderror" id="website"
+                                            :value="old('title')" name="website" placeholder="Website" required />
+                                        @error('website')
+                                            <x-input.error id="website"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="phone">Contact</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('phone') error-message @enderror" id="phone" :value="old('phone')" name="phone" placeholder="123-456-7890"
-                                                    required />
-                                                @error('phone')
-                                                    <x-input.error id="phone"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('phone') error-message @enderror" id="phone"
+                                                :value="old('phone')" name="phone" placeholder="123-456-7890" required />
+                                            @error('phone')
+                                                <x-input.error id="phone"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="sponsor">Sponsor</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('sponsor') error-message @enderror" id="sponsor" :value="old('sponsor')" name="sponsor" placeholder="Sponsor"
-                                                    required />
-                                                @error('sponsor')
-                                                    <x-input.error id="sponsor"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('sponsor') error-message @enderror"
+                                                id="sponsor" :value="old('sponsor')" name="sponsor" placeholder="Sponsor"
+                                                required />
+                                            @error('sponsor')
+                                                <x-input.error id="sponsor"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="event_speaker">Event Speaker</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('event_speaker') error-message @enderror" id="event_speaker" :value="old('event_speaker')" name="event_speaker" placeholder="Event Speaker"
-                                                    required />
-                                                @error('event_speaker')
-                                                    <x-input.error id="event_speaker"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('event_speaker') error-message @enderror"
+                                                id="event_speaker" :value="old('event_speaker')" name="event_speaker"
+                                                placeholder="Event Speaker" required />
+                                            @error('event_speaker')
+                                                <x-input.error id="event_speaker"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="tags">Tags</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('tags') error-message @enderror" id="tags" :value="old('tags')" name="tags" placeholder="Tags"
-                                                    required />
-                                                @error('tags')
-                                                    <x-input.error id="tags"
-                                                        class="form-text text-danger">{{ $message }}</x-input.error>
-                                                @enderror
+                                            <x-input.text type="text"
+                                                class="form-control @error('tags') error-message @enderror"
+                                                id="tags" :value="old('tags')" name="tags" placeholder="Tags"
+                                                required />
+                                            @error('tags')
+                                                <x-input.error id="tags"
+                                                    class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Event Category</label>
-                                        <select data-live-search="true" name="event_cat_id" class="form-control selectpicker @error('event_cat_id')error-message @enderror" id="simple-select2">
+                                        <select data-live-search="true" name="event_cat_id" required
+                                            class="form-control selectpicker @error('event_cat_id')error-message @enderror"
+                                            id="simple-select2">
                                             <option value="">Select </option>
-                                            @foreach($categories as $role)
-                                            <option value="{{$role->id}}" @if(isset($data)) @selected($data->category_id == $role->id)  @else  @endif>{{$role->title}}</option>
+                                            @foreach ($categories as $role)
+                                                <option value="{{ $role->id }}"
+                                                    @if (isset($data)) @selected($data->event_cat_id == $role->id)  @else @endif>
+                                                    {{ $role->title }}</option>
                                             @endforeach
-                                          </optgroup>
+                                            </optgroup>
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                        </div>
+                                        <x-input.upload label="Choose Photo" id="photo" name="photo"
+                                            accept="image/*"
+                                            onchange="
                                         const selectedFiles = this.files;
                                         const label = this.nextElementSibling;
                                         label.textContent = selectedFiles[0].name;
-                                    "/>
+                                    " />
                                         @error('photo')
-                                                <x-input.error id="photo"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
+                                            <x-input.error id="photo"
+                                                class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
                                     </div>
-                                    
+
                                     <div class="d-flex justify-content-end mr-0 mt-4">
                                         <x-admin.submit type="submit" color="primary">Submit</x-admin.submit>
                                     </div>
                                 </x-form>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

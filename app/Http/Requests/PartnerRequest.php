@@ -25,7 +25,7 @@ class PartnerRequest extends FormRequest
             'name'=>'required|string|max:255',
             'address'=>'string|max:255',
             'website' => 'url|max:350',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ];
     }
     public function messages(){
@@ -33,7 +33,7 @@ class PartnerRequest extends FormRequest
             'name.required'=>'The name is required',
             'name.string' => 'The name should be a valid text',
             'website.url'=>'Website should be a valid url',
-            'photo.max' => 'Image should be at least 2MB',
+            'photo.max' => 'Image should be at least 3MB',
             'photo.mimes' => 'Image should be of jpeg, png, jpg or gif format',
         ];
     }

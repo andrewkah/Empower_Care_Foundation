@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageName="Team" currentPage="Team"></x-admin.header>
+    <x-admin.header pageTitle="Team" currentPage="Team"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row justify-content-center">
@@ -56,11 +56,11 @@
                                     <div class="mb-3">
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">Cover Photo</span>
+                                                <span class="input-group-text">Cover Photo (81px * 81px)</span>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
-                                                    name="photo" accept=".jpg, .jpeg, .png"
+                                                    name="photo" accept="image/*"
                                                     onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
                                                 <label class="custom-file-label" for="photo">Browse</label>
                                             </div>

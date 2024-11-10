@@ -1,116 +1,158 @@
 @extends('website.layout.main')
 @section('content')
     <!-- Main Sllider Start -->
-    <section class="main-slider">
-        <div class="swiper-container banner-slider">
-            <div class="swiper-wrapper">
-
-                <!--Start Single Swiper Slide-->
-                <div class="swiper-slide">
-                    <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-1.jpg);">
-                    </div>
-                    <div class="image-layer__left-gradient"
-                        style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
-                    <div class="container">
-                        <div class="main-slider-content">
-                            <div class="main-slider-content__inner">
-                                <div class="sub-title">
-                                    <h4>We help companies</h4>
+    @if (count($banners))
+        <section class="main-slider">
+            <div class="swiper-container banner-slider">
+                <div class="swiper-wrapper">
+                    @foreach ($banners as $slider)
+                        <div class="swiper-slide">
+                            <div class="image-layer" style="background-image: url({{ Storage::url($slider->photo) }});">
+                            </div>
+                            <div class="image-layer__left-gradient"
+                                style="background-image: url({{ Storage::url($slider->photo) }});"></div>
+                            <div class="container">
+                                <div class="main-slider-content">
+                                    <div class="main-slider-content__inner">
+                                        <div class="sub-title">
+                                            <h4>{{ $slider->title }}</h4>
+                                        </div>
+                                        <div class="big-title">
+                                            <h2>
+                                                {!! $slider->description !!}
+                                            </h2>
+                                        </div>
+                                        {{-- <div class="btn-box">
+                                            <a href="{{route('home')}}#donate" class="thm-btn">
+                                                Donate Now
+                                                <span>
+                                                    <i class="icon-arrow-right"></i>
+                                                </span>
+                                            </a>
+                                        </div> --}}
+                                    </div>
                                 </div>
-                                <div class="big-title">
-                                    <h2>
-                                        Together, we can<br> make the world<br> better
-                                    </h2>
-                                </div>
-                                {{-- <div class="btn-box">
-                                    <a href="{{route('home')}}#donate" class="thm-btn">
-                                        Donate Now
-                                        <span>
-                                            <i class="icon-arrow-right"></i>
-                                        </span>
-                                    </a>
-                                </div> --}}
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-                <!--End Single Swiper Slide-->
-
-                <!--Start Single Swiper Slide-->
-                <div class="swiper-slide">
-                    <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-2.jpg);">
-                    </div>
-                    <div class="image-layer__left-gradient"
-                        style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
-                    <div class="container">
-                        <div class="main-slider-content">
-                            <div class="main-slider-content__inner">
-                                <div class="sub-title">
-                                    <h4>We help companies</h4>
-                                </div>
-                                <div class="big-title">
-                                    <h2>
-                                        Give a little<br> change you <br>a lot
-                                    </h2>
-                                </div>
-                                {{-- <div class="btn-box">
-                                    <a href="{{route('home')}}#donate" class="thm-btn">
-                                        Donate Now
-                                        <span>
-                                            <i class="icon-arrow-right"></i>
-                                        </span>
-                                    </a>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Swiper Slide-->
-
-                <!--Start Single Swiper Slide-->
-                <div class="swiper-slide">
-                    <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-3.jpg);">
-                    </div>
-                    <div class="image-layer__left-gradient"
-                        style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
-                    <div class="container">
-                        <div class="main-slider-content">
-                            <div class="main-slider-content__inner">
-                                <div class="sub-title">
-                                    <h4>We help companies</h4>
-                                </div>
-                                <div class="big-title">
-                                    <h2>
-                                        Every gift counts<br> your Every life<br> matters
-                                    </h2>
-                                </div>
-                                {{-- <div class="btn-box">
-                                    <a href="{{route('home')}}#donate" class="thm-btn">
-                                        Donate Now
-                                        <span>
-                                            <i class="icon-arrow-right"></i>
-                                        </span>
-                                    </a>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End Single Swiper Slide-->
-
             </div>
-        </div>
 
-        <ul class="banner-slider-nav-four">
-            <li class="banner-slider-control-four banner-slider-button-prev" tabindex="0" aria-label="Previous slide">
-                <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
-            </li>
-            <li class="banner-slider-control-four banner-slider-button-next" tabindex="0" aria-label="Next slide">
-                <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
-            </li>
-        </ul>
+            <ul class="banner-slider-nav-four">
+                <li class="banner-slider-control-four banner-slider-button-prev" tabindex="0" aria-label="Previous slide">
+                    <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
+                </li>
+                <li class="banner-slider-control-four banner-slider-button-next" tabindex="0" aria-label="Next slide">
+                    <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
+                </li>
+            </ul>
 
-    </section>
+        </section>
+    @else
+        <section class="main-slider">
+            <div class="swiper-container banner-slider">
+                <div class="swiper-wrapper">
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-1.jpg);">
+                        </div>
+                        <div class="image-layer__left-gradient"
+                            style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
+                        <div class="container">
+                            <div class="main-slider-content">
+                                <div class="main-slider-content__inner">
+                                    <div class="sub-title">
+                                        <h4>We help companies</h4>
+                                    </div>
+                                    <div class="big-title">
+                                        <h2>
+                                            Together, we can<br> make the world<br> better
+                                        </h2>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-2.jpg);">
+                        </div>
+                        <div class="image-layer__left-gradient"
+                            style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
+                        <div class="container">
+                            <div class="main-slider-content">
+                                <div class="main-slider-content__inner">
+                                    <div class="sub-title">
+                                        <h4>We help companies</h4>
+                                    </div>
+                                    <div class="big-title">
+                                        <h2>
+                                            Give a little<br> change you <br>a lot
+                                        </h2>
+                                    </div>
+                                    {{-- <div class="btn-box">
+                                        <a href="{{route('home')}}#donate" class="thm-btn">
+                                            Donate Now
+                                            <span>
+                                                <i class="icon-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slider/slider-v1-img-3.jpg);">
+                        </div>
+                        <div class="image-layer__left-gradient"
+                            style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div>
+                        <div class="container">
+                            <div class="main-slider-content">
+                                <div class="main-slider-content__inner">
+                                    <div class="sub-title">
+                                        <h4>We help companies</h4>
+                                    </div>
+                                    <div class="big-title">
+                                        <h2>
+                                            Every gift counts<br> your Every life<br> matters
+                                        </h2>
+                                    </div>
+                                    {{-- <div class="btn-box">
+                                        <a href="{{route('home')}}#donate" class="thm-btn">
+                                            Donate Now
+                                            <span>
+                                                <i class="icon-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                </div>
+            </div>
+
+            <ul class="banner-slider-nav-four">
+                <li class="banner-slider-control-four banner-slider-button-prev" tabindex="0" aria-label="Previous slide">
+                    <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
+                </li>
+                <li class="banner-slider-control-four banner-slider-button-next" tabindex="0" aria-label="Next slide">
+                    <span><i class="icon-arrow-right-two" aria-hidden="true"></i></span>
+                </li>
+            </ul>
+
+        </section>
+        @endif
     <!--Main Sllider Start -->
 
 
@@ -406,14 +448,14 @@
                         <div class="event-one__single">
                             <div class="event-one__img-box">
                                 <div class="event-one__img">
-                                    <img src="{{asset($event->image)}}" alt="">
+                                    <img src="@if ($event->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($event->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div class="event-one__date">
                                     <p><span class="icon-clock"></span>{{$event->event_date}} : {{$event->event_time}}</p>
                                 </div>
                             </div>
                             <div class="event-one__content">
-                                <h4 class="event-one__title"><a href="{{route('events.details', ['event' => $event->id])}}">{{$event->title}}</a></h4>
+                                <h4 class="event-one__title"><a href="{{route('events.details', $event->slug)}}">{{$event->title}}</a></h4>
                                 <p class="event-one__text">{{$event->summary}}</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
                                 
@@ -507,7 +549,7 @@
                         <div class="blog-one__single">
                             <div class="blog-one__img-box">
                                 <div class="blog-one__img">
-                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($article->photo) }}@endif" alt="">
+                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($article->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div class="blog-one__date">
                                     <p>{{date('d', strtotime($article->created_at))}}

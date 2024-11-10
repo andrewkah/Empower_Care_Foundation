@@ -28,12 +28,12 @@
                                     <div class="mb-3">
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">Cover Photo</span>
+                                                <span class="input-group-text">Cover Photo (81px * 81px)</span>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file"
                                                     class="custom-file-input @error('cover_photo') error-message @enderror"
-                                                    id="cover_photo" name="cover_photo" accept=".jpg, .jpeg, .png"
+                                                    id="cover_photo" name="cover_photo" accept="image/*"
                                                     onchange="document.querySelector('#cover_photo + label').textContent = this.files[0].name">
                                                 <label class="custom-file-label" for="cover_photo">Browse</label>
                                             </div>
@@ -65,7 +65,7 @@
                                     {{-- <div class="mb-3">
                                         <div class="input-group mb-3">
                                             <div class="custom-file">
-                                                <input type="file" id="photos" accept=".jpg, .jpeg, .png" multiple
+                                                <input type="file" id="photos" accept="image/*" multiple
                                                     name="photos">
                                                 <label class="custom-file-label" for="photos">Choose Photos</label>
                                             </div>

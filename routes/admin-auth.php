@@ -4,6 +4,7 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CauseController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
@@ -38,6 +39,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('article-categories', ArticleCategoryController::class);
     Route::resource('album', AlbumController::class);
     Route::put('album/{album}/update-gallery', [AlbumController::class, 'update_album'])->name('album.update_album');
+    Route::resource('banner', BannerController::class);
     Route::resource('causes', CauseController::class);
     Route::resource('contact', ContactController::class);
     Route::resource('events', EventController::class);

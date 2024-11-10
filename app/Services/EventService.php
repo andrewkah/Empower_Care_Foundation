@@ -18,7 +18,7 @@ class EventService{
     {
         $data = $request->validated();
         if ($request->hasFile('photo')) $path = $request->file('photo')->store('events'); else $path=null;
-        $data['photo_path'] = $path;
+        $data['photo'] = $path;
         $data['slug'] = Str::random(10);
         $data['created_by'] = Auth::id();
         return $this->event->create($data);

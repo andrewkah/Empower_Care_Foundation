@@ -17,8 +17,6 @@ class Banner extends Model implements Auditable
         'slug',
         'photo',
         'description',
-        'button_one',
-        'link_one',
         'created_by',
         'updated_by',
     ];

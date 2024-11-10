@@ -16,7 +16,7 @@ class DonationService{
     public function storeDonation(DonationRequest $request)
     {
         $data = $request->validated();
-        if ($request->hasFile('photo')) $path = $request->file('photo')->store('public/categories'); else $path=null;
+        if ($request->hasFile('photo')) $path = $request->file('photo')->store('public/donations'); else $path=null;
         $data['photo_path'] = $path;
         $data['slug'] = Str::slug($data['title']);
         $data['created_by'] = Auth::id();

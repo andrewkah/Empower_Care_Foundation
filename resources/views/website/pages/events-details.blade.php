@@ -11,32 +11,31 @@
             <div class="event-details__inner">
                 <div class="event-details__img">
                     <img src="{{ asset('storage/' . $details->photo) }}" alt="">
-                    <img src="{{ asset('assets/images/event/event-details-img-1.jpg') }}" alt="">
                 </div>
                 <h2 class="event-details__title">{{ $details->title }}</h2>
                 <p class="event-details__text-1">{{ $details->summary }}</p>
                 <p class="event-details__text-2">{{ $details->description }}</p>
-                <p class="event-details__text-1">Southern grayling trout-perch. Sharksucker sea toad candiru rocket
+                {{-- <p class="event-details__text-1">Southern grayling trout-perch. Sharksucker sea toad candiru rocket
                     danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata.</p>
                 <p class="event-details__text-2">Minnow snoek icefish velvet-belly shark, California halibut round
                     stingray northern sea robin. Southern grayling trout-perch. Sharksucker sea toad candiru rocket
                     danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata.
                     Midshipman dartfish Modoc sucker, yellowtail kingfish basslet. Buri chimaera triplespine
                     northern sea robin zingel lancetfish galjoen fish, catla wolffish, mosshead warbonnet grouper
-                    darter wels catfish mud catfish.</p>
-                <div class="event-details__text-box">
-                    <p>Event Speaker: {{ $details->event_speaker }}</p>
+                    darter wels catfish mud catfish.</p> --}}
+                {{-- <div class="event-details__text-box">
+                    <p>{{ $details->description }}</p>
                     <p>Tags: {{ $details->tags }}</p>
                     <p>Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere vive rra
                         .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentu m ul amcorper
                         viverra laoreet.flounder European minnow black dragonfish orbicular batfish stingray
                         tenpounder. Sucker lionfish garibaldi surgeonfish</p>
-                </div>
+                </div> --}}
                 
             </div>
             <div class="event-details__events-box">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="col-xl-5 col-lg-5 col-md-4">
                         <div class="event-details__event-single">
                             <h3>Details</h3>
                             <ul class="event-details__event-list list-unstyled">
@@ -49,19 +48,27 @@
                                 <li>
                                     <p><span>Start Time:</span>{{ $details->website }}</p>
                                 </li>
-                                <li>
-                                    <p><span>Sponsor:</span>{{ $details->sponsor }}</p>
-                                </li>
-                                <li><p>Event Speaker: {{ $details->event_speaker }}</p></li>
-                                <li><p>Tags: {{ $details->tags }}</p></li>
+                                
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="col-xl-5 col-lg-5 col-md-4">
                         <div class="event-details__event-single">
-                            <h3>Organizer</h3>
+                            <h3>Sponsor: <span>{{ $details->sponsor }}</span></h3>
                             <ul class="event-details__event-list list-unstyled">
-                                <p>{{ $details->organizer }}</p>
+                                <li>
+                                    <p><span>Event Speaker:</span>{{ $details->event_speaker }}</p>
+                                </li>
+                                <li>
+                                    <p><span>Tags:</span> {{ $details->tags }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-4">
+                        <div class="event-details__event-single">
+                            <h3>Organizer: <span>{{ $details->organizer }}</span></h3>
+                            <ul class="event-details__event-list list-unstyled">
                                 <li>
                                     <p><span>Phone:</span><a href="tel:{{ $details->phone }}">+{{ $details->phone }}</a></p>
                                 </li>
@@ -71,7 +78,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="col-xl-5 col-lg-5 col-md-4">
                         <div class="event-details__event-single">
                             <h3>Venue</h3>
                             <ul class="event-details__event-list list-unstyled">

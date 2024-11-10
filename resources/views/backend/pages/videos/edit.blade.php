@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Videos</h4>
-                                <x-form has-files :action="route('videos.update')">
+                                <x-form has-files :action="route('videos.update')" method="PUT">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
                                             <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="{{ old('title',$data->title)}}" name="title" placeholder="Title"
