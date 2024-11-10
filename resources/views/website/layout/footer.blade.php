@@ -54,7 +54,7 @@
                                     <div class="icon">
                                         <span class="icon-envelope"></span>
                                     </div>
-                                    <p><a href="mailto:mwirusima@gmail.com">emwirusima@gmail.com</a></p>
+                                    <p><a href="mailto:info@empowercarefoundation.or.tz">info@empowercarefoundation.or.tz </a></p>
                                 </li>
                                 <li>
                                     <div class="icon">

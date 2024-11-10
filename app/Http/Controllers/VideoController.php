@@ -30,7 +30,7 @@ class VideoController extends Controller
 
     public function edit($id){
         $video = $this->videoService->getSingleVideo($id);
-        return view('backend.pages.videos.edit', compact('video'));
+        return view('backend.pages.videos.create', compact('video'));
     }
 
     public function update($id, VideoRequest $request){

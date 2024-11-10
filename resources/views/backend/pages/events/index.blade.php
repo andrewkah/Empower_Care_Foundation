@@ -24,12 +24,12 @@
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
                                             <th scope="col">Photo</th>
-                                            <th scope="col">Summary</th>
+                                            {{-- <th scope="col">Summary</th> --}}
                                             <th scope="col">Event Date</th>
                                             <th scope="col">Event Time</th>
                                             <th scope="col">Organizer</th>
                                             <th scope="col">Location</th>
-                                            <th scope="col">Description</th>
+                                            {{-- <th scope="col">Description</th> --}}
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
@@ -44,12 +44,12 @@
                                                                                                         
                                                 </div>
                                             </div></td>
-                                            <td>{{ $cause->summary }}</td>
+                                            {{-- <td>{{ $cause->summary }}</td> --}}
                                             <td>{{ $cause->event_date }}</td>
                                             <td>{{ $cause->event_time }}</td>
                                             <td>{{ $cause->organizer }}</td>
                                             <td>{{ $cause->location }}</td>
-                                            <td>{!!$cause->description!!}</td>
+                                            {{-- <td>{!!$cause->description!!}</td> --}}
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('events.edit', $cause->id) }}"

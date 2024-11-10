@@ -215,7 +215,7 @@
                     </div>
 
                     <div class="col-xl-5 col-lg-6">
-                        <div class="donation-form-one">
+                        {{-- <div class="donation-form-one">
                             <div class="inner-title">
                                 <h3>Easy Donation</h3>
                             </div>
@@ -342,7 +342,7 @@
                                 </div>
 
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -404,10 +404,10 @@
                             <br>
                             They need to know that someone cares. <br> Without hope, other assistance will fail to make a difference.
                         </p>
-                        <div class="donate-one__btn-box">
+                        {{-- <div class="donate-one__btn-box">
                             <a href="{{route('home')}}#donate" class="donate-one__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -625,8 +625,8 @@
                     </h2>
                 </div>
                 <div class="cta-one__btn-box">
-                    <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
-                                class="icon-arrow-right"></i></span></a>
+                    {{-- <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
+                                class="icon-arrow-right"></i></span></a> --}}
                     <a href="become-volunteer.html" class="cta-one__btn-2 thm-btn">Become A volunteer<span><i
                                 class="icon-arrow-right"></i></span></a>
                 </div>

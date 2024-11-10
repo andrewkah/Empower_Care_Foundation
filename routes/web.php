@@ -15,6 +15,8 @@ Route::get('/programs',[FrontendController::class,'programs'])->name('programs')
 Route::get('/programs/{id}',[FrontendController::class,'program_details'])->name('programs.details');
 Route::get('/events',[FrontendController::class,'events'])->name('events');
 Route::get('/events/{id}',[FrontendController::class,'event_details'])->name('events.details');
+
+Route::get('/donate_request',[FrontendController::class,'donate'])->name('donate');
 Route::get('/about', function () {
     return view('website.pages.about');
 })->name('about');
@@ -22,12 +24,13 @@ Route::get('/causes',[FrontendController::class,'causes'])->name('causes');
 Route::get('/contact-us', function () {
     return view('website.pages.contact-us');
 })->name('contact-us');
-Route::post('/contact-us',[FrontendController::class,'contact_us'])->name('contact_us.store');
+Route::post('/store_contact-us',[FrontendController::class,'contact_us'])->name('contact_us.store');
 Route::get('/team',[FrontendController::class,'team'])->name('team');
 Route::get('/sponsors', function () {
     return view('website.pages.sponsors');
 })->name('sponsors');
 Route::get('/album',[FrontendController::class,'album'])->name('album');
+Route::get('/album/{id}', [FrontendController::class, 'album_details'])->name('album.details');
 Route::get('/donations', function () {
     return view('website.pages.donate');
 })->name('donations');

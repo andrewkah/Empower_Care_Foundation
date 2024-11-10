@@ -91,7 +91,7 @@ class AlbumService{
     }
 
     public function getalbumBySlug($id){
-        $data = $this->album->where('slug', $id)->first();
+        $data = $this->album->where('id', $id)->first();
         if ($data){
             $data->date = Carbon::parse($data->created_at)->format('F j, h:i A');
             $data->time = Carbon::parse($data->created_at)->format('M, y');

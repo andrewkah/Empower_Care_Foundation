@@ -56,7 +56,7 @@
                                     <div class="mb-3">
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                                <span class="input-group-text">Cover Photo (370px * 400px)</span>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"

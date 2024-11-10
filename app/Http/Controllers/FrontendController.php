@@ -85,6 +85,10 @@ class FrontendController extends Controller
         $album = $this->albumService->getAllAlbumOrderByCreatedAt();
         return view('website.pages.album', compact('album'));
     }
+    public function album_details($id){
+        $album = $this->albumService->getAlbumBySlug($id);
+        return view('website.pages.album-details', compact('album'));
+    }
     public function faqs(){
         $faqs = $this->faqService->getAllFaqsOrderByCreatedAt();
         return view('website.pages.faqs', compact('faqs'));
@@ -97,6 +101,9 @@ class FrontendController extends Controller
         $contacts = $this->contactService->storeContact($request);
         if ($contacts) return redirect()->route('home')->with('success', "Message sent successfully.");
         return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
+    }
+    public function donate(){
+        return view('website.pages.donate');
     }
     
 }

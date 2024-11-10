@@ -111,7 +111,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:mwirusima@gmail.com">needhelp@EmpowerCare</a>
+                    <a href="mailto:info@empowercarefoundation.or.tz">info@empowercarefoundation.or.tz</a>
                 </li>
                 <li>
                     <i class="fas fa-phone"></i>

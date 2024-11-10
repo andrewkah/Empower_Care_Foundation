@@ -51,6 +51,8 @@ class VideoService{
                 $video->date = Carbon::parse($video->created_at)->format('F j, h:i A');
                 $video->time = Carbon::parse($video->created_at)->format('M, Y');
                 $video->day = Carbon::parse($video->created_at)->format('d');
+                //get youtube video id from url
+                $video->youtube_id = substr($video->link, strpos($video->link, "=") + 1);
             }
         }
         return $data;

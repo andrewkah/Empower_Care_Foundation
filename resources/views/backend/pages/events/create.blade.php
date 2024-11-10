@@ -27,9 +27,9 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="summary">Summary</x-input.label>
-                                        <x-input.text type="text"
-                                            class="form-control @error('summary') error-message @enderror" id="summary"
-                                            :value="old('summary')" name="summary" placeholder="Summary" required />
+                                        <textarea name="summary" class="form-control @error('summary') error-message @enderror" id="summary"
+                                        aria-label="With textarea">{{old('summary')}}</textarea>
+                                       
                                         @error('summary')
                                             <x-input.error id="summary"
                                                 class="form-text text-danger">{{ $message }}</x-input.error>
@@ -37,10 +37,10 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                        <textarea name="description" class="form-control @error('description') error-message @enderror"
-                                            aria-label="With textarea"></textarea>
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror" id="description"
+                                            aria-label="With textarea">{{old('description')}}</textarea>
                                         @error('description')
-                                            <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                            <x-input.error  class="form-text text-danger">{{ $message }}</x-input.error>
                                         @enderror
                                     </div>
                                     <div class="row">
@@ -56,7 +56,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
-                                            <x-input.label for="event_time">Location</x-input.label>
+                                            <x-input.label for="event_time">Time</x-input.label>
                                             <x-input.text type="time"
                                                 class="form-control @error('event_time') error-message @enderror"
                                                 id="event_time" :value="old('event_time')" name="event_time" placeholder="Event time"
@@ -105,7 +105,7 @@
                                         <x-input.label for="website">Website</x-input.label>
                                         <x-input.text type="text"
                                             class="form-control @error('website') error-message @enderror" id="website"
-                                            :value="old('title')" name="website" placeholder="Website" required />
+                                            :value="old('website')" name="website" placeholder="Website" required />
                                         @error('website')
                                             <x-input.error id="website"
                                                 class="form-text text-danger">{{ $message }}</x-input.error>
@@ -173,10 +173,8 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Cover Photo (81px * 81px)</span>
-                                        </div>
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo"
+                                       
+                                        <x-input.upload label="Cover Photo (770px * 460px)" id="photo" name="photo"
                                             accept="image/*"
                                             onchange="
                                         const selectedFiles = this.files;
@@ -203,3 +201,15 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#description,#summary').summernote({
+                placeholder: 'Write a short description...',
+                tabsize: 2,
+                height: 150
+            });
+        });
+    </script>
+@endpush

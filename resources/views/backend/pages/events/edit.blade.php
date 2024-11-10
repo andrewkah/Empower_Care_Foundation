@@ -26,17 +26,17 @@
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="summary">Summary</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="old('summary',$data->summary)" name="summary" placeholder="Summary"
-                                                required />
+                                                <textarea name="summary" class="form-control @error('summary') error-message @enderror" id="summary"
+                                                aria-label="With textarea">{{old('summary',$data)}}</textarea>
                                             @error('summary')
                                                 <x-input.error id="summary">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="description">Description</x-input.label>
-                                            <textarea name="description" class="form-control @error('description') error-message @enderror" aria-label="With textarea"></textarea>
+                                            <textarea name="description"  id="description" class="form-control @error('description') error-message @enderror" aria-label="With textarea">{{old('description',$data)}}</textarea>
                                             @error('description')
-                                                <x-input.error id="description">{{ $message }}</x-input.error>
+                                                <x-input.error>{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="row">
@@ -149,7 +149,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                            <span class="input-group-text">Cover Photo (770px * 460px)</span>
                                         </div>
                                         <x-input.upload label="Choose Photo" id="photo" name="photo" accept="image/*" onchange="
                                         const selectedFiles = this.files;
@@ -176,3 +176,14 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#description,#summary').summernote({
+                placeholder: 'Write a short description...',
+                tabsize: 2,
+                height: 150
+            });
+        });
+    </script>
+@endpush

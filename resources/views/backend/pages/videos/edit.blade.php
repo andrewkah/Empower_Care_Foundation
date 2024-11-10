@@ -17,8 +17,8 @@
                                 <x-form has-files :action="route('videos.update')" method="PUT">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="{{ old('title',$data->title)}}" name="title" placeholder="Title"
-                                                required />
+                                            {{-- <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="{{ old('title',$data)}}" name="title" placeholder="Title"
+                                                required /> --}}
                                             @error('title')
                                                 <x-input.error id="title"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>

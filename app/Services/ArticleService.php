@@ -38,7 +38,7 @@ class ArticleService{
     public function updateArticle($id, ArticleRequest $article)
     {
         $path = $this->getSingleArticle($id)->photo;
-        if ($article->hasFile('photo')) $path = $article->file('photo')->store('programs');
+        if ($article->hasFile('photo')) $path = $article->file('photo')->store('articles');
         $data = $article->validated();
         $data['photo'] = $path;
         $data['updated_by'] = Auth::id();

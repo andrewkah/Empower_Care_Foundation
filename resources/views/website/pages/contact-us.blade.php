@@ -17,8 +17,8 @@
                     <h2 class="section-title__title title-animation">Empowering Communities<br> through Donations
                     </h2>
                 </div>
-                <form class="contact-form-validated contact-one__form" action="{{ route('contact_us.store') }}"
-                    method="post" novalidate="novalidate">
+                <form class="" action="{{ route('contact_us.store') }}"
+                    method="post">
                     @csrf
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="content">
                                     <h4>Email Address</h4>
-                                    <p><a href="mailto:"></a></p>
+                                    <p><a href="mailto:info@empowercarefoundation.or.tz">info@empowercarefoundation.or.tz</a></p>
                                 </div>
                             </li>
                             <li>

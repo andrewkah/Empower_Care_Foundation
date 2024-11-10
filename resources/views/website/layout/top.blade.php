@@ -8,7 +8,7 @@
                             <i class="icon-envelope"></i>
                         </div>
                         <div class="text">
-                            <p><a href="mailto:mwirusima@gmail.com">empowercare@gmail.com</a>
+                            <p><a href="mailto:info@empowercarefoundation.or.tz">info@empowercarefoundation.or.tz </a>
                             </p>
                         </div>
                     </li>
@@ -72,7 +72,7 @@
                                         <li><a href="{{route('events')}}">Events</a></li>
                                         <li><a href="{{route('album')}}">Album</a></li>
                                         <li><a href="{{route('videos')}}">Video</a></li>
-                                        <li><a href="{{route('downloads')}}">Downloads</a></li>
+                                        {{-- <li><a href="{{route('downloads')}}">Downloads</a></li> --}}
                                         {{-- <li><a href="{{route('sponsors')}}">Sponsors</a></li> --}}
                                     </ul>
                                 </li>
@@ -107,10 +107,10 @@
                             </div>
                         </div> --}}
                         <div class="main-menu__search-box">
-                            <a href="#" class="main-menu__search search-toggler icon-search"></a>
+                            {{-- <a href="#" class="main-menu__search search-toggler icon-search"></a> --}}
                         </div>
                         <div class="main-menu__btn-box">
-                            <a href="{{route('home')}}#donate" class="main-menu__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="main-menu__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
