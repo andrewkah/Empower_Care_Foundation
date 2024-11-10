@@ -57,7 +57,7 @@
                                             <x-input.label for="tag">Tag</x-input.label>
                                             <x-input.text type="text"
                                                 class="form-control @error('tag') error-message @enderror" id="tag"
-                                                :value="old('tag', $data->tag)" name="tag" placeholder="Tag" required />
+                                                :value="old('tag', $data->tag)" name="tag" placeholder="Tag,more tags" required />
                                             @error('tag')
                                                 <x-input.error id="tag"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>

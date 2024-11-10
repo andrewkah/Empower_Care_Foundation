@@ -53,15 +53,28 @@ class FrontendController extends Controller
         $details = $this->eventService->getEventBySlug($id);
         return view('website.pages.events-details', compact('details'));
     }
+    public function article_category($id){
+        $articles = $this->articleService->getArticleByCategory($id);
+        return view('website.pages.articles', compact('articles'));
+    }
 
     public function articles(){
         $articles = $this->articleService->getAllArticleOrderByCreatedAt();
         return view('website.pages.articles', compact('articles'));
     }
-
+    public function article_tag($id){
+        $articles = $this->articleService->getArticleByTag($id);
+        return view('website.pages.articles', compact('articles'));
+    } 
+    public function article_search(Request $request){
+        $articles = $this->articleService->ArticleSearch($request);
+        return view('website.pages.articles', compact('articles'));
+    }
     public function article_details($id){
         $article = $this->articleService->getArticleBySlug($id);
-        return view('website.pages.article-details', compact('article'));
+        $all_tags = $this->articleService->getAllTags(); 
+        $article_categories = $this->articleService->getAllArticleCategoryAndNumberOfArticles();
+        return view('website.pages.article-details', compact('article','all_tags','article_categories'));
     }
     
     public function team(){

@@ -35,7 +35,7 @@ class ArticleCategoryService{
     {
         $data = $articleCategory->validated();
         $data['updated_by'] = Auth::id();
-        return $this->articleCategory->findOrFail($id)->update();
+        return $this->articleCategory->findOrFail($id)->update($data);
 
     }
     // delete articleCategory

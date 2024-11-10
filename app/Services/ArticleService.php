@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Str;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class ArticleService{
@@ -60,7 +61,59 @@ class ArticleService{
         }
         return $data;
     }
+    public function getArticleByCategory($slug){
+        $category = ArticleCategory::where('slug', $slug)->first();
+        if ($category){
+            return $this->article->where('article_cat_id', $category->id)->get();
+        }else{
+            return null;
+        }
+    }
+    public function getArticleByTag($slug){
+        return $this->article->where('tags', 'LIKE', "%{$slug}%")
+         ->orWhere('tags', 'LIKE', "% {$slug} %")
+             ->orWhere('tags', 'LIKE', "{$slug},%")
+             ->orWhere('tags', 'LIKE', "%,{$slug}")
+        ->get();
+    }
+    public function ArticleSearch($request){
+        $articles=$this->article->orwhere('title','like','%'.$request->search.'%')
+            ->orwhere('quote','like','%'.$request->search.'%')
+            ->orwhere('summary','like','%'.$request->search.'%')
+            ->orwhere('description','like','%'.$request->search.'%')
+            ->orwhere('slug','like','%'.$request->search.'%')
+            ->orderBy('id','DESC')
+            ->get();
+        return $articles;
+    }
 
+    public function getAllTags(){
+        
+        $allTags =  $this->article->all()->pluck('tags'); // Get all the tags field from posts
+        
+        $uniqueTags = collect(); // Create an empty collection for unique tags
+        
+        // Loop through each post's tags and extract unique tags
+        foreach ($allTags as $tags) {
+            $tagsArray = explode(',', $tags); // Split the comma-separated tags
+            $uniqueTags = $uniqueTags->merge($tagsArray); // Merge tags into the collection
+        }
+        
+        $uniqueTags = $uniqueTags->unique()->values(); 
+        return $uniqueTags;
+    }
+    public function getAllArticleCategoryAndNumberOfArticles(){
+        $categoriesWithEventCount = ArticleCategory::all()->map(function ($category) {
+            $count = Article::where('article_cat_id',$category->id)->count();
+            
+            return [
+                 'title' => $category->title,
+                'slug'=>$category->slug,
+                'count' => $count,
+            ];
+        });
+       return $categoriesWithEventCount;
+    }
     public function getArticleBySlug($id){
         $data = $this->article->where('slug', $id)->first();
         if ($data){

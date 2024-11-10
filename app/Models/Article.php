@@ -25,4 +25,9 @@ class Article extends Model implements Auditable
         'updated_by',
         'status',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(ArticleCategory::class, 'article_cat_id', 'id');
+    }
 }

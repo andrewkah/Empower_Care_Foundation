@@ -23,11 +23,12 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title'=>'required|string|max:255',
-            'summary'=>'required|string|max:255',
-            'description' => 'string|max:350',
+            'summary'=>'required|string',
+            'description' => 'string',
             'quote' => 'string|max:255',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'tags' => 'string|max:255',
+            'article_cat_id'=>'required|exists:article_categories,id',
         ];
     }
     public function messages(){

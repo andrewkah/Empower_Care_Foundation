@@ -24,25 +24,7 @@
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
-                                    <div class="form-group">
-                                        <x-input.label for="summary">Summary</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="isset($data) ? old('summary',$data): old('summary')" name="summary" placeholder="Summary"
-                                                required />
-                                            @error('summary')
-                                                <x-input.error id="summary" class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <x-input.label for="description">Description</x-input.label>
-                                        @if(isset($data))
-                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$data->description)}}</textarea>
-                                        @else
-                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
-                                        @endif 
-                                            @error('description')
-                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
-                                    </div>
+                                   
                                     <div class="row">
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="quote">Quote</x-input.label>
@@ -55,7 +37,7 @@
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <x-input.label for="tag">Tag</x-input.label>
-                                                <x-input.text type="text" class="form-control @error('tag') error-message @enderror" id="tag" :value="isset($data) ? old('tag',$data): old('tag')" name="tag" placeholder="Tag"
+                                                <x-input.text type="text" class="form-control @error('tag') error-message @enderror" id="tag" :value="isset($data) ? old('tags',$data): old('tags')" name="tags" placeholder="Tag"
                                                     required />
                                                 @error('tag')
                                                     <x-input.error id="tag"
@@ -73,10 +55,36 @@
                                           </optgroup>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <x-input.label for="summary">Summary</x-input.label>
+                                        @if(isset($data))
+                                        <textarea name="summary" class="form-control @error('summary') error-message @enderror" name="summary" id="summary" aria-label="With textarea">{{old('summary',$data->summary)}}</textarea>
+                                        @else
+                                            <textarea class="form-control @error('summary') error-message @enderror" name="summary" id="summary" aria-label="With textarea">{{old('summary')}}</textarea>
+                                        @endif 
+                                            {{-- <x-input.text type="text" class="form-control @error('summary') error-message @enderror" id="summary" :value="isset($data) ? old('summary',$data): old('summary')" name="summary" placeholder="Summary"
+                                                required /> --}}
+                                            @error('summary')
+                                                <x-input.error id="summary" class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <x-input.label for="description">Description</x-input.label>
+                                        @if(isset($data))
+                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$data->description)}}</textarea>
+                                        @else
+                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
+                                        @endif 
+                                            @error('description')
+                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                            @enderror
+                                    </div>
+                                    
+                                   
                                     <div class="mb-3">
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text">Cover Photo (81px * 81px)</span>
+                                                <span class="input-group-text">Cover Photo (850px * 538px)</span>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
@@ -112,3 +120,14 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#description,#summary').summernote({
+                placeholder: 'Write a short description...',
+                tabsize: 2,
+                height: 150
+            });
+        });
+    </script>
+@endpush

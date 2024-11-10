@@ -24,9 +24,9 @@
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
                                             <th scope="col">Photo</th>
-                                            <th scope="col">Summary</th>
+                                            {{-- <th scope="col">Summary</th> --}}
                                             <th scope="col">Quote</th>
-                                            <th scope="col">Description</th>
+                                            {{-- <th scope="col">Description</th> --}}
                                             <th scope="col">Actions</th>
                                         </tr>
                                     </thead>
@@ -41,9 +41,9 @@
                                                                                                         
                                                 </div>
                                             </div></td>
-                                            <td>{{ $cause->summary }}</td>
+                                            {{-- <td>{{ $cause->summary }}</td> --}}
                                             <td>{!!$cause->quote!!}</td>
-                                            <td>{!!$cause->description!!}</td>
+                                            {{-- <td>{!!$cause->description!!}</td> --}}
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     <a aria-label="anchor" href="{{ route('articles.edit', $cause->id) }}"
