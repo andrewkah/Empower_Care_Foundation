@@ -22,7 +22,7 @@
                     <li><a href="{{route('banner.index')}}"><i class="fa fa-image"></i> <span>Banners</span></a></li>
                     <li><a href="{{route('causes.index')}}"><i class="fa fa-heartbeat"></i> <span>Causes</span></a></li>
                     <li><a href="{{route('donations.index')}}"><i class="fa fa-money"></i> <span>Donations</span></a></li>
-                    <li><a href="#"><i class="fa fa-download"></i> <span>Downloads</span></a></li>
+                    <li><a href="{{route('faqs.index')}}"><i class="fa fa-download"></i> <span>FAQs</span></a></li>
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Events</span></a>
                         <ul class="collapse">

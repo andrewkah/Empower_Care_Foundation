@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="{{$album->title}}" bgImage="assets/images/backgrounds/page-header-bg.jpg" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="{{$album->title}}" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
     <!--Projects Page Start-->

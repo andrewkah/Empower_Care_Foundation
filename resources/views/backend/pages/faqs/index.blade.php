@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Donations" currentPage="Donations"></x-admin.header>
+    <x-admin.header pageTitle="FAQS" currentPage="FAQS"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -12,7 +12,7 @@
 
                     <div class="col-auto ml-0">
 
-                        {{-- <x-outline-button color="primary" href="{{route('donations.create')}}">Add </x-outline-button> --}}
+                        <x-outline-button color="primary" href="{{ route('faqs.create') }}">Add FAQ</x-outline-button>
                     </div>
                 </div>
                 <div class="card">
@@ -22,8 +22,8 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Details</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Description</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
@@ -31,24 +31,15 @@
                                         @forelse ($data as $cause)
                                         <tr>
                                             <td>{{ $cause->title }}</td>
-                                            <td> 
-                                                <div class="media mb-2 mt-2">                                               
-                                                <div class="media-body">
-                                                    
-                                                    {!!$cause->slug!!}<br>
-                                                    {{number_format($cause->photo)}}
-
-                                                    
-                                                </div>
-                                            </div></td>
+                                            <td>{{ $cause->description }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    {{-- <a aria-label="anchor" href="{{ route('donations.edit', $cause->id) }}"
-                                                        title="Edit Donation" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o fa-lg"></i></a> --}}
+                                                    <a aria-label="anchor" href="{{ route('faqs.edit', $cause->id) }}"
+                                                        title="Edit Video" class="btn btn-sm btn-success"><i
+                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Donation"><i class="fa fa-trash fa-lg"></i></button>
+                                                        title="Delete Video"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">
@@ -65,7 +56,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form
-                                                                        action="{{ route('donations.destroy', $cause->id) }}"
+                                                                        action="{{ route('faqs.destroy', $cause->id) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -90,9 +81,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
                                         @empty
-                                        <tr>
                                             <td colspan="3">No data present</td>
                                         </tr>
                                         @endforelse

@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Team" bgImage="assets/images/backgrounds/page-header-bg.jpg"
+    <x-website-page-header title="Team" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
     <!--Volunteer Carousel Page Start-->

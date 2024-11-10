@@ -1,7 +1,7 @@
 @extends('website.layout.main')
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Downloads" bgImage="assets/images/backgrounds/page-header-bg.jpg" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="Downloads" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
     <!--Events Carousel Page Start-->

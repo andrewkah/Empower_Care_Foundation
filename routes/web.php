@@ -17,6 +17,7 @@ Route::get('/events',[FrontendController::class,'events'])->name('events');
 Route::get('/events/{id}',[FrontendController::class,'event_details'])->name('events.details');
 
 Route::get('/donate_request',[FrontendController::class,'donate'])->name('donate');
+Route::post('/submit_donate_request',[FrontendController::class,'donate_store'])->name('submit.donate');
 Route::get('/about', function () {
     return view('website.pages.about');
 })->name('about');

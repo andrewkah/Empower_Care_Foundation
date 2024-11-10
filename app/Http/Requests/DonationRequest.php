@@ -22,9 +22,11 @@ class DonationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=>'required|string|max:255',
-            'description' => 'string|max:350',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'firstname'=>'required|string|max:255',
+            'lastname'=>'required|string|max:255',
+            'email' => 'required|email',
+            'amount' => 'required|integer',
+            'payment_method' => 'required|string',
         ];
     }
     public function messages(){

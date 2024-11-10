@@ -1,9 +1,9 @@
 @if (session()->has('success'))
     <div x-show="show" x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
         <strong>{{ session()->get('success') }}</strong>
-        <button type="button" class="close ml-auto" data-dismiss="alert" aria-label="Close">
+        {{-- <button type="button" class="close ml-auto" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
-        </button>
+        </button> --}}
     </div>
 @endif
 

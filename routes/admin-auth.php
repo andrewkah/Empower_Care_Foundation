@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
@@ -46,6 +47,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('event-categories', EventCategoryController::class);
     Route::resource('teams', TeamController::class);
     Route::resource('videos', VideoController::class);
+    Route::resource('faqs', FAQController::class);
     Route::resource('partners', PartnerController::class);
     Route::resource('programs', ProgramController::class);
     Route::put('programs/{program}/update-gallery', [ProgramController::class, 'update_album'])->name('program.update_gallery');

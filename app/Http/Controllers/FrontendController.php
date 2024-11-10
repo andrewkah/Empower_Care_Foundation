@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\DonationRequest;
 use App\Services\AlbumService;
 use App\Services\ArticleService;
 use App\Services\BannerService;
 use Illuminate\Http\Request;
 use App\Services\CauseService;
 use App\Services\ContactService;
+use App\Services\DonationService;
 use App\Services\EventService;
 use App\Services\FAQService;
 use App\Services\PartnerService;
@@ -20,7 +22,7 @@ class FrontendController extends Controller
 {
 
     //
-    public function __construct(private BannerService $bannerService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
+    public function __construct(private BannerService $bannerService, private DonationService $donationService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
     {
         
     }
@@ -99,11 +101,16 @@ class FrontendController extends Controller
     }
     public function contact_us(ContactRequest $request){
         $contacts = $this->contactService->storeContact($request);
-        if ($contacts) return redirect()->route('home')->with('success', "Message sent successfully.");
+        if ($contacts) return redirect()->route('contact-us')->with('success', "Message sent successfully.");
         return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
     }
     public function donate(){
         return view('website.pages.donate');
+    }
+    public function donate_store(DonationRequest $request){
+        $donations = $this->donationService->storeDonation($request);
+        if ($donations) return redirect()->route('donate')->with('success', "Donation Request sent successfully.");
+        return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
     }
     
 }
