@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Donations" currentPage="Donations"></x-admin.header>
+    <x-admin.header pageTitle="Volunteer Requests" currentPage="Volunteers"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -25,7 +25,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Details</th>
                                             <th scope="col">Country</th>
-                                            <th scope="col">Phone</th>
+                                            <th scope="col">Bio</th>
                                             <th scope="col">Reason</th>
                                             <th scope="col">actions</th>
                                         </tr>
@@ -33,20 +33,20 @@
                                     <tbody>
                                         @forelse ($data as $cause)
                                         <tr>
-                                            <td>{{ $cause->title }}</td>
+                                            <td>{{ $cause->name }}</td>
                                             <td> 
                                                 <div class="media mb-2 mt-2">                                               
                                                 <div class="media-body">
                                                     
-                                                    {!!$cause->slug!!}<br>
-                                                    {{number_format($cause->photo)}}
+                                                    {!!$cause->phone!!}<br>
+                                                    {{$cause->email}}
                                                     
                                                 </div>
                                             </div>
                                         </td>
                                         <td>{{ $cause->country }}</td>
-                                        <td>{{ $cause->phone }}</td>
-                                        <td>{{ $cause->reason }}</td>
+                                        <td>{{ $cause->bio }}</td>
+                                        <td>{{ $cause->way_to_volunteer }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     {{-- <a aria-label="anchor" href="{{ route('donations.edit', $cause->id) }}"
@@ -54,7 +54,7 @@
                                                             class="fa fa-pencil-square-o fa-lg"></i></a> --}}
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Donation"><i class="fa fa-trash fa-lg"></i></button>
+                                                        title="Delete Volunteer Request"><i class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">
@@ -71,7 +71,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form
-                                                                        action="{{ route('donations.destroy', $cause->id) }}"
+                                                                        action="{{ route('volunteers.destroy', $cause->id) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')

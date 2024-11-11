@@ -170,7 +170,7 @@
     <script src="{{ asset('assets/js/isotope.js') }}"></script>
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script> --}}
     <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
     <script src="{{ asset('assets/js/gsap/gsap.js') }}"></script>
     <script src="{{ asset('assets/js/gsap/ScrollTrigger.js') }}"></script>

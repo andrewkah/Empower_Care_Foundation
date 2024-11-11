@@ -27,9 +27,8 @@ Route::get('/contact-us', function () {
 })->name('contact-us');
 Route::post('/store_contact-us',[FrontendController::class,'contact_us'])->name('contact_us.store');
 Route::get('/team',[FrontendController::class,'team'])->name('team');
-Route::get('/sponsors', function () {
-    return view('website.pages.sponsors');
-})->name('sponsors');
+Route::get('/volunteer',[FrontendController::class, 'volunteer_request'])->name('volunteer');
+Route::post('/submit_volunteer_request', [FrontendController::class, 'volunteer_store'])->name('volunteer.request');
 Route::get('/album',[FrontendController::class,'album'])->name('album');
 Route::get('/album/{id}', [FrontendController::class, 'album_details'])->name('album.details');
 Route::get('/donations', function () {

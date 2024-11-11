@@ -171,7 +171,7 @@
                             They need to know that someone cares. <br> Without hope, other assistance will fail to make a difference.
                         </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('home')}}#donate" class="donate-one__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="donate-one__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -181,13 +181,13 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url('{{ asset('assets/images/backgrounds/donate-one-single-bg-two.jpg') }}');">
                         </div>
-                        <h3 class="donate-one__title"><a href="{{route('home')}}">Join With Us To Serve As
+                        <h3 class="donate-one__title"><a href="{{route('volunteer')}}">Join With Us To Serve As
                                 Volenteer</a></h3>
                         <p class="donate-one__text">Join with us in making the world a more compassionate place.
                             Reach out to those in your community who are living in miserable situations. <br>  Show that you care in whatever way you can volunteer
                         </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('home')}}" class="donate-one__btn thm-btn">Join Now<span><i
+                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn">Join Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                         
                         <p>We believe that first and foremost people need to have hope that life can and will get better. They need to know that someone cares. Without hope, other assistance will fail to make a difference.</p>
                         <div class="who-we-are__btn-box">
-                            <a href="{{route('home')}}#donate" class="who-we-are__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="who-we-are__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

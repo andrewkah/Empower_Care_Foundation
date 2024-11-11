@@ -27,6 +27,9 @@ class DonationRequest extends FormRequest
             'email' => 'required|email',
             'amount' => 'required|integer',
             'payment_method' => 'required|string',
+            'reason' => 'required|string',
+            'phone' => 'nullable|string',
+            'country'=>'required|string|max:255',
         ];
     }
     public function messages(){

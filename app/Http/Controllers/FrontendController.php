@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\DonationRequest;
+use App\Http\Requests\VolunteerRequest;
 use App\Services\AlbumService;
 use App\Services\ArticleService;
 use App\Services\BannerService;
@@ -110,6 +111,14 @@ class FrontendController extends Controller
     public function donate_store(DonationRequest $request){
         $donations = $this->donationService->storeDonation($request);
         if ($donations) return redirect()->route('donate')->with('success', "Donation Request sent successfully.");
+        return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
+    }
+    public function volunteer_request (){
+        return view('website.pages.sponsors');
+    }
+    public function volunteer_store(VolunteerRequest $request){
+        $volunteers = $this->donationService->storeVolunteer($request);
+        if ($volunteers) return redirect()->route('volunteer')->with('success', "Volunteer Request sent successfully.");
         return redirect()->back()->with('error', "Something went wrong. Check your Internet connection and try again");
     }
     

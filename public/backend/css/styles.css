@@ -2318,7 +2318,7 @@ table.dataTable thead td {
 
 .login-form-head {
     text-align: center;
-    background: #8655FC;
+    background: #FF5528;
     padding: 50px;
 }
 
@@ -2451,7 +2451,7 @@ table.dataTable thead td {
 }
 
 .login-other a.fb-login {
-    background: #8655FC;
+    background: #FF5528;
     color: #fff;
 }
 

@@ -173,10 +173,7 @@
                             </div>
                             <div class="text">
                                 <p>
-                                    In a world where many face challenges, your generosity can bring hope. At
-                                    [Charity Name], we’re dedicated to [insert cause or mission], but we can’t do it
-                                    alone. We need the support of kind-hearted individuals like you to continue our
-                                    work.
+                                    Join with us in making the world a more compassionate place. Reach out to those in your community who are living in miserable situations. Show that you care in whatever way you can volunteer
                                 </p>
                             </div>
 
@@ -203,7 +200,7 @@
                             </ul>
 
                             <div class="btn-box">
-                                <a href="#" class="thm-btn">
+                                <a href="{{route('volunteer')}}" class="thm-btn">
                                     Become A Volunteer
                                     <span>
                                         <i class="icon-arrow-right"></i>
@@ -421,7 +418,7 @@
                                     Reach out to those in your community who are living in miserable situations. <br>  Show that you care in whatever way you can volunteer
                                 </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('home')}}" class="donate-one__btn thm-btn">Join Now<span><i
+                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn">Join Now<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <div class="sidebar-menu">
     <div class="sidebar-header">
         <div class="logo">
-            <a href="index.html"><img src="{{ asset('backend/images/icon/logo.png') }}" alt="logo"></a>
+            <a href="{{route('admin-home')}}"><img src="{{ asset('assets/images/empower-logo/logo.jpg') }}" alt="logo"></a>
         </div>
     </div>
     <div class="main-menu">
@@ -22,6 +22,7 @@
                     <li><a href="{{route('banner.index')}}"><i class="fa fa-image"></i> <span>Banners</span></a></li>
                     <li><a href="{{route('causes.index')}}"><i class="fa fa-heartbeat"></i> <span>Causes</span></a></li>
                     <li><a href="{{route('donations.index')}}"><i class="fa fa-money"></i> <span>Donations</span></a></li>
+                    <li><a href="{{route('volunteers.index')}}"><i class="fa fa-graduation-cap"></i> <span>Volunteers</span></a></li>
                     <li><a href="{{route('faqs.index')}}"><i class="fa fa-download"></i> <span>FAQs</span></a></li>
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Events</span></a>

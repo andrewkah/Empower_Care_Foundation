@@ -8,20 +8,20 @@
                 <span></span>
             </div>
             <div class="search-box pull-left">
-                <form action="#">
+                {{-- <form action="#">
                     <input type="text" name="search" placeholder="Search..." required>
                     <i class="ti-search"></i>
-                </form>
+                </form> --}}
             </div>
         </div>
         <!-- profile info & task notification -->
         <div class="col-md-6 col-sm-4 clearfix">
             <ul class="notification-area pull-right">
-                <li id="full-view"><i class="ti-fullscreen"></i></li>
-                <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-                <li class="settings-btn">
+                {{-- <li id="full-view"><i class="ti-fullscreen"></i></li>
+                <li id="full-view-exit"><i class="ti-zoom-out"></i></li> --}}
+                {{-- <li class="settings-btn">
                     <i class="ti-settings"></i>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

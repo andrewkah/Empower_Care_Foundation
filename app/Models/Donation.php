@@ -19,5 +19,8 @@ class Donation extends Model implements Auditable
         'description',
         'created_by',
         'updated_by',
+        'country',
+        'phone',
+        'reason',
     ];
 }

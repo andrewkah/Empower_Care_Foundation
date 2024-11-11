@@ -4,7 +4,10 @@ namespace App\Services;
 
 use Illuminate\Support\Str;
 use App\Http\Requests\DonationRequest;
+use App\Http\Requests\VolunteerRequest;
 use App\Models\Donation;
+use App\Models\Volunteer;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class DonationService{
 
@@ -23,10 +26,20 @@ class DonationService{
         $data['created_by'] = Auth::id();
         return $this->donation->create($data);
     }
+    public function storeVolunteer(VolunteerRequest $request){
+        $data=$request->validated();
+        $data['status']='pending';
+        $new_volunteer= Volunteer::create($data);
+        return $new_volunteer;
+    }
     // get all donations
     public function getAllDonations()
     {
         return $this->donation->all();
+    }
+    public function getAllVolunteers()
+    {
+        return Volunteer::all();
     }
     // get donation by id
     public function getSingleDonation($id)
@@ -43,6 +56,17 @@ class DonationService{
     public function deleteDonation($id)
     {
         return $this->donation->destroy($id);
+    }
+    public function updateVolunteerStatus($id,Request $request){
+        $volunteer=Volunteer::find($id);
+        $volunteer->status=$request->status;
+        $volunteer->save();
+        return $volunteer;
+    }
+    public function deleteVolunteer($id){
+        $volunteer=Volunteer::find($id);
+        $volunteer->delete();
+        return $volunteer;
     }
 }
 
