@@ -13,7 +13,7 @@
                     <form class="" action="{{route('submit.donate')}}"
                         method="post" >
                         @csrf 
-                    <h3 class="donation-details__payment-method-title">Select Payment Method</h3>
+                    {{-- <h3 class="donation-details__payment-method-title">Select Payment Method</h3> --}}
                     <div class="donation-details__quote-radio">
                         <input type="hidden" name="payment_method" value="1"/>
                         {{-- <label class="custom-radio">
