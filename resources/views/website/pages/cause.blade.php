@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Our Cause" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="Our Causes" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
     <!--Cause Details Start-->

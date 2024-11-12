@@ -35,7 +35,7 @@
                     </div>
                 @empty
                     <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-one__single">
+                        {{-- <div class="blog-one__single">
                             <div class="blog-one__img-box">
                                 <div class="blog-one__img">
                                     <img src="assets/images/blog/blog-1-1.jpg" alt="">
@@ -51,7 +51,7 @@
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 <!--Blog One Single End-->
                 @endforelse

@@ -36,7 +36,7 @@
                 @else
                     <!--Event One Single Start-->
                     <div class="item">
-                        <div class="event-one__single">
+                        {{-- <div class="event-one__single">
                             <div class="event-one__img-box">
                                 <div class="event-one__img">
                                     <img src="{{asset('assets/images/event/event-1-1.jpg') }}" alt="">
@@ -56,7 +56,7 @@
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--Event One Single End-->
                    

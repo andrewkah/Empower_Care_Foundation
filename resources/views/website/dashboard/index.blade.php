@@ -178,7 +178,7 @@
                             </div>
 
                             <ul class="list-item row clearfix">
-                                <li class="col-xl-6 col-lg-12 col-md-6">
+                                {{-- <li class="col-xl-6 col-lg-12 col-md-6">
                                     <div class="icon">
                                         <i class="icon-help"></i>
                                     </div>
@@ -196,7 +196,7 @@
                                         <h3>Trusted Funds
                                         </h3>
                                     </div>
-                                </li>
+                                </li> --}}
                             </ul>
 
                             <div class="btn-box">

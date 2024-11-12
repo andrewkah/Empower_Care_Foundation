@@ -18,9 +18,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">
-                            <p class="become-volinteer__bottom-text">who are capable of both providing strategic advice
-                                and executing the plan. It’s a model we’re really proud of and
-                                produces amazing results.</p>
+                            <p class="become-volinteer__bottom-text"></p>
                         </div>
                     </div>
                     <div class="become-volinteer__bottom-left">
@@ -333,8 +331,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="become-volinteer__btn-box">
-                                        <button type="submit" class="thm-btn become-volinteer__btn">Send
-                                            Messege<span><i class="icon-arrow-right"></i></span></button>
+                                        <button type="submit" class="thm-btn become-volinteer__btn">Submit<span><i class="icon-arrow-right"></i></span></button>
                                     </div>
                                 </div>
                             </div>

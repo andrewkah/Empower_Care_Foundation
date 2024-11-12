@@ -12,9 +12,11 @@
                 <div class="donation-details__payment-method-box">
                     <form class="" action="{{route('submit.donate')}}"
                         method="post" >
+                        @csrf 
                     <h3 class="donation-details__payment-method-title">Select Payment Method</h3>
                     <div class="donation-details__quote-radio">
-                        <label class="custom-radio">
+                        <input type="hidden" name="payment_method" value="1"/>
+                        {{-- <label class="custom-radio">
                             <input type="radio" name="payment_method" value="1" checked>
                             <span class="radio-dot"></span>
                             <span class="radio-text">Visa</span>
@@ -23,7 +25,7 @@
                             <input type="radio" name="payment_method" value="2">
                             <span class="radio-dot"></span>
                             <span class="radio-text">Paypal</span>
-                        </label>
+                        </label> --}}
                     </div>
                 </div>
                 <div class="donation-details__personal-info">
