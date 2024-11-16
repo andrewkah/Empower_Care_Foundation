@@ -40,8 +40,8 @@ class FrontendController extends Controller
         return view('website.pages.programs',compact('programs'));
     }
     public function program_details($id){
-        $programs = $this->programService->getProgramBySlug($id);
-        return view('website.pages.program_details', compact('programs'));
+        $program = $this->programService->getProgramBySlug($id);
+        return view('website.pages.program_details', compact('program'));
     }
     public function causes(){
         $causes = $this->causeService->getAllCausesOrderByCreatedAt();

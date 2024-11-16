@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="event-one__content">
                                     <h4 class="event-one__title"><a href="{{route('events.details', $event->slug)}}">{{$event->title}}</a></h4>
-                                    <p class="event-one__text">{{Str::limit($event->description, 150)}}</p>
+                                    <p class="event-one__text">{!!Str::limit($event->description, 150)!!}</p>
                                     <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
                                     <div class="event-one__btn-box">
                                         <a href="{{route('events.details', $event->slug)}}" class="event-one__btn thm-btn">Read More<span><i

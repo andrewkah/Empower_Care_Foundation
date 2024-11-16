@@ -453,9 +453,12 @@
                             </div>
                             <div class="event-one__content">
                                 <h4 class="event-one__title"><a href="{{route('events.details', $event->slug)}}">{{$event->title}}</a></h4>
-                                <p class="event-one__text">{!!$event->summary!!}</p>
+                                <p class="event-one__text">{!!Str::limit($event->summary, 150)!!}</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
-                                
+                                <div class="event-one__btn-box">
+                                    <a href="{{route('events.details', $event->slug)}}" class="event-one__btn thm-btn">Read More<span><i
+                                                class="icon-arrow-right"></i></span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -493,7 +496,7 @@
     <!--Country One End -->
 
     <!--Stat Project Style1-->
-    <section class="project-style1">
+    {{-- <section class="project-style1">
         <div class="container">
             <div class="project-style1__inner">
                 <div class="project-style1__carousel owl-theme owl-carousel">
@@ -514,7 +517,7 @@
                                                     <div class="caption">
                                                         {{ json_decode($image->captions)[$key] }}
                                                     </div>
-                                                @endif --}}
+                                                @endif 
                                             </a>
                                         @endforeach
                                     </div>
@@ -526,7 +529,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End Project Style1-->
 
 
@@ -556,7 +559,7 @@
                             </div>
                             <div class="blog-one__content">
                                 <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
-                                <p class="blog-one__text">{!! $article->summary!!}</p>
+                                <p class="blog-one__text">{!! Str::limit($article->summary, 150)!!}</p>
                                 <div class="blog-one__btn-box">
                                     <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
                                                 class="icon-arrow-right"></i></span></a>
@@ -614,7 +617,7 @@
                 <div class="cta-one__btn-box">
                     {{-- <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
                                 class="icon-arrow-right"></i></span></a> --}}
-                    <a href="become-volunteer.html" class="cta-one__btn-2 thm-btn">Become A volunteer<span><i
+                    <a href="{{route('volunteer')}}" class="cta-one__btn-2 thm-btn">Become A volunteer<span><i
                                 class="icon-arrow-right"></i></span></a>
                 </div>
             </div>

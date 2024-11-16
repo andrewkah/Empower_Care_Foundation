@@ -17,7 +17,7 @@
                             <img src="{{ Storage::url($cause->photo) }}" alt="">
                         </div>
                         <div class="events-list__content">
-                            <h3 class="events-list__title"><a href="event-details.html">{{$cause->title}}</a></h3>
+                            <h3 class="events-list__title"><a href="#">{{$cause->title}}</a></h3>
                             <p class="events-list__text">{!! $cause->description !!}</p>
                             <ul class="events-list__date list-unstyled">
                                 <li>

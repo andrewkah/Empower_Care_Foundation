@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="about-One__provide-content">
                                     <div class="about-One__provide-count count-box">
-                                        <h3 class="count-text" data-stop="250" data-speed="1500">00</h3>
+                                        <h3 class="count-text" data-stop="10" data-speed="1500">00</h3>
                                         <span>+</span>
                                     </div>
                                     <p class="about-One__provide-count-text">Services we provide</p>
