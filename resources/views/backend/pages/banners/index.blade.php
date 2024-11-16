@@ -35,7 +35,7 @@
                                                 <div class="media mb-2 mt-2">                                               
                                                 <div class="media-body">
                                                     <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
-                                                    {{$cause->description}} <br>
+                                                    {!!$cause->description!!} <br>
                                                     
                                                 </div>
                                             </div></td>

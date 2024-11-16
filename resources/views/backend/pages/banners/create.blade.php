@@ -56,7 +56,7 @@
                                             <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
                                         @endif 
                                             @error('description')
-                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                                <x-input.error  class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="d-flex justify-content-end mr-0 mt-4">
@@ -74,3 +74,14 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#description,#objectives').summernote({
+                placeholder: 'Write a short description...',
+                tabsize: 2,
+                height: 150
+            });
+        });
+    </script>
+@endpush

@@ -2,6 +2,7 @@
 @section('content')
     <!-- Main Sllider Start -->
     @if (count($banners))
+
         <section class="main-slider">
             <div class="swiper-container banner-slider">
                 <div class="swiper-wrapper">
@@ -9,8 +10,10 @@
                         <div class="swiper-slide">
                             <div class="image-layer" style="background-image: url({{ Storage::url($slider->photo) }});">
                             </div>
-                            <div class="image-layer__left-gradient"
-                                style="background-image: url({{ Storage::url($slider->photo) }});"></div>
+                            {{-- <div class="image-layer__left-gradient"
+                                style="background-image: url(assets/images/shapes/slider-bg1.jpg);"></div> --}}
+                            {{-- <div class="image-layer__left-gradient"
+                                style="background-image: url({{ Storage::url($slider->photo) }});"></div> --}}
                             <div class="container">
                                 <div class="main-slider-content">
                                     <div class="main-slider-content__inner">
