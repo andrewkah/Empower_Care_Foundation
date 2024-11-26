@@ -50,7 +50,7 @@
                                                 @enderror
                                         </div>
                                         <div class="form-group col-sm-6">
-                                            <x-input.label for="event_time">Location</x-input.label>
+                                            <x-input.label for="event_time">Event Time</x-input.label>
                                                 <x-input.text type="time" class="form-control @error('event_time') error-message @enderror" id="event_time" :value="old('event_time',$data->event_time)" name="event_time" placeholder="Event time"
                                                     required />
                                                 @error('event_time')
@@ -148,10 +148,8 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Cover Photo (770px * 460px)</span>
-                                        </div>
-                                        <x-input.upload label="Choose Photo" id="photo" name="photo" accept="image/*" onchange="
+                                       
+                                        <x-input.upload label="Choose Photo (770px * 460px)" id="photo" name="photo" accept="image/*" onchange="
                                         const selectedFiles = this.files;
                                         const label = this.nextElementSibling;
                                         label.textContent = selectedFiles[0].name;
