@@ -116,7 +116,7 @@
                                             <x-input.label for="phone">Contact</x-input.label>
                                             <x-input.text type="text"
                                                 class="form-control @error('phone') error-message @enderror" id="phone"
-                                                :value="old('phone')" name="phone" placeholder="123-456-7890" required />
+                                                :value="old('phone')" name="phone" placeholder="+255 ___" required />
                                             @error('phone')
                                                 <x-input.error id="phone"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
