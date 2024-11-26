@@ -26,7 +26,7 @@ class EventRequest extends FormRequest
             'summary' => 'required|string',
             'description' => 'nullable|string',
             'event_date' => 'required|date',
-            'event_time' => 'required|date_format:H:i:a',
+            'event_time' => 'required',
             'email' => 'required|email',
             'organizer' => 'required|string|max:255',
             'location' => 'required|string|max:255',
