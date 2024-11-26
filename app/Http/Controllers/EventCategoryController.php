@@ -41,7 +41,7 @@ class EventCategoryController extends Controller
 
     public function destroy($id){
         $eventCategory = $this->eventCategoryService->deleteEventCategory($id);
-        if($eventCategory) return redirect()->route('event-categories.edit')->with('success', 'EventCategory deleted successfully');
+        if($eventCategory) return redirect()->route('event-categories.index')->with('success', 'EventCategory deleted successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 }

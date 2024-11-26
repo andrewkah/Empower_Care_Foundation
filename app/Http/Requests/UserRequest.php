@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
         return [
             'name'=>'required',
             'email' => 'required|email|unique:users,email,'.$userId,
-            'password' => 'requiredmin:8',
+            'password' => 'required|min:8',
         ];
     }
     public function messages(){
