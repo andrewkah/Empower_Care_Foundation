@@ -38,9 +38,9 @@
                                                 <label class="custom-file-label" for="cover_photo">Browse</label>
                                             </div>
                                         </div>
-                                        @if(isset($album) && $album->photo !=null)
+                                        @if(isset($album) && $album->cover_photo !=null)
                                         <div class="media mb-2 mt-2">
-                                            <img class="img-fluid mr-4" src="{{Storage::url($album->photo)}}" style="height: 100px;" alt="image">
+                                            <img class="img-fluid mr-4" src="{{Storage::url($album->cover_photo)}}" style="height: 100px;" alt="image">
                                             <div class="media-body">
                                             </div>
                                         </div>
