@@ -47,14 +47,14 @@
                     <input type="hidden" name="email" id="email" value="{{ $email }}">
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="password">Old Password</label>
+                            <label for="password">New Password</label>
                             <input type="password" id="password" name="password">
                             <i class="ti-lock"></i>
                         </div>
                         @error('password')<x-input.error id="password"
                             class="form-text text-danger">{{ $message }}</x-input.error>@enderror
                         <div class="form-gp">
-                            <label for="password_confirmation">New Password</label>
+                            <label for="password_confirmation">Confirm Password</label>
                             <input type="password" id="password_confirmation" name="password_confirmation">
                             <i class="ti-lock"></i>
                         </div>

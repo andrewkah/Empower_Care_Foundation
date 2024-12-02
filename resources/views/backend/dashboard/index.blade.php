@@ -86,9 +86,9 @@
 							<div class="testimonial-carousel owl-carousel">
 								@foreach($inquires as $testimonial)
 									<div class="tst-item">
-										<div class="tstu-img">
+										{{-- <div class="tstu-img">
 											<img src="{{ asset($testimonial->photo) }}" alt="author image">
-										</div>
+										</div> --}}
 										<div class="tstu-content">
 											<h4 class="tstu-name">{{ $testimonial->name }}</h4>
 											<span class="profsn">{{ $testimonial->profession }}</span>

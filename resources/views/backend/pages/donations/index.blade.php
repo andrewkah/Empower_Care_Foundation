@@ -25,6 +25,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Details</th>
                                             <th scope="col">Country</th>
+                                            <th scope="col">Donation Amount</th>
                                             <th scope="col">Phone</th>
                                             <th scope="col">Reason</th>
                                             <th scope="col">actions</th>
@@ -39,12 +40,11 @@
                                                 <div class="media-body">
                                                     
                                                     {!!$cause->slug!!}<br>
-                                                    {{number_format($cause->photo)}}
-                                                    
                                                 </div>
                                             </div>
                                         </td>
                                         <td>{{ $cause->country }}</td>
+                                        <td>{{number_format($cause->photo)}}</td>
                                         <td>{{ $cause->phone }}</td>
                                         <td>{{ $cause->reason }}</td>
                                             <td>

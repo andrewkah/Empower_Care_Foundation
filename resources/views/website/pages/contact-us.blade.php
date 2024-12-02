@@ -35,7 +35,7 @@
                             <h4 class="contact-one__input-title">Email Address</h4>
                             <div class="contact-one__input-box">
                                 <div class="contact-one__input-icon">
-                                    <span class="icon-pin"></span>
+                                    <span class="icon-envelope"></span>
                                 </div>
                                 <input type="email" name="email" placeholder="someone@example.com">
                             </div>
