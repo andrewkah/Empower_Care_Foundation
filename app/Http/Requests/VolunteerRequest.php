@@ -23,7 +23,7 @@ class VolunteerRequest extends FormRequest
     {
         return [
             'name'=>'string|required|min:2',
-            'email'=>'email|required',
+            'email'=>'email|required|unique:volunteers,email',
             'bio'=>'required|min:10',
             'way_to_volunteer'=>'required|min:10',
             'country'=>'string|required',
