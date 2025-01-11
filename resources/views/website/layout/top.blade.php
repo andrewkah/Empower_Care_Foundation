@@ -61,10 +61,15 @@
                                 <li class="dropdown">
                                     <a href="#">What we Do</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('causes')}}">Our Cause</a></li>                                        
-                                        <li><a href="{{route('programs')}}">Our Programs</a></li>
+                                        <li><a href="{{route('causes')}}">Our Cause</a></li>
                                     </ul>
                                 </li>
+                                <a href="#">Departments</a>
+                                    <ul class="shadow-box">
+                                        <li><a href="#">Procurements</a></li>
+                                        <li><a href="{{route('programs')}}">Our Programs</a></li>
+                                        <li><a href="#">Monitoring</a></li>
+                                    </ul>
                                 <li class="dropdown">
                                     <a href="#">Updates</a>
                                     <ul class="shadow-box">
