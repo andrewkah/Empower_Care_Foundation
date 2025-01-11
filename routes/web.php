@@ -36,6 +36,7 @@ Route::get('/donations', function () {
 })->name('donations');
 Route::get('/faqs',[FrontendController::class,'faqs'])->name('faqs');
 Route::get('/videos',[FrontendController::class,'videos'])->name('videos');
+Route::get('/policies',[FrontendController::class,'policies'])->name('policies');
 Route::get('/downloads', function () {
     return view('website.pages.downloads');
 })->name('downloads');

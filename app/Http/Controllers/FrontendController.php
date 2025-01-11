@@ -15,6 +15,7 @@ use App\Services\DonationService;
 use App\Services\EventService;
 use App\Services\FAQService;
 use App\Services\PartnerService;
+use App\Services\PolicyService;
 use App\Services\ProgramService;
 use App\Services\TeamService;
 use App\Services\VideoService;
@@ -23,7 +24,7 @@ class FrontendController extends Controller
 {
 
     //
-    public function __construct(private BannerService $bannerService, private DonationService $donationService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
+    public function __construct(private PolicyService $policyService, private BannerService $bannerService, private DonationService $donationService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
     {
         
     }
@@ -99,6 +100,10 @@ class FrontendController extends Controller
     public function videos(){
         $videos = $this->videoService->getAllVideosOrderByCreatedAt();
         return view('website.pages.videos', compact('videos'));
+    }
+    public function policies(){
+        $policies = $this->policyService->getAllPoliciesOrderByCreatedAt();
+        return view('website.pages.policies', compact('policies'));
     }
     public function contact_us(ContactRequest $request){
         $contacts = $this->contactService->storeContact($request);

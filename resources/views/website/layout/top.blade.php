@@ -72,7 +72,7 @@
                                         <li><a href="{{route('events')}}">Events</a></li>
                                         <li><a href="{{route('album')}}">Album</a></li>
                                         <li><a href="{{route('videos')}}">Video</a></li>
-                                        {{-- <li><a href="{{route('downloads')}}">Downloads</a></li> --}}
+                                        <li><a href="{{route('policies')}}">Policies</a></li>
                                         {{-- <li><a href="{{route('sponsors')}}">Sponsors</a></li> --}}
                                     </ul>
                                 </li>

@@ -22,6 +22,7 @@
                     <li><a href="{{route('banner.index')}}"><i class="fa fa-image"></i> <span>Banners</span></a></li>
                     <li><a href="{{route('causes.index')}}"><i class="fa fa-heartbeat"></i> <span>Causes</span></a></li>
                     <li><a href="{{route('donations.index')}}"><i class="fa fa-money"></i> <span>Donations</span></a></li>
+                    <li><a href="{{route('policies.index')}}"><i class="fa fa-file-text-o"></i> <span>Policies</span></a></li>
                     <li><a href="{{route('volunteers.index')}}"><i class="fa fa-graduation-cap"></i> <span>Volunteers</span></a></li>
                     <li><a href="{{route('faqs.index')}}"><i class="fa fa-download"></i> <span>FAQs</span></a></li>
                     <li>

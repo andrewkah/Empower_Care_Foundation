@@ -13,6 +13,7 @@ use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -57,6 +58,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('volunteers', VolunteerController::class);
     Route::resource('articles', ArticleController::class);
     Route::resource('users', UserController::class);
+    Route::resource('policies', PolicyController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 
