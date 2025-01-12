@@ -17,7 +17,7 @@ class UserService{
 
     private $userQuery;
 
-    public function __construct()
+    public function __construct(public RoleService $role_service)
     {
         $this->userQuery = new User();
     }
@@ -81,6 +81,10 @@ class UserService{
          $path = null;
          if ($request->hasFile('avatar')) $path = $request->file('avatar')->store('public/avatars');
          $user = $this->userQuery->create_user($request->validated(), $path);
+         //assign user role
+        $role_id = $user['role'];
+        $role = $this->role_service->getRole($role_id);
+        $user->assignRole($role);
          return $user;
      }
      public function update_user_profile(Request $request , $id){

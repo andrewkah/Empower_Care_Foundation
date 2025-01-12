@@ -15,13 +15,13 @@
                             <div class="card-body">
                                 <h4 class="header-title">
                                     
-                                       Add User
+                                        Edit User
                                    
                                 </h4>
-                                <x-form has-files :action="route('users.store')" method="POST">
+                                <x-form has-files :action="route('users.update', $user->id)" method="PUT">
                                     <div class="form-group">
                                         <x-input.label for="name">Name</x-input.label>
-                                        <x-input.text type="text" class="form-control" id="name" :value="old('name')"
+                                        <x-input.text type="text" class="form-control" id="name" :value="old('name', $user) "
                                             name="name" placeholder="Name" required />
                                         @error('name')
                                             <x-input.error id="name"
@@ -32,19 +32,19 @@
                                         <select class="form-control show-tick" name="role">
                                             <option selected disabled>Role</option>
                                             @foreach ($roles as $role)
-                                                <option value="{{ $role->id }}" data-label="{{ $role->name }}"
-                                                    @if (old('role') == $role->id) selected @endif>
-                                                    {{ $role->name }}</option>
-                                            @endforeach
+                                            <option value="{{ $role->id }}" @if (old('role', $user->roles->first()->id) == $role->id) selected @endif>
+                                                {{ $role->name }}</option>
+                                        @endforeach
                                         </select>
                                         @error('role')
-                                        <x-input.error id="role"
-                                        class="form-text text-danger">{{ $message }}</x-input.error>
+                                            <span class="col-red" role="alert">
+                                                <small>{{ $message }}</small>
+                                            </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <x-input.label for="email">Email Address</x-input.label>
-                                        <x-input.text type="text" class="form-control" id="email"
+                                        <x-input.text type="text" class="form-control" id="email" :value="old('email', $user)"
                                             name="email" placeholder="Email Address" required />
                                         @error('email')
                                             <x-input.error id="email"
@@ -55,7 +55,7 @@
                                         <x-input.label for="password">Password</x-input.label>
                                         <div class="input-group password-group">
                                             <x-input.text type="password" class="form-control" id="password"
-                                                 name="password" placeholder="Password" required />
+                                                :value="isset($user) ? $user->password : ''" name="password" placeholder="Password" required />
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">
                                                     <i class="fa fa-eye" id="toggle-password"></i>

@@ -19,6 +19,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\RolesAndPermissionsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -59,6 +60,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('articles', ArticleController::class);
     Route::resource('users', UserController::class);
     Route::resource('policies', PolicyController::class);
+    Route::resource('roles', RolesAndPermissionsController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 

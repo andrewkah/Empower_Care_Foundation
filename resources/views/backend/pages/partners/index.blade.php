@@ -12,7 +12,9 @@
                     
                     <div class="col-auto ml-0">
                         
-                        <x-outline-button color="primary" href="{{route('partners.create')}}">Add Partner</x-outline-button>
+                        @can('partner-create')
+                            <x-outline-button color="primary" href="{{route('partners.create')}}">Add Partner</x-outline-button>
+                        @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -43,10 +45,14 @@
                                             <td>{{$cause->website}}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('partner-edit')
                                                         <a aria-label="anchor"
                                                             href="{{ route('partners.edit', $cause->id) }}"
                                                             title="Edit Partner" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
+                                                    
+                                                    @can('partner-delete')
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
@@ -90,6 +96,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         @empty

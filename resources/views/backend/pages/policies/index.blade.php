@@ -12,8 +12,10 @@
 
                     <div class="col-auto ml-0">
 
-                        <x-outline-button color="primary" href="{{ route('policies.create') }}">Add
-                            Policy</x-outline-button>
+                        @can('policy-create')
+                            <x-outline-button color="primary" href="{{ route('policies.create') }}">Add
+                                Policy</x-outline-button>
+                        @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -33,15 +35,19 @@
                                             <td>{{ $policy->title }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    <a aria-label="anchor"
-                                                        href="{{ route('policies.edit', $policy->id) }}"
-                                                        title="Edit Policy" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @can('policy-edit')
+                                                        <a aria-label="anchor"
+                                                            href="{{ route('policies.edit', $policy->id) }}"
+                                                            title="Edit Policy" class="btn btn-sm btn-success"><i
+                                                                class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
                                                     
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="#modal-delete{{ $policy->id }}"
-                                                        title="Delete Policy"><i
-                                                            class="fa fa-trash fa-lg"></i></button>
+                                                    @can('policy-delete')
+                                                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                                                            data-target="#modal-delete{{ $policy->id }}"
+                                                            title="Delete Policy"><i
+                                                                class="fa fa-trash fa-lg"></i></button>
+                                                    @endcan
                                                     <div class="modal fade" id="modal-delete{{ $policy->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

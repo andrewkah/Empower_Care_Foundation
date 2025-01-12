@@ -12,7 +12,9 @@
                     
                     <div class="col-auto ml-0">
                         
+                        @can('event-category-create')
                         <x-outline-button color="primary" href="{{route('event-categories.create')}}">Add Category</x-outline-button>
+                        @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -34,13 +36,17 @@
                                             
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('event-category-edit')
                                                     <a aria-label="anchor" href="{{ route('event-categories.edit', $cause->id) }}"
                                                         title="Edit Event Category" class="btn btn-sm btn-success"><i
                                                             class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
                                                     
+                                                    @can('event-category-delete')
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
                                                         title="Delete Event Category"><i class="fa fa-trash fa-lg"></i></button>
+                                                    @endcan
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

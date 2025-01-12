@@ -12,7 +12,9 @@
 
                     <div class="col-auto ml-0">
 
-                        <x-outline-button color="primary" href="{{ route('events.create') }}">Add Event</x-outline-button>
+                        @can('event-create')
+                            <x-outline-button color="primary" href="{{ route('events.create') }}">Add Event</x-outline-button>
+                        @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -52,13 +54,17 @@
                                             {{-- <td>{!!$cause->description!!}</td> --}}
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    <a aria-label="anchor" href="{{ route('events.edit', $cause->id) }}"
-                                                        title="Edit Event" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @can('event-edit')
+                                                        <a aria-label="anchor" href="{{ route('events.edit', $cause->id) }}"
+                                                            title="Edit Event" class="btn btn-sm btn-success"><i
+                                                                class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
                                                     
-                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Event"><i class="fa fa-trash fa-lg"></i></button>
+                                                    @can('event-delete')
+                                                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                                                            data-target="#modal-delete{{ $cause->id }}"
+                                                            title="Delete Event"><i class="fa fa-trash fa-lg"></i></button>
+                                                    @endcan
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

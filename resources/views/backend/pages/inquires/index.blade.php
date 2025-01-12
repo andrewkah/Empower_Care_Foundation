@@ -31,11 +31,13 @@
                                                 <td>{{ $cause->message }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">
+                                                        @can('inquires-delete')
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
                                                             title="Delete Contact"><i
                                                                 class="fa fa-trash fa-lg"></i></button>
+                                                        @endcan
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">
@@ -78,9 +80,11 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            @can('inquires-pdf')
                                             <a href="{{ route('contact.pdf') }}" class="btn btn-sm btn-primary float-right my-2 mr-3"
                                                             title="Download PDF Report"><i
                                                                 class="fa fa-file fa-md mr-2"></i>Download PDF</a>
+                                            @endcan
                                         @empty
                                         <tr>
                                             <td colspan="5">No data present</td>

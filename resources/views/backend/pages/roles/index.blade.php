@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Donations" currentPage="Donations"></x-admin.header>
+    <x-admin.header pageTitle="Roles" currentPage="Roles"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -11,8 +11,11 @@
                 <div class="row justify-content-between">
 
                     <div class="col-auto ml-0">
-
-                        {{-- <x-outline-button color="primary" href="{{route('donations.create')}}">Add </x-outline-button> --}}
+                        @can('role-create')                           
+                    
+                        <x-outline-button color="primary" href="{{ route('roles.create') }}">Add
+                            Role</x-outline-button>
+                            @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -22,39 +25,28 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Details</th>
-                                            <th scope="col">Country</th>
-                                            <th scope="col">Donation Amount</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Reason</th>
+                                            <th scope="col">Title</th>
+
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
                                             <tr>
-                                                <td>{{ $cause->title }}</td>
-                                                <td>
-                                                    <div class="media mb-2 mt-2">
-                                                        <div class="media-body">
+                                                <td>{{ $cause->name }}</td>
 
-                                                            {!! $cause->slug !!}<br>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>{{ $cause->country }}</td>
-                                                <td>{{ number_format($cause->photo) }}</td>
-                                                <td>{{ $cause->phone }}</td>
-                                                <td>{{ $cause->reason }}</td>
                                                 <td>
-                                                    @can('donation-delete')
-                                                        <div class="hstack gap-2 fs-15">
-                                                            
+                                                    <div class="hstack gap-2 fs-15">
+                                                        @can('role-edit')
+                                                            <a aria-label="anchor" href="{{ route('roles.edit', $cause->id) }}"
+                                                                title="Edit Role" class="btn btn-sm btn-success"><i
+                                                                    class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                        @endcan
+                                                        @can('role-delete')
                                                             <button type="button" class="btn btn-sm btn-danger"
                                                                 data-toggle="modal"
                                                                 data-target="#modal-delete{{ $cause->id }}"
-                                                                title="Delete Donation"><i
+                                                                title="Delete Event Role"><i
                                                                     class="fa fa-trash fa-lg"></i></button>
                                                             <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                                 tabindex="-1" aria-labelledby="modal-new-address"
@@ -72,7 +64,7 @@
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <form
-                                                                                action="{{ route('donations.destroy', $cause->id) }}"
+                                                                                action="{{ route('roles.destroy', $cause->id) }}"
                                                                                 method="post">
                                                                                 @csrf
                                                                                 @method('DELETE')
@@ -95,13 +87,13 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    @endcan
+                                                        @endcan
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="3">No data present</td>
+                                                <td colspan="2">No data present</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Services\RoleService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function __construct(private UserService $userService)
+    public function __construct(private UserService $userService, private RoleService $role_service)
     {
         
     }
@@ -19,7 +20,8 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('backend.pages.users.create');
+        $roles = $this->role_service->getRoles();
+        return view('backend.pages.users.create', compact('roles'));
     }
 
     public function store(UserRequest $request){
@@ -30,7 +32,8 @@ class UserController extends Controller
 
     public function edit($id){
         $user = $this->userService->get_user_by_id($id);
-        return view('backend.pages.users.create', compact('user'));
+        $roles = $this->role_service->getRoles();
+        return view('backend.pages.users.edit', compact('user', 'roles'));
     }
 
     public function update($id, UserRequest $request){
