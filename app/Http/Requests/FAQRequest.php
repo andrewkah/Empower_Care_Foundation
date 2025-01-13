@@ -22,14 +22,16 @@ class FAQRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=>'required|string|max:255',
-            'description' => 'string|max:350',
+            'question'=>'required|string|max:255',
+            'answer' => 'required|string|max:350',
         ];
     }
     public function messages(){
         return [
-            'title.required'=>'The title is required',
-            'title.string' => 'The title should be a valid text',
+            'question.required'=>'The question is required',
+            'question.string' => 'The question should be a valid text',
+            'answer.required'=>'The answer is required',
+            'answer.string' => 'The answer should be a valid text',
         ];
     }
 }

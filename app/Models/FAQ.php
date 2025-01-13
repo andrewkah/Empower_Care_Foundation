@@ -13,8 +13,8 @@ class FAQ extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
-        'title',
-        'description',
+        'question',
+        'answer',
         'slug',
         'created_by',
         'updated_by',

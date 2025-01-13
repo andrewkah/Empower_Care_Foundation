@@ -24,27 +24,27 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
+                                            <th scope="col">Question</th>
+                                            <th scope="col">Answer</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
                                         <tr>
-                                            <td>{{ $cause->title }}</td>
-                                            <td>{{ $cause->description }}</td>
+                                            <td>{{ $cause->question }}</td>
+                                            <td>{{ $cause->answer }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
                                                     @can('faqs-edit')
                                                         <a aria-label="anchor" href="{{ route('faqs.edit', $cause->id) }}"
-                                                            title="Edit Video" class="btn btn-sm btn-success"><i
+                                                            title="Edit FAQS" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     @endcan
                                                     @can('faqs-delete')
                                                         <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Video"><i class="fa fa-trash fa-lg"></i></button>
+                                                            title="Delete FAQS"><i class="fa fa-trash fa-lg"></i></button>
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">

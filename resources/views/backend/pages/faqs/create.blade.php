@@ -16,19 +16,19 @@
                                 <h4 class="header-title">@if(isset($faq)) Edit FAQ @else FAQs @endif</h4>
                                 <x-form has-files :action="isset($faq) ? route('faqs.update', $faq->id): route('faqs.store')" :method="isset($faq) ? 'PUT': 'POST'">
                                     <div class="form-group">
-                                        <x-input.label for="title">Title</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('title') error-message @enderror" id="title" :value="isset($faq) ? old('title',$faq): old('title')" name="title" placeholder="Title"
+                                        <x-input.label for="question">Question</x-input.label>
+                                            <x-input.text type="text" class="form-control @error('question') error-message @enderror" id="question" :value="isset($faq) ? old('question',$faq): old('question')" name="question" placeholder="Enter your question"
                                                 required />
-                                            @error('title')
-                                                <x-input.error id="title"
+                                            @error('question')
+                                                <x-input.error id="question"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <x-input.label for="link">Description</x-input.label>
-                                            <x-input.text type="text" class="form-control @error('description') error-message @enderror" id="description" :value="isset($faq) ? old('description',$faq): old('description')" name="description" placeholder="https://"
+                                        <x-input.label for="link">Answer</x-input.label>
+                                            <x-input.text type="text" class="form-control @error('answer') error-message @enderror" id="answer" :value="isset($faq) ? old('answer',$faq): old('answer')" name="answer" placeholder="Add the answer for your question"
                                                 required />
-                                            @error('description')
+                                            @error('answer')
                                                 <x-input.error id="link"
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
