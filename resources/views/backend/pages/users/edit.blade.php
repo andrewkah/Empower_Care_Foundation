@@ -55,7 +55,7 @@
                                         <x-input.label for="password">Password</x-input.label>
                                         <div class="input-group password-group">
                                             <x-input.text type="password" class="form-control" id="password"
-                                                :value="isset($user) ? $user->password : ''" name="password" placeholder="Password" required />
+                                                name="password" placeholder="Enter New Password" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">
                                                     <i class="fa fa-eye" id="toggle-password"></i>
