@@ -91,8 +91,8 @@
 										</div> --}}
 										<div class="tstu-content">
 											<h4 class="tstu-name">{{ $testimonial->name }}</h4>
-											<span class="profsn">{{ $testimonial->profession }}</span>
-											<p>{{ $testimonial->feedback }}</p>
+											<span class="profsn">{{ $testimonial->phone }}</span>
+											<p>{{ $testimonial->message }}</p>
 										</div>
 									</div>
 								@endforeach

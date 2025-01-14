@@ -32,7 +32,7 @@
                         <div class="footer-widget__links">
                             <h4 class="footer-widget__title">Links</h4>
                             <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="https://www.dcea.go.tz/">Drug Control and Enforcement Authority (DCEA)</a></li>
                                 <li><a href="{{route('programs')}}">Our Programs</a></li>
                                 <li><a href="{{route('causes')}}">Our Cause</a></li>                                        
                                 <li><a href="{{route('team')}}">Our Team</a></li>

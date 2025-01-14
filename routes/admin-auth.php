@@ -13,11 +13,13 @@ use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\RolesAndPermissionsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,6 +46,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('banner', BannerController::class);
     Route::resource('causes', CauseController::class);
     Route::resource('contact', ContactController::class);
+    Route::get('contact/pdf', [ContactController::class, 'contact_pdf'])->name('contact.pdf');
     Route::resource('events', EventController::class);
     Route::resource('event-categories', EventCategoryController::class);
     Route::resource('teams', TeamController::class);
@@ -56,6 +59,8 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('volunteers', VolunteerController::class);
     Route::resource('articles', ArticleController::class);
     Route::resource('users', UserController::class);
+    Route::resource('policies', PolicyController::class);
+    Route::resource('roles', RolesAndPermissionsController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 

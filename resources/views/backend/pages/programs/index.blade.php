@@ -12,7 +12,9 @@
                     
                     <div class="col-auto ml-0">
                         
-                        <x-outline-button color="primary" href="{{route('programs.create')}}">Add Program</x-outline-button>
+                        @can('program-create')
+                            <x-outline-button color="primary" href="{{route('programs.create')}}">Add Program</x-outline-button>
+                        @endcan
                     </div>
                 </div>
                 <div class="card">
@@ -46,18 +48,26 @@
                                             <td>{{$cause->description}}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('program-edit')
                                                         <a aria-label="anchor"
                                                             href="{{ route('programs.edit', $cause->id) }}"
                                                             title="Edit Program" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
-                                                                <a aria-label="anchor"
-                                                                href="{{ route('programs.show', $cause->id) }}"
-                                                                title="view Program Album" class="btn btn-sm btn-success"><i
-                                                                    class="fa fa-eye"></i></a>
+                                                    @endcan
+                                                    @can('program-show')
+                                                        <a aria-label="anchor"
+                                                        href="{{ route('programs.show', $cause->id) }}"
+                                                        title="view Program Album" class="btn btn-sm btn-success"><i
+                                                            class="fa fa-eye"></i></a>
+                                                    @endcan
+                                                    @can('program-delete')
+                                                        
+                                                    
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
                                                             title="Delete Program"><i class="fa fa-trash fa-lg"></i></button>
+                                                            @endcan
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">

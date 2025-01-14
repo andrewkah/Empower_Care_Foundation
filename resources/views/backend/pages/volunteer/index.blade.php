@@ -49,9 +49,8 @@
                                         <td>{{ $cause->way_to_volunteer }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    {{-- <a aria-label="anchor" href="{{ route('donations.edit', $cause->id) }}"
-                                                        title="Edit Donation" class="btn btn-sm btn-success"><i
-                                                            class="fa fa-pencil-square-o fa-lg"></i></a> --}}
+                                                    
+                                                    @can('volunteer-delete')
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
                                                         title="Delete Volunteer Request"><i class="fa fa-trash fa-lg"></i></button>
@@ -94,6 +93,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         </tr>

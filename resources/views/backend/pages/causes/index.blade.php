@@ -10,10 +10,12 @@
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
 
-                    <div class="col-auto ml-0">
+                    @can('cause-create')
+                        <div class="col-auto ml-0">
 
-                        <x-outline-button color="primary" href="{{ route('causes.create') }}">Add Cause</x-outline-button>
-                    </div>
+                            <x-outline-button color="primary" href="{{ route('causes.create') }}">Add Cause</x-outline-button>
+                        </div>
+                    @endcan
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -41,13 +43,17 @@
                                                 </div></td>
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">
+                                                        @can('cause-edit')
                                                         <a aria-label="anchor" href="{{ route('causes.edit', $cause->id) }}"
                                                             title="Edit Cause" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                        @endcan
+                                                        @can('cause-delete')
                                                         <button type="button" class="btn btn-sm btn-danger"
                                                             data-toggle="modal"
                                                             data-target="#modal-delete{{ $cause->id }}"
                                                             title="Delete Cause"><i class="fa fa-trash fa-lg"></i></button>
+                                                        @endcan
                                                         <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                             tabindex="-1" aria-labelledby="modal-new-address"
                                                             aria-hidden="true">

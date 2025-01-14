@@ -10,10 +10,12 @@
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
 
-                    <div class="col-auto ml-0">
+                    @can('article-create')
+                        <div class="col-auto ml-0">
 
-                        <x-outline-button color="primary" href="{{ route('articles.create') }}">Add Article</x-outline-button>
-                    </div>
+                            <x-outline-button color="primary" href="{{ route('articles.create') }}">Add Article</x-outline-button>
+                        </div>
+                    @endcan
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -46,12 +48,16 @@
                                             {{-- <td>{!!$cause->description!!}</td> --}}
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('article-edit')
                                                     <a aria-label="anchor" href="{{ route('articles.edit', $cause->id) }}"
                                                         title="Edit Article" class="btn btn-sm btn-success"><i
                                                             class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
+                                                    @can('article-delete')
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
                                                         title="Delete Article"><i class="fa fa-trash fa-lg"></i></button>
+                                                    @endcan
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">

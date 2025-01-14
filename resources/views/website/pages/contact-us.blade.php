@@ -5,7 +5,7 @@
     <x-website-page-header title="Contact Us" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
-    <x-flash/>
+
     <!--Contact One Start-->
     <section class="contact-one">
         <div class="container">

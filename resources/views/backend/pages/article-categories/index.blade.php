@@ -10,11 +10,13 @@
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
 
+                    @can('article-category-create')
                     <div class="col-auto ml-0">
 
                         <x-outline-button color="primary" href="{{ route('article-categories.create') }}">Add
                             Category</x-outline-button>
                     </div>
+                    @endcan
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -33,11 +35,14 @@
                                             <td>{{ $cause->title }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('article-category-edit')
                                                     <a aria-label="anchor"
                                                         href="{{ route('article-categories.edit', $cause->id) }}"
                                                         title="Edit Article Category" class="btn btn-sm btn-success"><i
                                                             class="fa fa-pencil-square-o fa-lg"></i></a>
+                                                    @endcan
                                                     
+                                                    @can('article-category-delete')
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
                                                         title="Delete Article Category"><i
@@ -81,6 +86,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         </tr>

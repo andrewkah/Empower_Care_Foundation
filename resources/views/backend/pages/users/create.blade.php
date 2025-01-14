@@ -14,16 +14,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">
-                                    @if (isset($user))
-                                        Edit User
-                                    @else
-                                        Users
-                                    @endif
+                                    
+                                       Add User
+                                   
                                 </h4>
-                                <x-form has-files :action="isset($user) ? route('users.update', $user->id) : route('users.store')" :method="isset($user) ? 'PUT' : 'POST'">
+                                <x-form has-files :action="route('users.store')" method="POST">
                                     <div class="form-group">
                                         <x-input.label for="name">Name</x-input.label>
-                                        <x-input.text type="text" class="form-control" id="name" :value="isset($user) ? old('name', $user) : old('name')"
+                                        <x-input.text type="text" class="form-control" id="name" :value="old('name')"
                                             name="name" placeholder="Name" required />
                                         @error('name')
                                             <x-input.error id="name"
@@ -31,8 +29,22 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <select class="form-control show-tick" name="role">
+                                            <option selected disabled>Role</option>
+                                            @foreach ($roles as $role)
+                                                <option value="{{ $role->id }}" data-label="{{ $role->name }}"
+                                                    @if (old('role') == $role->id) selected @endif>
+                                                    {{ $role->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('role')
+                                        <x-input.error id="role"
+                                        class="form-text text-danger">{{ $message }}</x-input.error>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <x-input.label for="email">Email Address</x-input.label>
-                                        <x-input.text type="text" class="form-control" id="email" :value="isset($user) ? old('email', $user) : old('email')"
+                                        <x-input.text type="text" class="form-control" id="email"
                                             name="email" placeholder="Email Address" required />
                                         @error('email')
                                             <x-input.error id="email"
@@ -43,7 +55,7 @@
                                         <x-input.label for="password">Password</x-input.label>
                                         <div class="input-group password-group">
                                             <x-input.text type="password" class="form-control" id="password"
-                                                :value="isset($user) ? $user->password : ''" name="password" placeholder="Password" required />
+                                                 name="password" placeholder="Password" required />
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon2">
                                                     <i class="fa fa-eye" id="toggle-password"></i>

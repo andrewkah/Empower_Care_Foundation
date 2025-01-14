@@ -10,10 +10,12 @@
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
                     
-                    <div class="col-auto ml-0">
-                        
-                        <x-outline-button color="primary" href="{{route('banner.create')}}">Add Banner</x-outline-button>
-                    </div>
+                    @can('banner-create')
+                        <div class="col-auto ml-0">
+                            
+                            <x-outline-button color="primary" href="{{route('banner.create')}}">Add Banner</x-outline-button>
+                        </div>
+                    @endcan
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -41,53 +43,57 @@
                                             </div></td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
+                                                    @can('banner-edit')
                                                         <a aria-label="anchor"
                                                             href="{{ route('banner.edit', $cause->id) }}"
                                                             title="Edit Banner" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
-                                                        <button type="button" class="btn btn-sm btn-danger"
-                                                            data-toggle="modal"
-                                                            data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Banner"><i class="fa fa-trash fa-lg"></i></button>
-                                                        <div class="modal fade" id="modal-delete{{ $cause->id }}"
-                                                            tabindex="-1" aria-labelledby="modal-new-address"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog  modal-dialog-centered">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h6 class="modal-title" id="staticBackdropLabel">
-                                                                        </h6>
-                                                                        <button type="button" class="close"
-                                                                            data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">×</span>
-                                                                        </button>
+                                                    @endcan
+                                                        @can('banner-delete')
+                                                            <button type="button" class="btn btn-sm btn-danger"
+                                                                data-toggle="modal"
+                                                                data-target="#modal-delete{{ $cause->id }}"
+                                                                title="Delete Banner"><i class="fa fa-trash fa-lg"></i></button>
+                                                            <div class="modal fade" id="modal-delete{{ $cause->id }}"
+                                                                tabindex="-1" aria-labelledby="modal-new-address"
+                                                                aria-hidden="true">
+                                                                <div class="modal-dialog  modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h6 class="modal-title" id="staticBackdropLabel">
+                                                                            </h6>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">×</span>
+                                                                            </button>
 
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <form
-                                                                            action="{{ route('banner.destroy', $cause->id) }}"
-                                                                            method="post">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <div class="row gy-3">
-                                                                                <div class="col-xl-6">
-                                                                                    <H2>Are you Sure ?</H2>
-                                                                                    <p>You won't be able to revert this!</p>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <form
+                                                                                action="{{ route('banner.destroy', $cause->id) }}"
+                                                                                method="post">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <div class="row gy-3">
+                                                                                    <div class="col-xl-6">
+                                                                                        <H2>Are you Sure ?</H2>
+                                                                                        <p>You won't be able to revert this!</p>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-light"
+                                                                                data-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-danger">Yes,
+                                                                                Delete It</button>
+                                                                        </div>
+                                                                        </form>
 
                                                                     </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-light"
-                                                                            data-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-danger">Yes,
-                                                                            Delete It</button>
-                                                                    </div>
-                                                                    </form>
-
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        @endcan
                                                 </div>
                                             </td>
                                         @empty

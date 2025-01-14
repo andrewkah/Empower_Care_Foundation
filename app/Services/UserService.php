@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Carbon\Carbon;
@@ -17,7 +18,7 @@ class UserService{
 
     private $userQuery;
 
-    public function __construct()
+    public function __construct(public RoleService $role_service)
     {
         $this->userQuery = new User();
     }
@@ -81,16 +82,20 @@ class UserService{
          $path = null;
          if ($request->hasFile('avatar')) $path = $request->file('avatar')->store('public/avatars');
          $user = $this->userQuery->create_user($request->validated(), $path);
+         //assign user role
+        $role_id = $request['role'];
+        $role = $this->role_service->getRole($role_id);
+        $user->assignRole($role);
          return $user;
      }
-     public function update_user_profile(Request $request , $id){
+     public function update_user_profile(UpdateUserRequest $request , $id){
          $path = null;
          if ($request->avatar != null) $path = $request->file('avatar')->store('public/avatars');
          $user = $this->userQuery->update_user_profile($request->validated(), $id, $path);
          return $user;
      }
      //function to update user
-     public function update_user(UserRequest $request, $id)
+     public function update_user(UpdateUserRequest $request, $id)
      {
          $path = null;
          if ($request->hasFile('avatar')) $path= $request->file('avatar')->store('public/avatars');
