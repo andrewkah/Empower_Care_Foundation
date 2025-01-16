@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Programs" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="{{__('messages.programs')}}" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
     <!--Testimonial Page Start -->
@@ -26,7 +26,7 @@
                             <p class="event-one__text">{!! $program->objectives !!}</p>
                             <p class="event-one__location"><span class="icon-pin"></span>{{$program->location}}</p>
                             <div class="event-one__btn-box">
-                                <a href="{{route('programs.details', $program->slug)}}" class="event-one__btn thm-btn">Read More<span><i
+                                <a href="{{route('programs.details', $program->slug)}}" class="event-one__btn thm-btn"> {{__('messages.readmore')}} <span><i
                                             class="icon-arrow-right"></i></span></a>
                             </div>
                         </div>

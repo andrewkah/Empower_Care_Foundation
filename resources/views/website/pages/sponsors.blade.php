@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Become Volunteer" bgImage="assets/images/backgrounds/page-header-bg.jpg"
+    <x-website-page-header title="{{__('messages.volunteer')}}" bgImage="assets/images/backgrounds/page-header-bg.jpg"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
     <x-flash/>
@@ -13,8 +13,7 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <div class="become-volinteer__bottom-title-box">
-                                <h2 class="become-volinteer__bottom-left-title">Fill Form and Become
-                                    Volunteer</h2>
+                                <h2 class="become-volinteer__bottom-left-title">{{__('messages.fillform')}}</h2>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">
@@ -331,7 +330,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="become-volinteer__btn-box">
-                                        <button type="submit" class="thm-btn become-volinteer__btn">Submit<span><i class="icon-arrow-right"></i></span></button>
+                                        <button type="submit" class="thm-btn become-volinteer__btn">{{__('messages.submit')}}<span><i class="icon-arrow-right"></i></span></button>
                                     </div>
                                 </div>
                             </div>

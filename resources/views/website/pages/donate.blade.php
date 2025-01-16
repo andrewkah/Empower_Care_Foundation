@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Create Donation Request" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="{{__('messages.donationrequest')}}" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
     <x-flash/>
     <!--Donation Details Start -->
@@ -29,13 +29,13 @@
                     </div>
                 </div>
                 <div class="donation-details__personal-info">
-                    <h3 class="donation-details__personal-info-title">Personal Information</h3>
+                    <h3 class="donation-details__personal-info-title">{{__('messages.personal')}}</h3>
                     
                         @csrf 
                         <div class="row">
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your First Name*</p>
+                                    <p class="donation-details__input-box-title">{{__('messages.firstname')}}*</p>
                                     <input type="text" name="firstname" placeholder="First Name..." required="" value="{{old('firstname')}}">
                                     @error('firstname')
                                     <span class="text-danger">{{$message}}</span>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your Last Name*</p>
+                                    <p class="donation-details__input-box-title">{{__('messages.lastname')}}*</p>
                                     <input type="text" name="lastname" placeholder="Last Name..." required="" value="{{old('lastname')}}">
                                     @error('lastname')
                                     <span class="text-danger">{{$message}}</span>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-xl-12 col-lg-12">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your E-mail Address*</p>
+                                    <p class="donation-details__input-box-title">{{__('messages.email')}}*</p>
                                     <input type="email" name="email" placeholder="E-mail Address..." required="" value="{{old('email')}}">
                                     @error('email')
                                     <span class="text-danger">{{$message}}</span>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your Phone Number*</p>
+                                    <p class="donation-details__input-box-title">{{__('messages.phone')}}*</p>
                                     <input type="text" name="phone" placeholder="Phone Number..." required="" value="{{old('phone')}}">
                                     @error('phone')
                                     <span class="text-danger">{{$message}}</span>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your Address *</p>
+                                    <p class="donation-details__input-box-title">{{__('messages.address')}} *</p>
                                     <input type="text" name="address" placeholder="Address ..." required="" value="{{old('address')}}">
                                     @error('lastname')
                                     <span class="text-danger">{{$message}}</span>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Your Country </p>
+                                    <p class="donation-details__input-box-title">{{__('messages.country')}} </p>
                                     <select name="country" class="js-example-basic-single form-control">
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Åland Islands">Åland Islands</option>
@@ -334,7 +334,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="donation-details__input-box">
-                                    <p class="donation-details__input-box-title">Reason for Donation </p>
+                                    <p class="donation-details__input-box-title">{{__('messages.reason')}} </p>
                                     <input type="text" name="reason" placeholder="Address ..." required="" value="{{old('reason')}}">
                                     @error('reason')
                                         <span class="text-danger">{{$message}}</span>
@@ -345,7 +345,7 @@
                                 <div class="donation-details__donate-box-outer">
                                     <div class="donation-details__donate-box">
                                         <div class="donate-now">
-                                            <p class="donation-details__input-box-title">Enter Donation Amount*</p>
+                                            <p class="donation-details__input-box-title">{{__('messages.donationamt')}}*</p>
                                             <input type="text" class="addAmount-value" name="amount" value="{{old('amount')}}"
                                                 placeholder="$ Costume Amount">
                                         </div>
@@ -363,7 +363,7 @@
                             </div>
                             <div class="col-xl-12">
                                 <div class="donation-details__btn-box">
-                                    <button type="submit" class="thm-btn donation-details__btn">Donate Now<span><i
+                                    <button type="submit" class="thm-btn donation-details__btn">{{__('messages.donatenow')}}<span><i
                                                 class="icon-arrow-right"></i></span></button>
                                 </div>
                             </div>

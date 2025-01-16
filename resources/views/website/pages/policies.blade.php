@@ -1,7 +1,7 @@
 @extends('website.layout.main')
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Policies" bgImage="assets/images/backgrounds/page-header-bg.png"
+    <x-website-page-header title="{{__('messages.policies')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 

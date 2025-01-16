@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="FAQS" bgImage="assets/images/backgrounds/page-header-bg.png"
+    <x-website-page-header title="{{__('messages.FAQs')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
@@ -49,11 +49,11 @@
             </div>
             <div class="container">
                 <div class="section-title text-center sec-title-animation animation-style1">
-                    <h3 class="section-title__title title-animation">For More Information <br> Contact Us Now!</h3>
+                    <h3 class="section-title__title title-animation"> {{__('messages.moreinfo')}} <br> {{__('messages.contactusnow')}}</h3>
                 </div>
                 <div class="btn-box text-center">
                     <a href="{{ route('contact-us') }}" class="thm-btn">
-                        Contact Us
+                       {{__('messages.contactus')}}
                         <span>
                             <i class="icon-arrow-right"></i>
                         </span>

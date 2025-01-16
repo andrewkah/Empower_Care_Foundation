@@ -79,10 +79,10 @@
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-4">
                             <div class="event-details__event-single">
-                                <h3>Details</h3>
+                                <h3>{{__('messages.details')}}</h3>
                                 <ul class="event-details__event-list list-unstyled">
                                     <li>
-                                        <p><span>Date:</span>{{ $details->event_date }}</p>
+                                        <p><span>{{__('messages.date')}}:</span>{{ $details->event_date }}</p>
                                     </li>
                                     <li>
                                         {{-- <p><span>Finish:</span>October 03’ 24</p> --}}
@@ -92,23 +92,23 @@
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4">
                             <div class="event-details__event-single">
-                                <h3>Sponsor</h3>
+                                <h3>{{__('messages.sponsor')}}</h3>
                                 <ul class="event-details__event-list list-unstyled">
                                     <li>
-                                        <p><span>Speaker:</span><a href="#">{{ $details->event_speaker }}</a></p>
+                                        <p><span>{{__('messages.speaker')}}:</span><a href="#">{{ $details->event_speaker }}</a></p>
                                     </li>
                                     <li>
-                                        <p><span>Sponsor:</span><a href="#">{{ $details->sponsor }}</a></p>
+                                        <p><span>{{__('messages.sponsor')}}:</span><a href="#">{{ $details->sponsor }}</a></p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4">
                             <div class="event-details__event-single">
-                                <h3>Venue</h3>
+                                <h3>{{__('messages.venue')}}</h3>
                                 <ul class="event-details__event-list list-unstyled">
                                     <li>
-                                        <p><span>Location:</span>{{ $details->location }}</p>
+                                        <p><span>{{__('messages.location')}}:</span>{{ $details->location }}</p>
                                     </li>
                                     <li>
                                         <p>{{ $details->location }}</p>

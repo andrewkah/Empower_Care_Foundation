@@ -8,7 +8,7 @@
                             <div class="footer-widget__about-logo">
                                 <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo_footer_v2-transparent.png') }}" alt=""></a>
                             </div>
-                            <p class="footer-widget__about-text">Our vision is to see a flourishing Tanzania, where individuals and communities thrive in health and development. </p>
+                            <p class="footer-widget__about-text">{{__('messages.aboutfooter')}} </p>
                             <div class="site-footer__social">
                                 {{-- <a href="#"><i class="icon-facebook"></i></a>
                                 <a href="#"><i class="icon-twitter"></i></a> --}}
@@ -19,30 +19,30 @@
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="footer-widget__services">
-                            <h4 class="footer-widget__title">Updates</h4>
+                            <h4 class="footer-widget__title">{{__('messages.updates')}}</h4>
                             <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="{{route('articles')}}">Articles</a></li>
-                                <li><a href="{{route('events')}}">Events</a></li>
-                                <li><a href="{{route('album')}}">Album</a></li>
-                                <li><a href="{{route('videos')}}">Video</a></li>
+                                <li><a href="{{route('articles')}}">{{__('messages.articles')}}</a></li>
+                                <li><a href="{{route('events')}}">{{__('messages.events')}}</a></li>
+                                <li><a href="{{route('album')}}">{{__('messages.albums')}}</a></li>
+                                <li><a href="{{route('videos')}}">{{__('messages.videos')}}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="footer-widget__links">
-                            <h4 class="footer-widget__title">Links</h4>
+                            <h4 class="footer-widget__title">{{__('messages.links')}}</h4>
                             <ul class="footer-widget__services-list list-unstyled">
-                                <li><a href="https://www.dcea.go.tz/">Drug Control and Enforcement Authority (DCEA)</a></li>
-                                <li><a href="{{route('programs')}}">Our Programs</a></li>
-                                <li><a href="{{route('causes')}}">Our Cause</a></li>                                        
-                                <li><a href="{{route('team')}}">Our Team</a></li>
+                                <li><a href="https://www.dcea.go.tz/">{{__('messages.DCEA')}} </a></li>
+                                <li><a href="{{route('programs')}}">{{__('messages.ourprograms')}}</a></li>
+                                <li><a href="{{route('causes')}}">{{__('messages.ourcause')}}</a></li>                                        
+                                <li><a href="{{route('team')}}">{{__('messages.ourteam')}}</a></li>
                                 
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="footer-widget__contact">
-                            <h3 class="footer-widget__title">Contact Info</h3>
+                            <h3 class="footer-widget__title">{{__('messages.contactinfo')}}</h3>
                             <ul class="footer-widget__contact-list list-unstyled">
                                 <li>
                                     <div class="icon">
@@ -75,14 +75,13 @@
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
                         <div class="site-footer__copyright">
-                            <p class="site-footer__copyright-text">Copyright {{date('Y')}} by <a href="#">EmpowerCare</a>.   All
-                                Rights Reserved. <a href="https://ufanisiafrica.com/" >Developed by Ufanisi Africa</a>
+                            <p class="site-footer__copyright-text"> {{__('messages.copyright')}}  {{date('Y')}} {{__('messages.by')}} <a href="#">EmpowerCare</a>. {{__('messages.allreserved')}}. <a href="https://ufanisiafrica.com/" > {{__('messages.developed')}}</a>
                                </p>
                         </div>
                         <div class="site-footer__bottom-menu-box">
                             <ul class="list-unstyled site-footer__bottom-menu">
-                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                                <li><a href="javascript:void(0)">Terms of Service</a></li>
+                                <li><a href="javascript:void(0)"> {{__('messages.privacy')}} </a></li>
+                                <li><a href="javascript:void(0)">{{__('messages.terms')}}</a></li>
                                 {{-- <li><a href="about.html">Cookies Settings</a></li> --}}
                             </ul>
                         </div>

@@ -101,6 +101,14 @@ class FrontendController extends Controller
         $videos = $this->videoService->getAllVideosOrderByCreatedAt();
         return view('website.pages.videos', compact('videos'));
     }
+    public function setLanguage(Request $request,$lang){
+         // Validate and set the locale
+         if (in_array($lang, ['en', 'sw'])) { // Add supported locales here
+           session(['locale' => $lang]);
+        }
+        // Redirect back or to a default page
+        return redirect()->back();
+    }
     public function policies(){
         $policies = $this->policyService->getAllPoliciesOrderByCreatedAt();
         return view('website.pages.policies', compact('policies'));

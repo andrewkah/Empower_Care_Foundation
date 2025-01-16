@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="blog-details__keyword-and-tag">
                                     <div class="blog-details__keyword">
-                                        <span>Keyword:</span>
+                                        <span> {{__('messages.Keyword')}}:</span>
                                         <div class="blog-details__keyword-list">
                                             @foreach (explode(',', $article->tags) as $tag)
                                             <a href="{{route('articles.tag',$tag)}}">{{ $tag }}</a>
@@ -71,7 +71,7 @@
                             <div class="sidebar">
                                 <div class="sidebar__single sidebar__search">
                                     <div class="sidebar__title-box">
-                                        <h3 class="sidebar__title">Search Here </h3>
+                                        <h3 class="sidebar__title"> {{__('messages.search')}} </h3>
                                     </div>
                                     <form action="{{route('articles.search')}}" class="sidebar__search-form" method="POST">
                                         @csrf 
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="sidebar__single sidebar__category">
                                     <div class="sidebar__title-box">
-                                        <h3 class="sidebar__title">Categories</h3>
+                                        <h3 class="sidebar__title">{{__('messages.Categories')}}</h3>
                                     </div>
                                     <ul class="sidebar__category-list list-unstyled">
                                         @forelse($article_categories as $category)
@@ -135,7 +135,7 @@
                                 </div> --}}
                                 <div class="sidebar__single sidebar__tag">
                                     <div class="sidebar__title-box">
-                                        <h3 class="sidebar__title">Popular Tags</h3>
+                                        <h3 class="sidebar__title"> {{__('messages.tags')}}</h3>
                                     </div>
                                     <div class="sidebar__tag-list">
                                         @forelse($all_tags as $tag_value)

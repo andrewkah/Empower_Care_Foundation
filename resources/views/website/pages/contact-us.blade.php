@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Contact Us" bgImage="assets/images/backgrounds/page-header-bg.png"
+    <x-website-page-header title="{{__(' .contactus')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
@@ -13,9 +13,9 @@
                 <x-flash />
                 <div class="section-title text-left sec-title-animation animation-style2">
                     <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Contact Us</span>
+                        <span class="section-title__tagline">{{__('messages.contactus')}}</span>
                     </div>
-                    <h2 class="section-title__title title-animation">Empowering Communities<br> through Donations
+                    <h2 class="section-title__title title-animation"> {{__('messages.empower')}} <br> {{__('messages.thrudonations')}}
                     </h2>
                 </div>
                 <form class="" action="{{ route('contact_us.store') }}"
@@ -23,7 +23,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
-                            <h4 class="contact-one__input-title">Your Name</h4>
+                            <h4 class="contact-one__input-title">{{__('messages.yourname')}}</h4>
                             <div class="contact-one__input-box">
                                 <div class="contact-one__input-icon">
                                     <span class="icon-user"></span>
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6">
-                            <h4 class="contact-one__input-title">Email Address</h4>
+                            <h4 class="contact-one__input-title">{{__('messages.emailaddress')}}</h4>
                             <div class="contact-one__input-box">
                                 <div class="contact-one__input-icon">
                                     <span class="icon-envelope"></span>
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="col-xl-12">
-                            <h4 class="contact-one__input-title">Your phone</h4>
+                            <h4 class="contact-one__input-title">{{__('messages.yourphone')}}</h4>
                             <div class="contact-one__input-box">
                                 <div class="contact-one__input-icon">
                                     <span class="icon-call"></span>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="col-xl-12">
-                            <h4 class="contact-one__input-title">Message</h4>
+                            <h4 class="contact-one__input-title">{{__('messages.message')}}</h4>
                             <div class="contact-one__input-box text-message-box">
                                 <div class="contact-one__input-icon">
                                     <span class="icon-envelope"></span>
@@ -58,7 +58,7 @@
                                 <textarea name="message" placeholder="Write your message.."></textarea>
                             </div>
                             <div class="contact-one__btn-box">
-                                <button type="submit" class="thm-btn contact-one__btn">Send Message<span><i
+                                <button type="submit" class="thm-btn contact-one__btn">{{__('messages.sendmessage')}}<span><i
                                             class="icon-arrow-right"></i></span></button>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                     <span class="icon-pin-two"></span>
                                 </div>
                                 <div class="content">
-                                    <h4>Address</h4>
+                                    <h4>{{__('messages.address1')}}</h4>
                                     <p>Uyole, Mbeya</p>
                                 </div>
                             </li>
@@ -99,7 +99,7 @@
                                     <span class="icon-envelope"></span>
                                 </div>
                                 <div class="content">
-                                    <h4>Email Address</h4>
+                                    <h4>{{__('messages.emailaddress')}}</h4>
                                     <p><a href="mailto:info@empowercarefoundation.or.tz">info@empowercarefoundation.or.tz</a></p>
                                 </div>
                             </li>
@@ -108,7 +108,7 @@
                                     <span class="icon-call"></span>
                                 </div>
                                 <div class="content">
-                                    <h4>Phone number</h4>
+                                    <h4>{{__('messages.phonenumber')}}</h4>
                                     <p><a href="tel:+255757448534">(+255) 757 448 534</a></p>
                                 </div>
                             </li>

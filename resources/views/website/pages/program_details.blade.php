@@ -17,15 +17,15 @@
                         <div class="project-details__info">
                             <ul class="project-details__info-list list-unstyled">
                                 <li>
-                                    <p>Name:<span>{{$program->title}}</span></p>
+                                    <p>{{__('messages.name')}}:<span>{{$program->title}}</span></p>
                                 </li>
                                 <li>
-                                    <p>Location:<span>{{$program->location}}</span></p>
+                                    <p>{{__('messages.location')}}:<span>{{$program->location}}</span></p>
                                 </li>
                             </ul>
                             <ul class="project-details__info-list list-unstyled">
                                 <li>
-                                    <p>Date:<span>{{$program->day}} {{$program->time}}</span></p>
+                                    <p>{{__('messages.date')}}:<span>{{$program->day}} {{$program->time}}</span></p>
                                 </li>
                                 {{-- <li>
                                     <p>Tags:<span>Water For All</span></p>
@@ -46,7 +46,7 @@
                         <h3 class="project-details__title-1">{{$program->title}}</h3>
                         
                         <p class="project-details__text-1">{!! $program->objectives !!}</p>
-                        <h3 class="project-details__title-2">Description</h3>
+                        <h3 class="project-details__title-2"> {{__('messages.description')}}</h3>
                         <p class="project-details__text-2">{!! $program->description !!}</p>
                        
                        

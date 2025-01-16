@@ -23,10 +23,10 @@
                 </ul>
                 <div class="main-menu__top-right">
                     <div class="main-menu__social-box">
-                        <p class="main-menu__social-title">Follow Us On:</p>
+                        <p class="main-menu__social-title">{{__('messages.followuson')}}</p>
                         <div class="main-menu__social">
-                            {{-- <a href="#"><i class="icon-facebook"></i></a>
-                            <a href="#"><i class="icon-twitter"></i></a> --}}
+                            <a href="{{ route('switch.language', 'en') }}">Eng</a>
+                            <a href="{{ route('switch.language', 'sw') }}">Swa</a>
                             <a href="https://www.linkedin.com/company/105256332/admin/dashboard/?anchor=organization-website-field&editPage=true&editPageActiveTab=details"><i class="icon-link-in"></i></a>
                             <a href="https://www.youtube.com/channel/UCS0OVJU-7Eu_iEVRF8gYIDQ"><i class="icon-play"></i></a>
                         </div>
@@ -48,50 +48,50 @@
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li>
-                                    <a href="{{route('home')}}">Home </a>
+                                    <a href="{{route('home')}}">{{__('messages.home')}} </a>
                                     
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">About Us</a>
+                                    <a href="#">{{__('messages.aboutus')}}</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('about')}}">Who are we</a></li>
-                                        <li><a href="{{route('team')}}">Our Team</a></li>
+                                        <li><a href="{{route('about')}}">{{__('messages.whoarewe')}}</a></li>
+                                        <li><a href="{{route('team')}}">{{__('messages.ourteam')}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">What we Do</a>
+                                    <a href="#">{{__('messages.whatwedo')}}</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('causes')}}">Our Cause</a></li>
+                                        <li><a href="{{route('causes')}}">{{__('messages.ourcause')}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                <a href="#">Departments</a>
+                                <a href="#">{{__('messages.departments')}}</a>
                                     <ul class="shadow-box">
-                                        <li><a href="#">Procurements</a></li>
-                                        <li><a href="{{route('programs')}}">Our Programs</a></li>
-                                        <li><a href="#">Monitoring</a></li>
+                                        {{-- <li><a href="#">{{__('messages.procurements')}}</a></li> --}}
+                                        <li><a href="{{route('programs')}}">{{__('messages.ourprograms')}}</a></li>
+                                        {{-- <li><a href="#">{{__('messages.monitoring')}}</a></li> --}}
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">Updates</a>
+                                    <a href="#">{{__('messages.updates')}}</a>
                                     <ul class="shadow-box">
-                                        <li><a href="{{route('articles')}}">Articles</a></li>
-                                        <li><a href="{{route('events')}}">Events</a></li>
-                                        <li><a href="{{route('album')}}">Album</a></li>
-                                        <li><a href="{{route('videos')}}">Video</a></li>
-                                        <li><a href="{{route('policies')}}">Policies</a></li>
+                                        <li><a href="{{route('articles')}}">{{__('messages.articles')}}</a></li>
+                                        <li><a href="{{route('events')}}">{{__('messages.events')}}</a></li>
+                                        <li><a href="{{route('album')}}">{{__('messages.albums')}}</a></li>
+                                        <li><a href="{{route('videos')}}">{{__('messages.videos')}}</a></li>
+                                        <li><a href="{{route('policies')}}">{{__('messages.policies')}}</a></li>
                                     </ul>
                                 </li>
                                 
                                 
                                 <li class="dropdown">
-                                    <a href="#">Contact Us</a>
+                                    <a href="#">{{__('messages.contactus')}}</a>
                                     <ul class="shadow-box">
                                         <li>
-                                            <a href="{{route('contact-us')}}">Contact Us</a>
+                                            <a href="{{route('contact-us')}}">{{__('messages.contactus')}}</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('faqs')}}">FAQ</a>
+                                            <a href="{{route('faqs')}}">{{__('messages.FAQs')}}</a>
                                         </li>
                                         
                                     </ul>
@@ -116,7 +116,7 @@
                             {{-- <a href="#" class="main-menu__search search-toggler icon-search"></a> --}}
                         </div>
                         <div class="main-menu__btn-box">
-                            <a href="{{route('donate')}}" class="main-menu__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="main-menu__btn thm-btn">{{__('messages.donatenow')}}<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="Album" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
+    <x-website-page-header title="{{__('messages.album')}}" bgImage="assets/images/backgrounds/page-header-bg.png" homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
      <!--Events Carousel Page Start-->
@@ -26,7 +26,7 @@
                                     <p class="event-one__text">{{Str::limit($event->description, 150)}}</p>
                                     {{-- <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p> --}}
                                     <div class="event-one__btn-box">
-                                        <a href="{{route('album.details', $event->id)}}" class="event-one__btn thm-btn">View all<span><i
+                                        <a href="{{route('album.details', $event->id)}}" class="event-one__btn thm-btn">{{__('messages.viewall')}}<span><i
                                                     class="icon-arrow-right"></i></span></a>
                                     </div>
                                 </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 Route::get('/', [FrontendController::class,'index'])->name('home');
 Route::get('/articles',[FrontendController::class,'articles'])->name('articles');
@@ -40,5 +41,7 @@ Route::get('/policies',[FrontendController::class,'policies'])->name('policies')
 Route::get('/downloads', function () {
     return view('website.pages.downloads');
 })->name('downloads');
+
+Route::get('/switch-language/{lang}',[FrontendController::class,'setLanguage'])->name('switch.language');
 
 require __DIR__.'/admin-auth.php';

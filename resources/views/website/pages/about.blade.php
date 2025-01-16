@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="About Us" bgImage="assets/images/backgrounds/page-header-bg.png"
+    <x-website-page-header title="{{__('messages.aboutus')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
@@ -29,7 +29,7 @@
                                         <h3 class="count-text" data-stop="10" data-speed="1500">00</h3>
                                         <span>+</span>
                                     </div>
-                                    <p class="about-One__provide-count-text">Services we provide</p>
+                                    <p class="about-One__provide-count-text"> {{__('messages.servicewe')}} </p>
                                 </div>
                             </div>
                             <div class="about-One__shape-1"></div>
@@ -40,77 +40,64 @@
                     <div class="about-One__right wow fadeInRight" data-wow-delay="300ms">
                         <div class="section-title text-left sec-title-animation animation-style2">
                             <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">About Us</span>
+                                <span class="section-title__tagline">{{__('messages.aboutus')}}</span>
                             </div>
-                            <h2 class="section-title__title title-animation">Unite for a Cause
-                                <br> Change the World
+                            <h2 class="section-title__title title-animation"> {{__('messages.unitefor')}}
+                                <br> {{__('message.changeworld')}}
                             </h2>
                         </div>
                         <div class="about-One__vission-mission">
                             <div class="about-One__tab-box tabs-box">
                                 <ul class="tab-buttons clearfix list-unstyled">
-                                    <li data-tab="#vission" class="tab-btn active-btn"><span>Our Vision</span></li>
-                                    <li data-tab="#mission" class="tab-btn"><span>Our Mission</span></li>
-                                    <li data-tab="#goal" class="tab-btn"><span>Our Values</span></li>
+                                    <li data-tab="#vission" class="tab-btn active-btn"><span> {{__('messages.ourvision')}} </span></li>
+                                    <li data-tab="#mission" class="tab-btn"><span> {{__('messages.ourmission')}} </span></li>
+                                    <li data-tab="#goal" class="tab-btn"><span> {{__('messages.ourvalues')}} </span></li>
                                 </ul>
                                 <div class="tabs-content">
                                     <!--tab-->
                                     <div class="tab active-tab" id="vission">
                                         <div class="tabs-content__inner">
-                                            <p>Our vision is to see a flourishing Tanzania, where individuals and
-                                                communities thrive in health and development.</p>
+                                            <p> {{__('messages.ourvission')}} </p>
                                         </div>
                                     </div>
                                     <!--tab-->
                                     <!--tab-->
                                     <div class="tab" id="mission">
                                         <div class="tabs-content__inner">
-                                            <p>Our Mission is to foster the holistic development of Tanzanian individuals
-                                                and communities by promoting health, empowerment, and resilience.</p>
-                                            <p>Our key focus areas include; healthcare enhancement, with an emphasis on
-                                                maternal, newborn, adolescent and young people, and child health, HIV,
-                                                Hepatitis, Gender Equality, Gender Based Violence, climate change
-                                                resilience, substance abuse prevention, advocacy for policy change, and
-                                                building strong partnerships with local governments, private sector,
-                                                educational institutions, and international organizations.</p>
-                                                <p>At the core of EmpowerCare&#39;s work are community-driven solutions and evidence-based
-                                                    approaches to improve service delivery, tackle emerging health and environmental
-                                                    challenges, and drive sustainable development across Tanzania.</p>
+                                            <p> {{__('messages.mission1')}}</p>
+                                            <p> {{__('messages.mission2')}} </p>
+                                                <p>{{__('messages.mission3')}}</p>
                                                 <div class="cause-details__points-box">
                                                     <ul class="cause-details__points-list list-unstyled">
                                                         <li>
                                                             <div class="icon">
                                                                 <span class="fas fa-check"></span>
                                                             </div>
-                                                            <p>Empowering and capacitating vulnerable communities on matters of health and
-                                                                development.</p>
+                                                            <p>{{__('messages.point1')}}</p>
                                                         </li>
                                                         <li>
                                                             <div class="icon">
                                                                 <span class="fas fa-check"></span>
                                                             </div>
-                                                            <p>Advocating for the enhancement of service delivery and the integration of
-                                                                interventions.</p>
+                                                            <p> {{__('messages.point2')}} </p>
                                                         </li>
                                                         <li>
                                                             <div class="icon">
                                                                 <span class="fas fa-check"></span>
                                                             </div>
-                                                            <p>Promoting climate resilience and sustainable development practices.</p>
+                                                            <p> {{__('messages.point3')}} </p>
                                                         </li>
                                                         <li>
                                                             <div class="icon">
                                                                 <span class="fas fa-check"></span>
                                                             </div>
-                                                            <p>Fostering enduring partnerships with local government entities for effective
-                                                                intervention implementation.</p>
+                                                            <p> {{__('messages.point4')}} </p>
                                                         </li>
                                                         <li>
                                                             <div class="icon">
                                                                 <span class="fas fa-check"></span>
                                                             </div>
-                                                            <p>Utilizing research, monitoring, and evaluation to drive advocacy efforts towards
-                                                                policy changes and resource allocation.</p>
+                                                            <p> {{__('messages.point5')}} </p>
                                                         </li>
                                                     </ul>
                                                     {{-- <ul class="cause-details__points-list list-unstyled">
@@ -126,21 +113,16 @@
                                     <!--tab-->
                                     <div class="tab" id="goal">
                                         <div class="tabs-content__inner">
-                                            <h6>Quality</h6>
-                                            <p>We prioritize the highest standards in delivering services that meet the
-                                                diverse needs of the communities we serve.</p>
-                                            <h6>Integrity</h6>
-                                            <p>Transparency, accountability, and honesty guide all of our actions and
-                                                decisions.</p>
-                                            <h6>Inclusivity</h6>
-                                            <p>We embrace diversity and work to ensure that all voices, especially those of
-                                                marginalized groups, are heard and respected.</p>
-                                            <h6>Collaboration</h6>
-                                            <p>We believe in the power of partnerships and actively engage with stakeholders
-                                                to foster sustainable, community-driven solutions.</p>
-                                            <h6>Resilience</h6>
-                                            <p>We are committed to building the capacity of individuals and communities to
-                                                overcome challenges and thrive in the face of adversity.</p>
+                                            <h6>{{__('messages.Quality')}}</h6>
+                                            <p> {{__('messages.qualityvalue')}}</p>
+                                            <h6>{{__('messages.Integrity')}}</h6>
+                                            <p>{{__('messages.integrityvalue')}} </p>
+                                            <h6>{{__('messages.Inclusivity')}}</h6>
+                                            <p>{{__('messages.inclusivityvalue')}}</p>
+                                            <h6>{{__('messages.Collaboration')}}</h6>
+                                            <p>{{__('messages.collaborationvalue')}}</p>
+                                            <h6>{{__('messages.Resilience')}}</h6>
+                                            <p>{{__('messages.resiliencevalue')}}</p>
                                         </div>
                                     </div>
                                     <!--tab-->
@@ -164,14 +146,14 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url(assets/images/backgrounds/donate-one-single-bg.jpg);">
                         </div>
-                        <h3 class="donate-one__title"><a href="#">Help Them With Donation</a>
+                        <h3 class="donate-one__title"><a href="#"> {{__('messages.donate')}} </a>
                         </h3>
-                        <p class="donate-one__text">We believe that first and foremost people need to have hope that life can and will get better. 
-                            <br>
-                            They need to know that someone cares. <br> Without hope, other assistance will fail to make a difference.
+                        <p class="donate-one__text"> {{__('messages.donations')}}
+                            <br> {{__('messages.donations2')}}
+                            <br> {{__('messages.donation3')}}
                         </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('donate')}}" class="donate-one__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="donate-one__btn thm-btn">{{__('messages.donatenow')}}<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -181,13 +163,13 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url('{{ asset('assets/images/backgrounds/donate-one-single-bg-two.jpg') }}');">
                         </div>
-                        <h3 class="donate-one__title"><a href="{{route('volunteer')}}">Join With Us To Serve As
-                                Volenteer</a></h3>
-                        <p class="donate-one__text">Join with us in making the world a more compassionate place.
-                            Reach out to those in your community who are living in miserable situations. <br>  Show that you care in whatever way you can volunteer
+                        <h3 class="donate-one__title"><a href="{{route('volunteer')}}"> {{__('messages.becomevolunteer')}}</a></h3>
+                        <p class="donate-one__text">{{__('messages.join2')}} 
+                            <br>  
+                            {{__('messages.join3')}} 
                         </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn">Join Now<span><i
+                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn">{{__('messages.joinnow')}}<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -211,16 +193,15 @@
                     <div class="who-we-are__left">
                         <div class="section-title text-left sec-title-animation animation-style2">
                             <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">Who We Are</span>
+                                <span class="section-title__tagline">{{__('messages.who')}}</span>
                             </div>
-                            <h2 class="section-title__title title-animation">Supporting Dreams Changing
-                                Lives</h2>
+                            <h2 class="section-title__title title-animation"> {{__('messages.dreams')}}</h2>
                         </div><span class="color-black"></span>
-                        <p class="who-we-are__text">EmpowerCare Foundation (EF), is a non-governmental organization with registration number <strong class="color-black">00NGO/R/5113</strong>, untethered by political or religious affiliations, registered by the Ministry of Community Development. EmpowerCare is committed to fostering health, empowerment, and resilience across communities.</p>
+                        <p class="who-we-are__text"> {{__('messages.intro')}} <strong class="color-black">00NGO/R/5113</strong>, {{__('messages.intro2')}}</p>
                         
-                        <p>We believe that first and foremost people need to have hope that life can and will get better. They need to know that someone cares. Without hope, other assistance will fail to make a difference.</p>
+                        <p>{{__('messages.wearep')}}</p>
                         <div class="who-we-are__btn-box">
-                            <a href="{{route('donate')}}" class="who-we-are__btn thm-btn">Donate Now<span><i
+                            <a href="{{route('donate')}}" class="who-we-are__btn thm-btn"> {{__('messages.donatenow')}}<span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>

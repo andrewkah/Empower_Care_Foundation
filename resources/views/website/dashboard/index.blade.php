@@ -168,15 +168,15 @@
                         <div class="welcome-one__content">
                             <div class="section-title text-left sec-title-animation animation-style2">
                                 <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">Welcome To EmpowerCare Foundation</span>
+                                    <span class="section-title__tagline"> {{__('messages.welcome')}} </span>
                                 </div>
-                                <h2 class="section-title__title title-animation">
-                                    Every Dollar Makes <br>a Difference.
+                                <h2 class="section-title__title title-animation"> {{__('messages.everydollar')}} <br>
+                                    {{__('messages.makesadifference')}}.
                                 </h2>
                             </div>
                             <div class="text">
                                 <p>
-                                    Join with us in making the world a more compassionate place. Reach out to those in your community who are living in miserable situations. Show that you care in whatever way you can volunteer
+                                    {{__('messages.joinus')}}
                                 </p>
                             </div>
 
@@ -203,8 +203,8 @@
                             </ul>
 
                             <div class="btn-box">
-                                <a href="{{route('volunteer')}}" class="thm-btn">
-                                    Become A Volunteer
+                                <a href="{{route('volunteer')}}" class="thm-btn"> {{__('messages.becomevolunteer')}}
+                                    
                                     <span>
                                         <i class="icon-arrow-right"></i>
                                     </span>
@@ -361,10 +361,10 @@
                 <div class="donation-one__content-box">
                     <div class="section-title-two text-left sec-title-animation animation-style2">
                         <div class="section-title-two__tagline-box">
-                            <span class="section-title-two__tagline">Join Us Now</span>
+                            <span class="section-title-two__tagline"> {{__('messages.joinusnow')}} </span>
                         </div>
-                        <h2 class="section-title-two__title title-animation">Helping To Make Our <br> World
-                            <span>Better</span> Living
+                        <h2 class="section-title-two__title title-animation"> {{__('messages.helpingtomake')}} <br> {{__('messages.world')}}
+                            <span>{{__('messages.better')}}</span> {{__('messages.living')}}
                         </h2>
                     </div>
                     <div class="donation-one__donate-box">
@@ -398,11 +398,11 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url(assets/images/backgrounds/donate-one-single-bg.jpg);">
                         </div>
-                        <h3 class="donate-one__title"><a href="#">Help Them With Donation</a>
+                        <h3 class="donate-one__title"><a href="#">{{__('messages.helpthem')}}</a>
                         </h3>
-                        <p class="donate-one__text">We believe that first and foremost people need to have hope that life can and will get better. 
-                            <br>
-                            They need to know that someone cares. <br> Without hope, other assistance will fail to make a difference.
+                        <p class="donate-one__text"> {{__('messages.believefirst')}} 
+                            <br> {{__('messages.needto')}}
+                            <br> {{__('messages.withouthope')}}
                         </p>
                         {{-- <div class="donate-one__btn-box">
                             <a href="{{route('home')}}#donate" class="donate-one__btn thm-btn">Donate Now<span><i
@@ -415,13 +415,11 @@
                         <div class="donate-one__single-bg"
                             style="background-image: url(assets/images/backgrounds/donate-one-single-bg-two.jpg);">
                         </div>
-                        <h3 class="donate-one__title"><a href="{{route('home')}}">Join With Us To Serve As
-                                Volenteer</a></h3>
-                                <p class="donate-one__text">Join with us in making the world a more compassionate place.
-                                    Reach out to those in your community who are living in miserable situations. <br>  Show that you care in whatever way you can volunteer
+                        <h3 class="donate-one__title"><a href="{{route('home')}}"> {{__('messages.serveasvol')}} </a></h3>
+                                <p class="donate-one__text"> {{__('messages.makingtheworld')}} <br>  {{__('messages.showthatyou')}}
                                 </p>
                         <div class="donate-one__btn-box">
-                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn">Join Now<span><i
+                            <a href="{{route('volunteer')}}" class="donate-one__btn thm-btn"> {{__('messages.joinnow')}} <span><i
                                         class="icon-arrow-right"></i></span></a>
                         </div>
                     </div>
@@ -437,9 +435,9 @@
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Our Events</span>
+                    <span class="section-title__tagline"> {{__('messages.ourevents')}} </span>
                 </div>
-                <h2 class="section-title__title title-animation">Join Us in the Fight <br>Against Poverty</h2>
+                <h2 class="section-title__title title-animation"> {{__('messages.infight')}} <br> {{__('messages.poverty')}}</h2>
             </div>
             <div class="row">
                 <!--Event One Single Start-->
@@ -459,7 +457,7 @@
                                 <p class="event-one__text">{!!Str::limit($event->summary, 150)!!}</p>
                                 <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
                                 <div class="event-one__btn-box">
-                                    <a href="{{route('events.details', $event->slug)}}" class="event-one__btn thm-btn">Read More<span><i
+                                    <a href="{{route('events.details', $event->slug)}}" class="event-one__btn thm-btn">{{__('messages.readmore')}}<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
@@ -476,7 +474,7 @@
     <section class="country-one">
         <div class="container">
             <div class="country-one__top-title-box sec-title-animation animation-style1">
-                <h1 class="country-one__top-title title-animation">Our   <span>Partners </span></h1>
+                <h1 class="country-one__top-title title-animation"> {{__('messages.our')}}  <span> {{__('messages.partners')}} </span></h1>
             </div>
             <div class="row">
                 <!--Country One Single Start-->
@@ -541,7 +539,7 @@
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Articles And Blogs</span>
+                    <span class="section-title__tagline"> {{__('messages.articlesandblogs')}} </span>
                 </div>
                 <h2 class="section-title__title title-animation">Lending a Hand<br> Spreading Hope</h2>
             </div>
@@ -564,7 +562,7 @@
                                 <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
                                 <p class="blog-one__text">{!! Str::limit($article->summary, 150)!!}</p>
                                 <div class="blog-one__btn-box">
-                                    <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">rEAD mORe<span><i
+                                    <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">{{__('messages.readmore')}}<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
@@ -614,13 +612,13 @@
         <div class="container">
             <div class="cta-one__inner">
                 <div class="cta-one__title-box sec-title-animation animation-style1">
-                    <h2 class="cta-one__title title-animation">Creating Lasting Change in <br>Communities Worldwide
+                    <h2 class="cta-one__title title-animation"> {{__('messages.lastingchange')}} <br> {{__('messages.communities')}}
                     </h2>
                 </div>
                 <div class="cta-one__btn-box">
                     {{-- <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
                                 class="icon-arrow-right"></i></span></a> --}}
-                    <a href="{{route('volunteer')}}" class="cta-one__btn-2 thm-btn">Become A volunteer<span><i
+                    <a href="{{route('volunteer')}}" class="cta-one__btn-2 thm-btn">{{__('messages.becomevolunteer')}}<span><i
                                 class="icon-arrow-right"></i></span></a>
                 </div>
             </div>
