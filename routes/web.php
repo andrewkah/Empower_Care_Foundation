@@ -14,6 +14,7 @@ Route::get('/articles/tag/{id}', [FrontendController::class, 'article_tag'])->na
 Route::post('/articles/search', [FrontendController::class, 'article_search'])->name('articles.search');
 Route::get('/programs',[FrontendController::class,'programs'])->name('programs');
 Route::get('/programs/{id}',[FrontendController::class,'program_details'])->name('programs.details');
+Route::get('/our_departments',[FrontendController::class,'departments'])->name('our_departments');
 Route::get('/events',[FrontendController::class,'events'])->name('events');
 Route::get('/events/{id}',[FrontendController::class,'event_details'])->name('events.details');
 

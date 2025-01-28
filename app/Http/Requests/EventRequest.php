@@ -36,6 +36,7 @@ class EventRequest extends FormRequest
             'event_speaker' => 'required|string|max:255',
             'tags' => 'required|string|max:255',
             'event_cat_id' => 'required|exists:event_categories,id',
+            'department_id' => 'required|exists:departments,id',
             'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:3048',
         ];
     }

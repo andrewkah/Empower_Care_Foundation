@@ -147,5 +147,7 @@ return [
     'donations2'=>'They need to know that someone cares.',
     'donations3'=>'Without hope, other assistance will fail to make a difference.',
     'donate'=>'Help Them With Donation',
+    'department'=>'Department',
+    'departments'=>'Our Departments',
 
 ];

@@ -25,8 +25,8 @@
                     <div class="main-menu__social-box">
                         <p class="main-menu__social-title">{{__('messages.followuson')}}</p>
                         <div class="main-menu__social">
-                            <a href="{{ route('switch.language', 'en') }}">Eng</a>
-                            <a href="{{ route('switch.language', 'sw') }}">Swa</a>
+                            <a href="{{ route('switch.language', 'en') }}">ENG</a>
+                            <a href="{{ route('switch.language', 'sw') }}">SWA</a>
                             <a href="https://www.linkedin.com/company/105256332/admin/dashboard/?anchor=organization-website-field&editPage=true&editPageActiveTab=details"><i class="icon-link-in"></i></a>
                             <a href="https://www.youtube.com/channel/UCS0OVJU-7Eu_iEVRF8gYIDQ"><i class="icon-play"></i></a>
                         </div>
@@ -69,7 +69,7 @@
                                     <ul class="shadow-box">
                                         {{-- <li><a href="#">{{__('messages.procurements')}}</a></li> --}}
                                         <li><a href="{{route('programs')}}">{{__('messages.ourprograms')}}</a></li>
-                                        {{-- <li><a href="#">{{__('messages.monitoring')}}</a></li> --}}
+                                        <li><a href="{{route('our_departments')}}">{{__('messages.departments')}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

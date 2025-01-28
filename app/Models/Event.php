@@ -29,8 +29,18 @@ class Event extends Model implements Auditable
         'photo',
         'tags',
         'event_cat_id',
+        'department_id',
         'status',
         'created_by',
         'updated_by',
     ];
+
+    public function eventCategory()
+    {
+        return $this->belongsTo(EventCategory::class, 'event_cat_id');
+    }
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
 }

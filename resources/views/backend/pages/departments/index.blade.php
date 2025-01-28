@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Events" currentPage="Events"></x-admin.header>
+    <x-admin.header pageTitle="Departments" currentPage="Departments"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -10,12 +10,11 @@
             <div class="col-lg-12 mt-5">
                 <div class="row justify-content-between">
 
+                    @can('departments-create')
                     <div class="col-auto ml-0">
-
-                        @can('event-create')
-                            <x-outline-button color="primary" href="{{ route('events.create') }}">Add Event</x-outline-button>
-                        @endcan
+                        <x-outline-button color="primary" href="{{ route('departments.create') }}">Add Department</x-outline-button>
                     </div>
+                    @endcan
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -25,46 +24,29 @@
                                     <thead class="text-uppercase bg-dark">
                                         <tr class="text-white">
                                             <th scope="col">Title</th>
-                                            <th scope="col">Photo</th>
-                                            {{-- <th scope="col">Summary</th> --}}
-                                            <th scope="col">Event Date</th>
-                                            <th scope="col">Event Time</th>
-                                            <th scope="col">Organizer</th>
-                                            <th scope="col">Location</th>
-                                            {{-- <th scope="col">Description</th> --}}
+                                            <th scope="col">Description</th>
                                             <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($data as $cause)
                                         <tr>
-                                            <td>{{ $cause->title }}</td>
-                                            <td> 
-                                                <div class="media mb-2 mt-2">                                               
-                                                <div class="media-body">
-                                                    <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
-                                                                                                        
-                                                </div>
-                                            </div></td>
-                                            {{-- <td>{{ $cause->summary }}</td> --}}
-                                            <td>{{ $cause->event_date }}</td>
-                                            <td>{{ $cause->event_time }}</td>
-                                            <td>{{ $cause->organizer }}</td>
-                                            <td>{{ $cause->location }}</td>
-                                            {{-- <td>{!!$cause->description!!}</td> --}}
+                                            <td>{{ $cause->name }}</td>
+                                            <td>{{ $cause->description }}</td>
                                             <td>
                                                 <div class="hstack gap-2 fs-15">
-                                                    {{-- @can('event-edit') --}}
-                                                        <a aria-label="anchor" href="{{ route('events.edit', $cause->id) }}"
-                                                            title="Edit Event" class="btn btn-sm btn-success"><i
-                                                                class="fa fa-pencil-square-o fa-lg"></i></a>
-                                                    {{-- @endcan --}}
-                                                    
-                                                    @can('event-delete')
-                                                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-                                                            data-target="#modal-delete{{ $cause->id }}"
-                                                            title="Delete Event"><i class="fa fa-trash fa-lg"></i></button>
+                                                    @can('departments-edit')
+                                                    <a aria-label="anchor"
+                                                        href="{{ route('departments.edit', $cause->id) }}"
+                                                        title="Edit Department" class="btn btn-sm btn-success"><i
+                                                            class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     @endcan
+                                                    
+                                                    @can('departments-delete')
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                                                        data-target="#modal-delete{{ $cause->id }}"
+                                                        title="Delete Department"><i
+                                                            class="fa fa-trash fa-lg"></i></button>
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"
                                                         aria-hidden="true">
@@ -81,7 +63,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form
-                                                                        action="{{ route('events.destroy', $cause->id) }}"
+                                                                        action="{{ route('departments.destroy', $cause->id) }}"
                                                                         method="post">
                                                                         @csrf
                                                                         @method('DELETE')
@@ -104,12 +86,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         </tr>
                                         @empty
                                         <tr>
-                                            <td colspan="8">No data present</td>
+                                            <td colspan="2">No data present</td>
                                         </tr>
                                         @endforelse
                                     </tbody>

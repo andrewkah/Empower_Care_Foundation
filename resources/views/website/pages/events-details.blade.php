@@ -111,7 +111,7 @@
                                         <p><span>{{__('messages.location')}}:</span>{{ $details->location }}</p>
                                     </li>
                                     <li>
-                                        <p>{{ $details->location }}</p>
+                                        <p><span>{{__('messages.department')}}:</span>{{ $details->department?->name }}</p>
                                     </li>
                                 </ul>
                             </div>

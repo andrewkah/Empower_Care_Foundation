@@ -8,6 +8,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CauseController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\EventController;
@@ -44,6 +45,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('album', AlbumController::class);
     Route::put('album/{album}/update-gallery', [AlbumController::class, 'update_album'])->name('album.update_album');
     Route::resource('banner', BannerController::class);
+    Route::resource('departments',  DepartmentController::class);
     Route::resource('causes', CauseController::class);
     Route::resource('contact', ContactController::class);
     Route::get('contact/pdf', [ContactController::class, 'contact_pdf'])->name('contact.pdf');

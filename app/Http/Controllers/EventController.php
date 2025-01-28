@@ -6,10 +6,10 @@ use App\Http\Requests\EventRequest;
 use App\Services\EventCategoryService;
 use App\Services\EventService;
 use Illuminate\Http\Request;
-
+use App\Services\ArticleCategoryService;
 class EventController extends Controller
 {
-    public function __construct(private EventService $eventService, private EventCategoryService $eventCategoryService)
+    public function __construct(private EventService $eventService, private EventCategoryService $eventCategoryService,protected ArticleCategoryService $articleCategoryService)
     {
         
     }
@@ -21,7 +21,8 @@ class EventController extends Controller
 
     public function create(){
         $categories = $this->eventCategoryService->getAllEventCategorys();
-        return view('backend.pages.events.create', compact('categories'));
+        $departments = $this->articleCategoryService->getAllDepartment();
+        return view('backend.pages.events.create', compact('categories','departments'));
     }
 
     public function store(EventRequest $request){
@@ -33,7 +34,8 @@ class EventController extends Controller
     public function edit($id){
         $data = $this->eventService->getSingleEvent($id);
         $categories = $this->eventCategoryService->getAllEventCategorys();
-        return view('backend.pages.events.edit', compact('data', 'categories'));
+        $departments = $this->articleCategoryService->getAllDepartment();
+        return view('backend.pages.events.edit', compact('data', 'categories','departments'));
     }
 
     public function update($id, EventRequest $request){

@@ -147,6 +147,20 @@
                                           </optgroup>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Event Department</label>
+                                        <select data-live-search="true" name="department_id" required
+                                            class="form-control selectpicker @error('department_id')error-message @enderror"
+                                            id="simple-select2">
+                                            <option value="">Select </option>
+                                            @foreach ($departments as $role)
+                                                <option value="{{ $role->id }}"
+                                                    @if (isset($data)) @selected($data->department_id == $role->id)  @else @endif>
+                                                    {{ $role->name }}</option>
+                                            @endforeach
+                                            </optgroup>
+                                        </select>
+                                    </div>
                                     <div class="mb-3">
                                        
                                         <x-input.upload label="Choose Photo (770px * 460px)" id="photo" name="photo" accept="image/*" onchange="

@@ -80,7 +80,11 @@ class FrontendController extends Controller
         $article_categories = $this->articleService->getAllArticleCategoryAndNumberOfArticles();
         return view('website.pages.article-details', compact('article','all_tags','article_categories'));
     }
-    
+    public function departments()
+    {
+        $departments = $this->departmentService->getAllDepartmentsOrderByCreatedAt();
+        return view('website.pages.departments');
+    }
     public function team(){
         $team = $this->teamService->getAllTeamsOrderByCreatedAt();
         return view('website.pages.team', compact('team'));

@@ -137,4 +137,6 @@ return [
 'donations2'=>'Wanahitaji kujua kwamba kuna mtu anajali.',
 'donations3'=>'Bila matumaini, msaada mwingine hautaleta tofauti.',
 'donate'=>'Wasaidie Kwa Mchango',
+'department'=>'idara',
+'departments'=>'idara yetu',
 ];

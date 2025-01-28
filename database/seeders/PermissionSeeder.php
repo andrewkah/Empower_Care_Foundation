@@ -136,11 +136,11 @@ class PermissionSeeder extends Seeder
             array('name' => 'partner-edit', 'permission_category_id' => '18', 'description' => 'Edit Policy', 'guard_name' => 'web', 'crud' => 'edit'),
             array('name' => 'partner-delete', 'permission_category_id' => '18', 'description' => 'Delete Policies', 'guard_name' => 'web', 'crud' => 'delete'),
 
-            // array('name' => 'policy-list', 'permission_category_id' => '6', 'description' => 'View Policies', 'guard_name' => 'web', 'crud' => 'view'),
-            // array('name' => 'policy-create', 'permission_category_id' => '6', 'description' => 'Create Policies', 'guard_name' => 'web', 'crud' => 'create'),
-            // array('name' => 'policy-show', 'permission_category_id' => '6', 'description' => 'Show Policies', 'guard_name' => 'web', 'crud' => 'read'),
-            // array('name' => 'policy-edit', 'permission_category_id' => '6', 'description' => 'Edit Policy', 'guard_name' => 'web', 'crud' => 'edit'),
-            // array('name' => 'policy-delete', 'permission_category_id' => '6', 'description' => 'Delete Policies', 'guard_name' => 'web', 'crud' => 'delete'),
+            array('name' => 'departments-list', 'permission_category_id' => '16', 'description' => 'View Departments', 'guard_name' => 'web', 'crud' => 'view'),
+            array('name' => 'departments-create', 'permission_category_id' => '16', 'description' => 'Create Departments', 'guard_name' => 'web', 'crud' => 'create'),
+            array('name' => 'departments-show', 'permission_category_id' => '16', 'description' => 'Show Departments', 'guard_name' => 'web', 'crud' => 'read'),
+            array('name' => 'departments-edit', 'permission_category_id' => '16', 'description' => 'Edit Departments', 'guard_name' => 'web', 'crud' => 'edit'),
+            array('name' => 'departments-delete', 'permission_category_id' => '16', 'description' => 'Delete Departments', 'guard_name' => 'web', 'crud' => 'delete'),
 
         );
 

@@ -22,6 +22,11 @@
                         @endcan
                     </li>
                     <li>
+                        {{-- @can('department-show') --}}
+                            <a href="{{route('departments.index')}}"><i class="fa fa-graduation-cap"></i> <span>Departments</span></a>
+                        {{-- @endcan --}}
+                    </li>
+                    <li>
                         @can('banner-show')
                             <a href="{{route('banner.index')}}"><i class="fa fa-image"></i> <span>Banners</span></a>
                         @endcan
