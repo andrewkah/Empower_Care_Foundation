@@ -7,7 +7,7 @@ use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-
+use Lunaweb\RecaptchaV3\Facades\RecaptchaV3;
 class ContactService
 {
 
@@ -15,8 +15,16 @@ class ContactService
     // create contact
     public function storeContact(ContactRequest $request)
     {
-        $data = $request->validated();
-        return $this->contact->create($data);
+        $score = RecaptchaV3::verify($request->get('g-recaptcha-response'), 'store_contact-us');
+            if($score > 0.7) {
+                // go
+                $data = $request->validated();
+                return $this->contact->create($data);
+            } elseif($score > 0.3) {
+                // require additional email verification
+            } else {
+                return abort(400, 'You are most likely a bot');
+            }       
     }
     // get all contacts
     public function getAllContacts()

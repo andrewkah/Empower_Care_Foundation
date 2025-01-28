@@ -21,6 +21,7 @@
                 <form class="" action="{{ route('contact_us.store') }}"
                     method="post">
                     @csrf
+                    {!! RecaptchaV3::field('store_contact-us') !!}
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <h4 class="contact-one__input-title">{{__('messages.yourname')}}</h4>
@@ -124,3 +125,8 @@
     @include('website.layout.footer')
     <!--Site Footer Two End-->
 @endsection
+
+@push('scripts')
+{!! RecaptchaV3::initJs() !!}
+
+@endpush

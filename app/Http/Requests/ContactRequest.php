@@ -23,9 +23,10 @@ class ContactRequest extends FormRequest
     {
         return [
             'name'=>'required|string|max:255',
-            'email'=>'required|email',
+            'email'=>'required|email:dns,rfc',
             'phone' => 'nullable',
             'message' => 'required|string|max:450',
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
         ];
     }
     public function messages(){

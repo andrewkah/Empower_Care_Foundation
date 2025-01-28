@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\Department;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class ArticleService{
@@ -122,6 +123,10 @@ class ArticleService{
             $data->day = Carbon::parse($data->created_at)->format('d');
            
         }
+        return $data;
+    }
+    public function getAllDepartmentsOrderByCreatedAt(){
+        $data= Department::orderBy('created_at', 'desc')->get();
         return $data;
     }
 }

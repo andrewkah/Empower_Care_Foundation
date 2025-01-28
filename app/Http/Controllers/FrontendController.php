@@ -82,8 +82,8 @@ class FrontendController extends Controller
     }
     public function departments()
     {
-        $departments = $this->departmentService->getAllDepartmentsOrderByCreatedAt();
-        return view('website.pages.departments');
+        $departments = $this->articleService->getAllDepartmentsOrderByCreatedAt();
+        return view('website.pages.departments', compact('departments'));
     }
     public function team(){
         $team = $this->teamService->getAllTeamsOrderByCreatedAt();
