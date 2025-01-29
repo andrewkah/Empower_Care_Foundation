@@ -541,7 +541,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline"> {{__('messages.articlesandblogs')}} </span>
                 </div>
-                <h2 class="section-title__title title-animation">Lending a Hand<br> Spreading Hope</h2>
+                <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2>
             </div>
             <div class="row">
                 @forelse ($articles as $key => $article)

@@ -139,4 +139,6 @@ return [
 'donate'=>'Wasaidie Kwa Mchango',
 'department'=>'idara',
 'departments'=>'idara yetu',
+'lending'=>'Kukopesha Mkono',
+    'spreading'=>'Kueneza Tumaini',
 ];

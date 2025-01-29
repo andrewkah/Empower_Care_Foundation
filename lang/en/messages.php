@@ -148,6 +148,7 @@ return [
     'donations3'=>'Without hope, other assistance will fail to make a difference.',
     'donate'=>'Help Them With Donation',
     'department'=>'Department',
-    'departments'=>'Our Departments',
-
+    // 'departments'=>'Our Departments',
+    'lending'=>'Lending a Hand',
+    'spreading'=>'Spreading Hope',
 ];
