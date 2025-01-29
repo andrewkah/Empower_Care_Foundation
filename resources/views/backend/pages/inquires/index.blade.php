@@ -10,6 +10,11 @@
             <div class="col-lg-12 mt-5">
                 <div class="card">
                     <div class="card-body">
+                      @can('inquires-pdf')
+                                            <a href="{{ route('contact.pdf') }}" class="btn btn-sm btn-primary float-right my-2 mr-3"
+                                                            title="Download PDF Report"><i
+                                                                class="fa fa-file fa-md mr-2"></i>Download PDF</a>
+                                            @endcan
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table text-center">
@@ -80,11 +85,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            @can('inquires-pdf')
-                                            <a href="{{ route('contact.pdf') }}" class="btn btn-sm btn-primary float-right my-2 mr-3"
-                                                            title="Download PDF Report"><i
-                                                                class="fa fa-file fa-md mr-2"></i>Download PDF</a>
-                                            @endcan
+                                          
                                         @empty
                                         <tr>
                                             <td colspan="5">No data present</td>

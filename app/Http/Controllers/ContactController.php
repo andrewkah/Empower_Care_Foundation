@@ -55,7 +55,7 @@ class ContactController extends Controller
     public function destroy($id)
     {
         $contact = $this->contactService->deleteContact($id);
-        if ($contact) return redirect()->route('contacts.index')->with('success', 'Contact deleted successfully');
+        if ($contact) return redirect()->route('contact.index')->with('success', 'Contact deleted successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
