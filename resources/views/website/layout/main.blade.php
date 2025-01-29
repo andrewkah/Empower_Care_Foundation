@@ -60,7 +60,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/project.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/coming-soon.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/module-css/faq.css') }}" />
-
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
@@ -183,6 +182,7 @@
 
     <!-- template js -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    
     @stack('scripts')
 </body>
 

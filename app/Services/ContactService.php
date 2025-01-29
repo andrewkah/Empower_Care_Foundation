@@ -15,16 +15,9 @@ class ContactService
     // create contact
     public function storeContact(ContactRequest $request)
     {
-        $score = RecaptchaV3::verify($request->get('g-recaptcha-response'), 'store_contact-us');
-            if($score > 0.7) {
-                // go
-                $data = $request->validated();
-                return $this->contact->create($data);
-            } elseif($score > 0.3) {
-                // require additional email verification
-            } else {
-                return abort(400, 'You are most likely a bot');
-            }       
+        
+        $data = $request->validated();
+        return $this->contact->create($data);                 
     }
     // get all contacts
     public function getAllContacts()

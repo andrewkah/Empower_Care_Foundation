@@ -18,10 +18,10 @@
                     <h2 class="section-title__title title-animation"> {{__('messages.empower')}} <br> {{__('messages.thrudonations')}}
                     </h2>
                 </div>
-                <form class="" action="{{ route('contact_us.store') }}"
+                <form class="" action="/store_contact-us"
                     method="post">
                     @csrf
-                    {!! RecaptchaV3::field('store_contact-us') !!}
+                    
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <h4 class="contact-one__input-title">{{__('messages.yourname')}}</h4>
@@ -127,6 +127,6 @@
 @endsection
 
 @push('scripts')
-{!! RecaptchaV3::initJs() !!}
+
 
 @endpush
