@@ -17,7 +17,7 @@
                             <div class="event-one__content">
                                 <h4 class="event-one__title"><a href="#">{{ $policy->title }}</a></h4>
                                 <p class="event-one__file"><a
-                                        href="{{ asset('storage/policies/' . basename($policy->file)) }}">{{ basename($policy->file) }}</a></p>
+                                        href="{{ asset('storage/policies/' . basename($policy->file)) }}">{{ basename($policy->title) }}</a></p>
                             </div>
                         </div>
                     </div>
