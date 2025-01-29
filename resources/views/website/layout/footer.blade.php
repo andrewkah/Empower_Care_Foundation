@@ -9,6 +9,8 @@
                                 <a href="{{route('home')}}"><img src="{{asset('assets/images/empower-logo/logo_footer_v2-transparent.png') }}" alt=""></a>
                             </div>
                             <p class="footer-widget__about-text">{{__('messages.aboutfooter')}} </p>
+                            <p class="footer-widget__about-text">{{__('messages.visitors')}} {{$visitorCount}} </p>
+
                             <div class="site-footer__social">
                                 {{-- <a href="#"><i class="icon-facebook"></i></a>
                                 <a href="#"><i class="icon-twitter"></i></a> --}}

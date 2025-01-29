@@ -141,4 +141,5 @@ return [
 'departments'=>'idara yetu',
 'lending'=>'Kukopesha Mkono',
     'spreading'=>'Kueneza Tumaini',
+    'visitors'=>'Wageni',
 ];

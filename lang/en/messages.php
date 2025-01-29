@@ -151,4 +151,5 @@ return [
     // 'departments'=>'Our Departments',
     'lending'=>'Lending a Hand',
     'spreading'=>'Spreading Hope',
+    'visitors'=>'Visitors',
 ];
