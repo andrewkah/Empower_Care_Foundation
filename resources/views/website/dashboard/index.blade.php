@@ -477,11 +477,11 @@
                 <h1 class="country-one__top-title title-animation"> {{__('messages.our')}}  <span> {{__('messages.partners')}} </span></h1>
             </div>
             <div class="row">
-                <!--Country One Single Start-->
+                <!--Country One Single Start width: 80px; height: 80px; -->
                 @forelse ($partners as $partner)
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-5 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="country-one__single">
-                        <div class="country-one__img" style="width: 80px; height: 80px; overflow: hidden;">
+                        <div class="country-one__img" style=" overflow: hidden;">
                             <img src="@if ($partner->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($partner->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4 class="country-one__title"><a href="#">{{$partner->name}}</a></h4>
