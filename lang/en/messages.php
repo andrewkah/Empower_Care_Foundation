@@ -152,4 +152,6 @@ return [
     'lending'=>'Lending a Hand',
     'spreading'=>'Spreading Hope',
     'visitors'=>'Visitors',
+    'ourimpacts'=>'Our Impacts',
+    'norecordsfound'=>'No Records Found',
 ];

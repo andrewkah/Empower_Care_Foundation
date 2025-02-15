@@ -46,7 +46,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::put('album/{album}/update-gallery', [AlbumController::class, 'update_album'])->name('album.update_album');
     Route::resource('banner', BannerController::class);
     Route::resource('departments',  DepartmentController::class);
-    Route::resource('causes', CauseController::class);
+    Route::resource('impacts', CauseController::class);
     Route::resource('contact', ContactController::class);
     Route::get('contact/pdf', [ContactController::class, 'contact_pdf'])->name('contact.pdf');
     Route::resource('events', EventController::class);

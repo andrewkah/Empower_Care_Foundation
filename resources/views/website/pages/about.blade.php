@@ -43,7 +43,7 @@
                                 <span class="section-title__tagline">{{__('messages.aboutus')}}</span>
                             </div>
                             <h2 class="section-title__title title-animation"> {{__('messages.unitefor')}}
-                                <br> {{__('message.changeworld')}}
+                                <br> {{__('messages.changeworld')}}
                             </h2>
                         </div>
                         <div class="about-One__vission-mission">

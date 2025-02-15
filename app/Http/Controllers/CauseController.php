@@ -24,7 +24,7 @@ class CauseController extends Controller
 
     public function store(CauseRequest $request){
         $causes = $this->causeService->storeCause($request);
-        if ($causes) return redirect()->route('causes.index')->with('success', "Cause created successfully.");
+        if ($causes) return redirect()->route('impacts.index')->with('success', "Impact created successfully.");
         return redirect()->back()->with('error', "Something went wrong");
     }
 
@@ -35,13 +35,13 @@ class CauseController extends Controller
 
     public function update($id, CauseRequest $request){
         $cause = $this->causeService->updateCause($id, $request);
-        if($cause) return redirect()->route('causes.index')->with('success', 'Cause updated successfully');
+        if($cause) return redirect()->route('impacts.index')->with('success', 'Impact updated successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 
     public function destroy($id){
         $cause = $this->causeService->deleteCause($id);
-        if($cause) return redirect()->route('causes.index')->with('success', 'Cause deleted successfully');
+        if($cause) return redirect()->route('impacts.index')->with('success', 'Impact deleted successfully');
         return redirect()->back()->with('error', 'Something went wrong');
     }
 }

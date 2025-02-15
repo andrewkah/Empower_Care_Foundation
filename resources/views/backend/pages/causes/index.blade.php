@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Causes" currentPage="Causes"></x-admin.header>
+    <x-admin.header pageTitle="Our Impacts" currentPage="Impact"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -13,7 +13,7 @@
                     @can('cause-create')
                         <div class="col-auto ml-0">
 
-                            <x-outline-button color="primary" href="{{ route('causes.create') }}">Add Cause</x-outline-button>
+                            <x-outline-button color="primary" href="{{ route('impacts.create') }}">Add Impact</x-outline-button>
                         </div>
                     @endcan
                 </div>
@@ -44,7 +44,7 @@
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">
                                                         @can('cause-edit')
-                                                        <a aria-label="anchor" href="{{ route('causes.edit', $cause->id) }}"
+                                                        <a aria-label="anchor" href="{{ route('impacts.edit', $cause->id) }}"
                                                             title="Edit Cause" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
                                                         @endcan
@@ -70,7 +70,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <form
-                                                                            action="{{ route('causes.destroy', $cause->id) }}"
+                                                                            action="{{ route('impacts.destroy', $cause->id) }}"
                                                                             method="post">
                                                                             @csrf
                                                                             @method('DELETE')

@@ -30,11 +30,10 @@ class FrontendController extends Controller
     }
     public function index(){
         $banners = $this->bannerService->getAllBannersOrderByCreatedAt();
-        $articles = $this->articleService->getAllArticleOrderByCreatedAt();
-        $album = $this->albumService->getAllAlbumOrderByCreatedAt();
+        $causes = $this->causeService->getAllCausesOrderByCreatedAt();
         $events = $this->eventService->getAllEventsOrderByCreatedAt();
         $partners = $this->partnerService->getAllPartnersOrderByCreatedAt();
-        return view('website.dashboard.index', compact('partners', 'events', 'album', 'articles', 'banners' ));
+        return view('website.dashboard.index', compact('partners', 'events', 'causes', 'banners' ));
     }
     public function programs(){
         $programs = $this->programService->getAllProgramsOrderByCreatedAt();

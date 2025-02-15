@@ -33,7 +33,7 @@
                     </li>
                     <li>
                         @can('cause-show')
-                            <a href="{{route('causes.index')}}"><i class="fa fa-heartbeat"></i> <span>Causes</span></a>
+                            <a href="{{route('impacts.index')}}"><i class="fa fa-heartbeat"></i> <span>Our Impacts</span></a>
                         @endcan
                     </li>
                     <li>

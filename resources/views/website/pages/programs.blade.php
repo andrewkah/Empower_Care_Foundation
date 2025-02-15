@@ -15,7 +15,7 @@
                     <div class="event-one__single">
                         <div class="event-one__img-box">
                             <div class="event-one__img">
-                                <img src="{{ Storage::url($program->photo) }}" alt="">
+                                <img src="@if ($program->photo ==null) {{ asset('assets/images/placeholder.webp')}} @else {{ Storage::url($program->photo) }}@endif" alt="">
                             </div>
                             <div class="event-one__date">
                                 <p><span class="icon-clock"></span>{{$program->day}} {{$program->time}}</p>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="event-one__content">
                             <h4 class="event-one__title"><a href="#">{{$program->title}}</a></h4>
-                            <p class="event-one__text">{!! $program->objectives !!}</p>
+                            <p class="event-one__text">{!! Str::limit($program->objectives, 150) !!}</p>
                             <p class="event-one__location"><span class="icon-pin"></span>{{$program->location}}</p>
                             <div class="event-one__btn-box">
                                 <a href="{{route('programs.details', $program->slug)}}" class="event-one__btn thm-btn"> {{__('messages.readmore')}} <span><i

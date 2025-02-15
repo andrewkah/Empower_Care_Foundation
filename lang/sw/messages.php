@@ -142,4 +142,6 @@ return [
 'lending'=>'Kukopesha Mkono',
     'spreading'=>'Kueneza Tumaini',
     'visitors'=>'Wageni',
+    'ourimpacts'=>'Athari zetu',
+    'norecordsfound'=>'hakuna rekodi zilizopatikana',
 ];

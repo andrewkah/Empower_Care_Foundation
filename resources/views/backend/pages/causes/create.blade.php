@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Causes" currentPage="Causes"></x-admin.header>
+    <x-admin.header pageTitle="Our Impacts" currentPage="Impact"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row justify-content-center">
@@ -13,8 +13,8 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">@if(isset($cause)) Edit Cause @else Causes @endif</h4>
-                                    <x-form has-files :action="isset($cause) ? route('causes.update', $cause->id) : route('causes.store')" :method="isset($cause) ? 'PUT': 'POST'"> 
+                                <h4 class="header-title">@if(isset($cause)) Edit Impact @else Impacts @endif</h4>
+                                    <x-form has-files :action="isset($cause) ? route('impacts.update', $cause->id) : route('impacts.store')" :method="isset($cause) ? 'PUT': 'POST'"> 
                                
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>

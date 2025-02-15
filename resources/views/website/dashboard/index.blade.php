@@ -390,8 +390,8 @@
     <!--Donation One End -->
 
     <!--Donate One Start -->
-    <section class="donate-one pdt">
-        <div class="container">
+   {{-- <section class="donate-one pdt">
+         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                     <div class="donate-one__single">
@@ -407,7 +407,7 @@
                         {{-- <div class="donate-one__btn-box">
                             <a href="{{route('home')}}#donate" class="donate-one__btn thm-btn">Donate Now<span><i
                                         class="icon-arrow-right"></i></span></a>
-                        </div> --}}
+                        </div> --}
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -425,13 +425,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div> 
+    </section>--}}
     <!--Donate One End -->
 
     
     <!--Event One Start -->
-    <section class="event-one">
+    {{-- <section class="event-one">
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
@@ -467,7 +467,7 @@
                 <!--Event One Single End-->
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--Event One End -->
 
     <!--Country One Start -->
@@ -479,9 +479,9 @@
             <div class="row">
                 <!--Country One Single Start-->
                 @forelse ($partners as $partner)
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="country-one__single">
-                        <div class="country-one__img" style="width: 80px; height: 80px; overflow: hidden;">
+                        <div class="country-one__img" style="height: 80px; overflow: hidden;">
                             <img src="@if ($partner->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($partner->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4 class="country-one__title"><a href="#">{{$partner->name}}</a></h4>
@@ -539,18 +539,18 @@
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline"> {{__('messages.articlesandblogs')}} </span>
+                    <span class="section-title__tagline"> {{__('messages.ourimpacts')}} </span>
                 </div>
                 <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2>
             </div>
             <div class="row">
-                @forelse ($articles as $key => $article)
+                @forelse ($causes as $key => $article)
                     <!--Blog One Single Start-->
                     <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($key * 100)}}ms">
                         <div class="blog-one__single">
                             <div class="blog-one__img-box">
                                 <div class="blog-one__img">
-                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($article->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/placeholder.webp')}} @else {{ Storage::url($article->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div class="blog-one__date">
                                     <p>{{date('d', strtotime($article->created_at))}}
@@ -560,46 +560,17 @@
                             </div>
                             <div class="blog-one__content">
                                 <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
-                                <p class="blog-one__text">{!! Str::limit($article->summary, 150)!!}</p>
-                                <div class="blog-one__btn-box">
+                                <p class="blog-one__text">{!! $article->description !!}</p>
+                                {{-- <div class="blog-one__btn-box">
                                     <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">{{__('messages.readmore')}}<span><i
                                                 class="icon-arrow-right"></i></span></a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                     <!--Blog One Single End-->
                 @empty
-                    @for ($i = 0; $i < 3; $i++)
-                        <!--Blog One Single Start-->
-                        <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($i * 100)}}ms">
-                            <div class="blog-one__single">
-                                <div class="blog-one__img-box">
-                                    <div class="blog-one__img">
-                                        <img src="assets/images/blog/blog-1-{{rand(1, 3)}}.jpg" alt="">
-                                    </div>
-                                    <div class="blog-one__date">
-                                        <p>{{rand(1, 28)}}
-                                            <span><br>{{date('M')}}</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="blog-one__content">
-                                    <h4 class="blog-one__title"><a href="#">Caring for the Elderly and Vulnerable
-                                            Strategy</a></h4>
-                                    <p class="blog-one__text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                        aliquip ex ea commodo consequat.</p>
-                                    <div class="blog-one__btn-box">
-                                        <a href="#" class="blog-one__btn thm-btn">rEAD mORe<span><i
-                                                    class="icon-arrow-right"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Blog One Single End-->
-                    @endfor
+                <h4 class="section-title__title title-animation">{{__('messages.norecordsfound')}}</h4>
                 @endforelse
             </div>
         </div>
@@ -607,7 +578,7 @@
     <!--Blog One End -->
 
     <!--CTA One Start -->
-    <section class="cta-one">
+     {{-- <section class="cta-one">
         <div class="cta-one__bg" style="background-image: url(assets/images/backgrounds/cta-one-bg.jpg);"></div>
         <div class="container">
             <div class="cta-one__inner">
@@ -617,13 +588,13 @@
                 </div>
                 <div class="cta-one__btn-box">
                     {{-- <a href="{{route('home')}}#donate" class="cta-one__btn-1 thm-btn">Donate Now<span><i
-                                class="icon-arrow-right"></i></span></a> --}}
+                                class="icon-arrow-right"></i></span></a> --}
                     <a href="{{route('volunteer')}}" class="cta-one__btn-2 thm-btn">{{__('messages.becomevolunteer')}}<span><i
                                 class="icon-arrow-right"></i></span></a>
                 </div>
             </div>
         </div>
-    </section>
+    </section>  --}}
     <!--CTA One End -->
 
     <!--Site Footer Two Start-->

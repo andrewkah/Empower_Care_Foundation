@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Page Header Start-->
-    <x-website-page-header title="{{__('messsages.articles')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
+    <x-website-page-header title="{{__('messages.articles')}}" bgImage="assets/images/backgrounds/page-header-bg.png"
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 

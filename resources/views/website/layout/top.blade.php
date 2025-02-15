@@ -58,17 +58,12 @@
                                         <li><a href="{{route('team')}}">{{__('messages.ourteam')}}</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">{{__('messages.whatwedo')}}</a>
-                                    <ul class="shadow-box">
-                                        <li><a href="{{route('causes')}}">{{__('messages.ourcause')}}</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="{{route('programs')}}">{{__('messages.ourprograms')}} </a>                                    
                                 </li>
                                 <li class="dropdown">
                                 <a href="#">{{__('messages.departments')}}</a>
-                                    <ul class="shadow-box">
-                                        {{-- <li><a href="#">{{__('messages.procurements')}}</a></li> --}}
-                                        <li><a href="{{route('programs')}}">{{__('messages.ourprograms')}}</a></li>
+                                    <ul class="shadow-box">                                       
                                         <li><a href="{{route('our_departments')}}">{{__('messages.departments')}}</a></li>
                                     </ul>
                                 </li>
