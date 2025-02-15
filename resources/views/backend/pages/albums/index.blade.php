@@ -49,7 +49,7 @@
                                                                 class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     @endcan
                                                     
-                                                    @can('album-view')
+                                                    @can('album-list')
                                                         <a aria-label="anchor" href="{{ route('album.show', $cause->id) }}"
                                                             title="View Album" class="btn btn-sm btn-success"><i
                                                                 class="fa fa-eye"></i></a>

@@ -20,9 +20,7 @@ Route::get('/events/{id}',[FrontendController::class,'event_details'])->name('ev
 
 Route::get('/donate_request',[FrontendController::class,'donate'])->name('donate');
 Route::post('/submit_donate_request',[FrontendController::class,'donate_store'])->name('submit.donate');
-Route::get('/about', function () {
-    return view('website.pages.about');
-})->name('about');
+Route::get('/about',[FrontendController::class,'aboutus'])->name('about');
 Route::get('/causes',[FrontendController::class,'causes'])->name('causes');
 Route::get('/contact-us', function () {
     return view('website.pages.contact-us');

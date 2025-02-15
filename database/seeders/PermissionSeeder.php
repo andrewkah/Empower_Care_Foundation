@@ -142,6 +142,9 @@ class PermissionSeeder extends Seeder
             array('name' => 'departments-edit', 'permission_category_id' => '16', 'description' => 'Edit Departments', 'guard_name' => 'web', 'crud' => 'edit'),
             array('name' => 'departments-delete', 'permission_category_id' => '16', 'description' => 'Delete Departments', 'guard_name' => 'web', 'crud' => 'delete'),
 
+            array('name' => 'aboutus-show', 'permission_category_id' => '16', 'description' => 'View About Us ', 'guard_name' => 'web', 'crud' => 'show'),
+            array('name' => 'aboutus-edit', 'permission_category_id' => '16', 'description' => 'Edit About Us', 'guard_name' => 'web', 'crud' => 'edit'),
+
         );
 
         foreach ($permissions as $permission) {

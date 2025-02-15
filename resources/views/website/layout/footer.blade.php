@@ -36,7 +36,7 @@
                             <ul class="footer-widget__services-list list-unstyled">
                                 <li><a href="https://www.dcea.go.tz/">{{__('messages.DCEA')}} </a></li>
                                 <li><a href="{{route('programs')}}">{{__('messages.ourprograms')}}</a></li>
-                                <li><a href="{{route('causes')}}">{{__('messages.ourcause')}}</a></li>                                        
+                                {{-- <li><a href="{{route('causes')}}">{{__('messages.ourcause')}}</a></li>                                         --}}
                                 <li><a href="{{route('team')}}">{{__('messages.ourteam')}}</a></li>
                                 
                             </ul>

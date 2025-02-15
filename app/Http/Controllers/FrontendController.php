@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\DonationRequest;
 use App\Http\Requests\VolunteerRequest;
+use App\Services\AboutService;
 use App\Services\AlbumService;
 use App\Services\ArticleService;
 use App\Services\BannerService;
@@ -24,7 +25,7 @@ class FrontendController extends Controller
 {
 
     //
-    public function __construct(private PolicyService $policyService, private BannerService $bannerService, private DonationService $donationService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
+    public function __construct(private PolicyService $policyService,protected AboutService $aboutService, private BannerService $bannerService, private DonationService $donationService, private VideoService $videoService, private ContactService $contactService, private FAQService $faqService, private TeamService $teamService, private CauseService $causeService, private ArticleService $articleService, private AlbumService $albumService, private EventService $eventService, private PartnerService $partnerService, private ProgramService $programService)
     {
         
     }
@@ -34,6 +35,10 @@ class FrontendController extends Controller
         $events = $this->eventService->getAllEventsOrderByCreatedAt();
         $partners = $this->partnerService->getAllPartnersOrderByCreatedAt();
         return view('website.dashboard.index', compact('partners', 'events', 'causes', 'banners' ));
+    }
+    public function aboutus(){
+        $data = $this->aboutService->getAboutUs();
+        return view('website.pages.about', compact('data'));
     }
     public function programs(){
         $programs = $this->programService->getAllProgramsOrderByCreatedAt();

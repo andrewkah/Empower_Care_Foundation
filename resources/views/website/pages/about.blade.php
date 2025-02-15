@@ -57,14 +57,16 @@
                                     <!--tab-->
                                     <div class="tab active-tab" id="vission">
                                         <div class="tabs-content__inner">
-                                            <p> {{__('messages.ourvission')}} </p>
+                                            {!! $data['about_intro']['vision'] !!}
+                                            {{-- <p> {{__('messages.ourvission')}} </p> --}}
                                         </div>
                                     </div>
                                     <!--tab-->
                                     <!--tab-->
                                     <div class="tab" id="mission">
                                         <div class="tabs-content__inner">
-                                            <p> {{__('messages.mission1')}}</p>
+                                            {!! $data['about_intro']['mission'] !!}
+                                            {{-- <p> {{__('messages.mission1')}}</p>
                                             <p> {{__('messages.mission2')}} </p>
                                                 <p>{{__('messages.mission3')}}</p>
                                                 <div class="cause-details__points-box">
@@ -105,15 +107,16 @@
                                                         
                                                     </li>
                                                    
-                                                    </ul> --}}
-                                                </div>
+                                                    </ul> --}
+                                                </div> --}}
                                         </div>
                                     </div>
                                     <!--tab-->
                                     <!--tab-->
                                     <div class="tab" id="goal">
                                         <div class="tabs-content__inner">
-                                            <h6>{{__('messages.Quality')}}</h6>
+                                            {!! $data['about_intro']['value'] !!}
+                                            {{-- <h6>{{__('messages.Quality')}}</h6>
                                             <p> {{__('messages.qualityvalue')}}</p>
                                             <h6>{{__('messages.Integrity')}}</h6>
                                             <p>{{__('messages.integrityvalue')}} </p>
@@ -122,7 +125,7 @@
                                             <h6>{{__('messages.Collaboration')}}</h6>
                                             <p>{{__('messages.collaborationvalue')}}</p>
                                             <h6>{{__('messages.Resilience')}}</h6>
-                                            <p>{{__('messages.resiliencevalue')}}</p>
+                                            <p>{{__('messages.resiliencevalue')}}</p> --}}
                                         </div>
                                     </div>
                                     <!--tab-->
@@ -195,9 +198,13 @@
                             <div class="section-title__tagline-box">
                                 <span class="section-title__tagline">{{__('messages.who')}}</span>
                             </div>
-                            <h2 class="section-title__title title-animation"> {{__('messages.dreams')}}</h2>
+                            <h2 class="section-title__title title-animation"> 
+                                {{-- {{__('messages.dreams')}} --}}
+                                {!! $data['about_title'] !!}
+                            </h2>
                         </div><span class="color-black"></span>
-                        <p class="who-we-are__text"> {{__('messages.intro')}} <strong class="color-black">00NGO/R/5113</strong>, {{__('messages.intro2')}}</p>
+                        {!! $data['about_content'] !!}
+                        {{-- <p class="who-we-are__text"> {{__('messages.intro')}} <strong class="color-black">00NGO/R/5113</strong>, {{__('messages.intro2')}}</p> --}}
                         
                         <p>{{__('messages.wearep')}}</p>
                         <div class="who-we-are__btn-box">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\ArticleController;
@@ -47,6 +48,7 @@ Route::prefix('admin-empowercare')->middleware('auth')->group(function () {
     Route::resource('banner', BannerController::class);
     Route::resource('departments',  DepartmentController::class);
     Route::resource('impacts', CauseController::class);
+    Route::resource('aboutus', AboutController ::class);
     Route::resource('contact', ContactController::class);
     Route::get('contact/pdf', [ContactController::class, 'contact_pdf'])->name('contact.pdf');
     Route::resource('events', EventController::class);

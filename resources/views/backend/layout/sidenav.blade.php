@@ -37,6 +37,11 @@
                         @endcan
                     </li>
                     <li>
+                        @can('aboutus-show')
+                            <a href="{{route('aboutus.index')}}"><i class="fa fa-download"></i> <span>About Us</span></a>
+                        @endcan
+                    </li>
+                    <li>
                         @can('donation-show')
                             <a href="{{route('donations.index')}}"><i class="fa fa-money"></i> <span>Donations</span></a>
                         @endcan
