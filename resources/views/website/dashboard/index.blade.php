@@ -430,45 +430,63 @@
     <!--Donate One End -->
 
     
-    <!--Event One Start -->
-    {{-- <section class="event-one">
+
+    <!--Blog One Start -->
+    <section class="blog-one">
         <div class="container">
             <div class="section-title text-center sec-title-animation animation-style1">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline"> {{__('messages.ourevents')}} </span>
+                    <span class="section-title__tagline"> {{__('messages.ourimpacts')}} </span>
                 </div>
-                <h2 class="section-title__title title-animation"> {{__('messages.infight')}} <br> {{__('messages.poverty')}}</h2>
+                <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2>
             </div>
             <div class="row">
-                <!--Event One Single Start-->
-                @foreach ($events as $event)
-                    <div class="col-xl-4 col-lg-4 wow fadeIn{{$loop->index % 2 == 0 ? 'Left' : 'Right'}}" data-wow-delay="{{($loop->index * 100) + 100}}ms">
-                        <div class="event-one__single">
-                            <div class="event-one__img-box">
-                                <div class="event-one__img">
-                                    <img src="@if ($event->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($event->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                @forelse ($causes as $key => $article)
+                    <!--Blog One Single Start-->
+                    <div class="col-xl-4 col-lg-4 col-md-4 wow fadeInLeft animated"  data-wow-delay="{{100 + ($key * 100)}}ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInLeft;">
+                        <div class="counter-one__single counter-one__single-1">
+                            <div class="counter-one__single-shape-1">
+                                <img src="assets/images/shapes/counter-one-single-shape-1.png" alt="">
+                            </div>
+                            <div class="counter-one__count-box-2">
+                                <div class="counter-one__count-2 count-box counted">
+                                    <h2 class="count-text" data-stop="{!! $article->description !!}" data-speed="1500">{!! $article->description !!}</h2>
+                                    <span>+</span>
                                 </div>
-                                <div class="event-one__date">
-                                    <p><span class="icon-clock"></span>{{$event->event_date}} : {{$event->event_time}}</p>
+                                <p class="counter-one__text-2">{{$article->title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($key * 100)}}ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__img-box">
+                                <div class="blog-one__img">
+                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/placeholder.webp')}} @else {{ Storage::url($article->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-one__date">
+                                    <p>{{date('d', strtotime($article->created_at))}}
+                                        <span><br>{{date('M', strtotime($article->created_at))}}</span>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="event-one__content">
-                                <h4 class="event-one__title"><a href="{{route('events.details', $event->slug)}}">{{$event->title}}</a></h4>
-                                <p class="event-one__text">{!!Str::limit($event->summary, 150)!!}</p>
-                                <p class="event-one__location"><span class="icon-pin"></span>{{$event->location}}</p>
-                                <div class="event-one__btn-box">
-                                    <a href="{{route('events.details', $event->slug)}}" class="event-one__btn thm-btn">{{__('messages.readmore')}}<span><i
+                            <div class="blog-one__content">
+                                <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
+                                <p class="blog-one__text">{!! $article->description !!}</p>
+                                <div class="blog-one__btn-box">
+                                    <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">{{__('messages.readmore')}}<span><i
                                                 class="icon-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                <!--Event One Single End-->
+                    </div> --}}
+                    <!--Blog One Single End-->
+                @empty
+                <h4 class="section-title__title title-animation">{{__('messages.norecordsfound')}}</h4>
+                @endforelse
             </div>
         </div>
-    </section> --}}
-    <!--Event One End -->
+    </section>
+    <!--Blog One End -->
 
     <!--Country One Start -->
     <section class="country-one">
@@ -533,49 +551,6 @@
     </section> --}}
     <!--End Project Style1-->
 
-
-    <!--Blog One Start -->
-    <section class="blog-one">
-        <div class="container">
-            <div class="section-title text-center sec-title-animation animation-style1">
-                <div class="section-title__tagline-box">
-                    <span class="section-title__tagline"> {{__('messages.ourimpacts')}} </span>
-                </div>
-                <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2>
-            </div>
-            <div class="row">
-                @forelse ($causes as $key => $article)
-                    <!--Blog One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="{{100 + ($key * 100)}}ms">
-                        <div class="blog-one__single">
-                            <div class="blog-one__img-box">
-                                <div class="blog-one__img">
-                                    <img src="@if ($article->photo ==null) {{ asset('assets/images/placeholder.webp')}} @else {{ Storage::url($article->photo) }}@endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div class="blog-one__date">
-                                    <p>{{date('d', strtotime($article->created_at))}}
-                                        <span><br>{{date('M', strtotime($article->created_at))}}</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="blog-one__content">
-                                <h4 class="blog-one__title"><a href="#">{{$article->title}}</a></h4>
-                                <p class="blog-one__text">{!! $article->description !!}</p>
-                                {{-- <div class="blog-one__btn-box">
-                                    <a href="{{route('articles.details', $article->slug)}}" class="blog-one__btn thm-btn">{{__('messages.readmore')}}<span><i
-                                                class="icon-arrow-right"></i></span></a>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <!--Blog One Single End-->
-                @empty
-                <h4 class="section-title__title title-animation">{{__('messages.norecordsfound')}}</h4>
-                @endforelse
-            </div>
-        </div>
-    </section>
-    <!--Blog One End -->
 
     <!--CTA One Start -->
      {{-- <section class="cta-one">

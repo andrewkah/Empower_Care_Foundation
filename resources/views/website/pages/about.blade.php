@@ -6,6 +6,55 @@
         homeLink="{{ url('/') }}" />
     <!--Page Header End-->
 
+        <!--Who We Are Start -->
+        <section class="who-we-are">
+            <div class="who-we-are__shape-3 float-bob-y">
+                <img src="{{ asset('assets/images/shapes/who-we-are-shape-3.png') }}" alt="">
+            </div>
+            <div class="who-we-are__shape-4 float-bob-x">
+                <img src="{{ asset('assets/images/shapes/who-we-are-shape-4.png') }}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
+                        <div class="who-we-are__left">
+                            <div class="section-title text-left sec-title-animation animation-style2">
+                                <div class="section-title__tagline-box">
+                                    <span class="section-title__tagline">{{__('messages.who')}}</span>
+                                </div>
+                                <h2 class="section-title__title title-animation"> 
+                                    {{-- {{__('messages.dreams')}} --}}
+                                    {!! $data['about_title'] !!}
+                                </h2>
+                            </div><span class="color-black"></span>
+                            {!! $data['about_content'] !!}
+                            {{-- <p class="who-we-are__text"> {{__('messages.intro')}} <strong class="color-black">00NGO/R/5113</strong>, {{__('messages.intro2')}}</p> --}}
+                            
+                            <p>{{__('messages.wearep')}}</p>
+                            <div class="who-we-are__btn-box">
+                                <a href="{{route('donate')}}" class="who-we-are__btn thm-btn"> {{__('messages.donatenow')}}<span><i
+                                            class="icon-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+                        <div class="who-we-are__right">
+                            <div class="who-we-are__img-box">
+                                <div class="who-we-are__img">
+                                    <img src="{{ asset('assets/images/resources/who-we-are-img-1.jpg') }}" alt="">
+                                </div>
+                                <div class="who-we-are__img-2">
+                                    <img src="{{ asset('assets/images/resources/who-we-are-img-2.jpg') }}" alt="">
+                                </div>
+                                <div class="who-we-are__shape-1 img-bounce"></div>
+                                <div class="who-we-are__shape-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Who We Are End -->
     <!--About One Start -->
     <section class="about-One">
         <div class="container">
@@ -182,55 +231,7 @@
     </section>
     <!--Donate One End -->
 
-    <!--Who We Are Start -->
-    <section class="who-we-are">
-        <div class="who-we-are__shape-3 float-bob-y">
-            <img src="{{ asset('assets/images/shapes/who-we-are-shape-3.png') }}" alt="">
-        </div>
-        <div class="who-we-are__shape-4 float-bob-x">
-            <img src="{{ asset('assets/images/shapes/who-we-are-shape-4.png') }}" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
-                    <div class="who-we-are__left">
-                        <div class="section-title text-left sec-title-animation animation-style2">
-                            <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">{{__('messages.who')}}</span>
-                            </div>
-                            <h2 class="section-title__title title-animation"> 
-                                {{-- {{__('messages.dreams')}} --}}
-                                {!! $data['about_title'] !!}
-                            </h2>
-                        </div><span class="color-black"></span>
-                        {!! $data['about_content'] !!}
-                        {{-- <p class="who-we-are__text"> {{__('messages.intro')}} <strong class="color-black">00NGO/R/5113</strong>, {{__('messages.intro2')}}</p> --}}
-                        
-                        <p>{{__('messages.wearep')}}</p>
-                        <div class="who-we-are__btn-box">
-                            <a href="{{route('donate')}}" class="who-we-are__btn thm-btn"> {{__('messages.donatenow')}}<span><i
-                                        class="icon-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                    <div class="who-we-are__right">
-                        <div class="who-we-are__img-box">
-                            <div class="who-we-are__img">
-                                <img src="{{ asset('assets/images/resources/who-we-are-img-1.jpg') }}" alt="">
-                            </div>
-                            <div class="who-we-are__img-2">
-                                <img src="{{ asset('assets/images/resources/who-we-are-img-2.jpg') }}" alt="">
-                            </div>
-                            <div class="who-we-are__shape-1 img-bounce"></div>
-                            <div class="who-we-are__shape-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Who We Are End -->
+
     <!--Site Footer Two Start-->
     @include('website.layout.footer')
     <!--Site Footer Two End-->

@@ -23,7 +23,7 @@ class CauseRequest extends FormRequest
     {
         return [
             'title'=>'required|string|max:255',
-            'description' => 'required|string|',
+            'description' => 'required|numeric',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
         ];
     }

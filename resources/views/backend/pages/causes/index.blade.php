@@ -35,11 +35,7 @@
                                                 <td>{{ $cause->title }}</td>
                                                 <td> 
                                                     <div class="media mb-2 mt-2">                                               
-                                                    <div class="media-body">
-                                                        <img class="img-fluid mr-2" src="{{Storage::url($cause->photo)}}" style="height: 60px;" alt="image">
-                                                        {!! $cause->description !!} <br>
-                                                        
-                                                    </div>
+                                                    <div class="media-body">{!! $cause->description !!} </div>
                                                 </div></td>
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">

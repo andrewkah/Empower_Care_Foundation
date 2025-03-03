@@ -70,7 +70,7 @@ return [
     'country'=>'Your Country',
     'reason'=>'Reason for Donation',
     'donationamt'=>'Enter Donation Amount',
-    'articles'=> 'Articles',
+    'articles'=> 'Our Stories',
     'updates'=> 'Updates',
     'donatenow'=> 'Donate Now',
     'procurements'=> 'Procurements',

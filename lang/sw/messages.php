@@ -61,7 +61,7 @@ return [
 'country'=>'Nchi Yako',
 'reason'=>'Sababu ya Mchango',
 'donationamt'=>'Weka Kiasi cha Mchango',
-'articles'=> 'Makala',
+'articles'=> 'Hadithi Zetu',
 'updates'=> 'Sasisho',
 'donatenow'=> 'Changia Sasa',
 'procurements'=> 'Ununuzi',

@@ -31,37 +31,14 @@
                                                     class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="input-group ">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Cover Photo (245px * 215px)</span>
-                                            </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input @error('photo') error-message @enderror" id="photo"
-                                                    name="photo" accept="image/*"
-                                                    onchange="document.querySelector('#photo + label').textContent = this.files[0].name">
-                                                <label class="custom-file-label" for="photo">Browse</label>
-                                            </div>
-                                        </div>
-                                        @error('photo')
-                                                <x-input.error id="photo"
-                                                    class="form-text text-danger">{{ $message }}</x-input.error>
-                                            @enderror
-                                            @if(isset($cause) && $cause->photo !=null)
-                                            <div class="media mb-2 mt-2">
-                                                <img class="img-fluid mr-4" src="{{Storage::url($cause->photo)}}" style="height: 100px;" alt="image">
-                                                <div class="media-body">
-                                                </div>
-                                            </div>
-                                            @endif
-                                    </div>
-                                    
+                                                                        
                                     <div class="form-group">
-                                        <x-input.label for="description">Description</x-input.label>
+                                        <x-input.label for="description">Impact Number</x-input.label>
                                         @if(isset($cause))
-                                        <textarea name="description" class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description',$cause->description)}}</textarea>
+                                        <x-input.text type='number' class="form-control @error('description') error-message @enderror" id="description"  value="{{ old('description',$cause->description)}}" name='description' placeholder="" required />
                                         @else
-                                            <textarea class="form-control @error('description') error-message @enderror" name="description" id="description" aria-label="With textarea">{{old('description')}}</textarea>
+                                            <x-input.text type='number' class="form-control @error('description') error-message @enderror" id="description"  value="{{ old('description')}}" name='description' placeholder="" required />
+                                            
                                         @endif 
                                             @error('description')
                                                 <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
