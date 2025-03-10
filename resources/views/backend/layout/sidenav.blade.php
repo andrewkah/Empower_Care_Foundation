@@ -14,10 +14,10 @@
                     </li>
                     <li>
                         @can('article-show')
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-newspaper-o"></i><span>Articles</span></a>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-newspaper-o"></i><span>Our Stories</span></a>
                             <ul class="collapse">
                                 <li><a href="{{route('article-categories.index')}}"><i class="fa fa-tag"></i>Categories</a></li>
-                                <li><a href="{{route('articles.index')}}"><i class="fa fa-file"></i>Articles</a></li>
+                                <li><a href="{{route('articles.index')}}"><i class="fa fa-file"></i>Our Stories</a></li>
                             </ul>
                         @endcan
                     </li>

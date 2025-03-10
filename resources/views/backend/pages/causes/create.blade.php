@@ -35,13 +35,13 @@
                                     <div class="form-group">
                                         <x-input.label for="description">Impact Number</x-input.label>
                                         @if(isset($cause))
-                                        <x-input.text type='number' class="form-control @error('description') error-message @enderror" id="description"  value="{{ old('description',$cause->description)}}" name='description' placeholder="" required />
+                                        <x-input.text type='number' class="form-control @error('description') error-message @enderror"   value="{{ old('description',$cause->description)}}" name='description' placeholder="" required />
                                         @else
-                                            <x-input.text type='number' class="form-control @error('description') error-message @enderror" id="description"  value="{{ old('description')}}" name='description' placeholder="" required />
+                                            <x-input.text type='number' class="form-control @error('description') error-message @enderror"   value="{{ old('description')}}" name='description' placeholder="" required />
                                             
                                         @endif 
                                             @error('description')
-                                                <x-input.error id="description" class="form-text text-danger">{{ $message }}</x-input.error>
+                                                <x-input.error  class="form-text text-danger">{{ $message }}</x-input.error>
                                             @enderror
                                     </div>
                                     <div class="d-flex justify-content-end mr-0 mt-4">

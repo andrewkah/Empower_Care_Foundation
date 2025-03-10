@@ -438,7 +438,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline"> {{__('messages.ourimpacts')}} </span>
                 </div>
-                <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2>
+                {{-- <h2 class="section-title__title title-animation">{{__('messages.lending')}}<br> {{__('messages.spreading')}}</h2> --}}
             </div>
             <div class="row">
                 @forelse ($causes as $key => $article)

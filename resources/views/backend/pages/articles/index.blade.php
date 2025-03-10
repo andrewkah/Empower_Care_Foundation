@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- header area start -->
-    <x-admin.header pageTitle="Articles" currentPage="Articles"></x-admin.header>
+    <x-admin.header pageTitle="Our Stories" currentPage="Our Stories"></x-admin.header>
     <!-- header area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -13,7 +13,7 @@
                     @can('article-create')
                         <div class="col-auto ml-0">
 
-                            <x-outline-button color="primary" href="{{ route('articles.create') }}">Add Article</x-outline-button>
+                            <x-outline-button color="primary" href="{{ route('articles.create') }}">Add Story</x-outline-button>
                         </div>
                     @endcan
                 </div>
@@ -50,13 +50,13 @@
                                                 <div class="hstack gap-2 fs-15">
                                                     @can('article-edit')
                                                     <a aria-label="anchor" href="{{ route('articles.edit', $cause->id) }}"
-                                                        title="Edit Article" class="btn btn-sm btn-success"><i
+                                                        title="Edit Story" class="btn btn-sm btn-success"><i
                                                             class="fa fa-pencil-square-o fa-lg"></i></a>
                                                     @endcan
                                                     @can('article-delete')
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                                         data-target="#modal-delete{{ $cause->id }}"
-                                                        title="Delete Article"><i class="fa fa-trash fa-lg"></i></button>
+                                                        title="Delete Story"><i class="fa fa-trash fa-lg"></i></button>
                                                     @endcan
                                                     <div class="modal fade" id="modal-delete{{ $cause->id }}"
                                                         tabindex="-1" aria-labelledby="modal-new-address"

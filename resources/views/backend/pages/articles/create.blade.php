@@ -13,7 +13,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">@if(isset($data)) Edit Article @else Articles @endif </h4>
+                                <h4 class="header-title">@if(isset($data)) Edit Story @else Our Stories @endif </h4>
                                 <x-form has-files :action="isset($data) ? route('articles.update', $data->id): route('articles.store')" :method="isset($data) ? 'PUT': 'POST'">
                                     <div class="form-group">
                                         <x-input.label for="title">Title</x-input.label>
