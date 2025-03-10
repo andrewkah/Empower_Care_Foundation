@@ -43,4 +43,23 @@ Route::get('/downloads', function () {
 
 Route::get('/switch-language/{lang}',[FrontendController::class,'setLanguage'])->name('switch.language');
 
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    echo "Done.";
+});
+
+// Route::get('/createlink', function () {
+//     Artisan::call('storage:link');
+
+//     echo "done";
+// });
+
+Route::get('/clearcache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('clear-compiled');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    echo "done";
+});
+
 require __DIR__.'/admin-auth.php';
