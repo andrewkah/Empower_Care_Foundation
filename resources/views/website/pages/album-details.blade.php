@@ -9,7 +9,7 @@
     <section class="projects-page">
         <div class="container">
             <div class="row">
-                    @foreach ($album->photos as $key => $photo)
+                    @foreach ($album->photos??[] as $key => $photo)
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="projects-page__single">
                                 <div class="projects-page__img">

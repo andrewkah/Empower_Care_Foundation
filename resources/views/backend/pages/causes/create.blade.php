@@ -35,9 +35,9 @@
                                     <div class="form-group">
                                         <x-input.label for="description">Impact Number</x-input.label>
                                         @if(isset($cause))
-                                        <x-input.text type='number' class="form-control @error('description') error-message @enderror"   value="{{ old('description',$cause->description)}}" name='description' placeholder="" required />
+                                        <x-input.text type='number' class="form-control @error('description') error-message @enderror" id="impact"  value="{{ old('description',$cause->description)}}" name='description' placeholder="" required />
                                         @else
-                                            <x-input.text type='number' class="form-control @error('description') error-message @enderror"   value="{{ old('description')}}" name='description' placeholder="" required />
+                                            <x-input.text type='number' class="form-control @error('description') error-message @enderror"   id="impact"   value="{{ old('description')}}" name='description' placeholder="" required />
                                             
                                         @endif 
                                             @error('description')

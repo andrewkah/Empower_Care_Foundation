@@ -13,7 +13,7 @@
 						<div class="card">
 							<div class="seo-fact sbg1">
 								<div class="p-4 d-flex justify-content-between align-items-center">
-									<div class="seofct-icon"><i class="fa fa-file"></i> Articles</div>
+									<div class="seofct-icon"><i class="fa fa-file"></i> Our Stories </div>
 									<h2>{{ App\Models\Article::count() }}</h2>
 								</div>
 								<canvas id="seolinechart1" height="50"></canvas>

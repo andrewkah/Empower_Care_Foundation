@@ -23,10 +23,10 @@ class TeamRequest extends FormRequest
     {
         return [
             'name'=>'required|string|max:255',
-            'email'=>'email|unique:teams,email',
+            'email'=>'email|max:255',
             'phone' => 'nullable',
             'position' => 'string|max:255',
-            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,webp,svg|max:3048',
         ];
     }
     public function messages(){

@@ -15,7 +15,7 @@
                             <div class="event-one__single">
                                 <div class="event-one__img-box">
                                     <div class="event-one__img">
-                                        <img src="@if ($event->photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($event->photo) }} @endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <img src="@if ($event->cover_photo ==null) {{ asset('assets/images/null.png')}} @else {{ Storage::url($event->cover_photo) }} @endif" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div class="event-one__date">
                                         <p><span class="icon-clock"></span>{{date('d M, Y', strtotime($event->date))}}</p>
@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($album as $image)
-                    @foreach (json_decode($image->photos) as $key => $photo)
+                    @foreach (json_decode($image->photos)??[] as $key => $photo)
                         <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="projects-page__single">
                                 <div class="projects-page__img">
